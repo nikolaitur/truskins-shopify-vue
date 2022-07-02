@@ -6,27 +6,27 @@ import { createStore } from 'vuex'
 import './css/main.css'
 
 /**
- * vuex
- * auto-import all modules and prepare shared store
- */
-const vuexModules = require.context('./vue/store/', true, /\.js$/)
-const modules = {}
-
-vuexModules.keys().forEach(key => {
-  const name = key.replace(/\.(\/|js)/g, '').replace(/\s/g, '-')
-  modules[name] = vuexModules(key).default
-})
-
-const store = createStore({
-  strict: process.env.NODE_ENV !== 'production',
-  modules
-})
-
-/**
  * create vue instance function
  */
-const createVueApp = () => {
+const createVueApp = (params) => {
   const app = createApp({})
+
+  /**
+   * vuex
+   * auto-import all modules and prepare shared store
+   */
+  const vuexModules = require.context('./vue/store/', true, /\.js$/)
+  const modules = {}
+
+  vuexModules.keys().forEach(key => {
+    const name = key.replace(/\.(\/|js)/g, '').replace(/\s/g, '-')
+    modules[name] = vuexModules(key).default
+  })
+
+  const store = createStore({
+    strict: process.env.NODE_ENV !== 'production',
+    modules
+  })
 
   /**
    * vue components
@@ -72,6 +72,13 @@ const createVueApp = () => {
    */
   app.use(store)
 
+  /**
+   * vue router
+   */
+  if (params?.router) {
+     app.use(params.router)
+  }
+
   return app
 }
 
@@ -79,8 +86,15 @@ const createVueApp = () => {
  * create and mount vue instance(s)
  */
 const appElement = document.querySelector('#app')
+const elemWithRouter = document.querySelector('[vue-router]')
 
-if (appElement) {
+if (elemWithRouter) {
+  const routers = require('./vue/routers').default
+  const routerName = elemWithRouter.getAttribute('vue-router')
+  createVueApp({ 
+    router: routers[routerName] 
+  }).mount(elemWithRouter)
+} else if (appElement) {
   createVueApp().mount(appElement)
 } else {
   const vueElements = document.querySelectorAll('[vue]')
