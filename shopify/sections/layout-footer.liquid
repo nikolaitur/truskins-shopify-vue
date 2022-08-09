@@ -1,88 +1,98 @@
-<div class="border-t border-gray-200 pt-12 pb-24">
-  <div class="container grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-x-4 gap-y-8">
-    <div>
-      <div class="text-lg font-bold mb-3">
-        {{ 'footer.menu' | t }}
-      </div>
+<div class="pt-20 pb-10 bg-light-black">
+  <div class="container flex items-start w-full justify-between pr-20">
+    <div class="w-96">
+      <div>
+        <div class="text-hero-subtitle-md text-white font-bold text-left mb-5">
+          {{ section.settings.headline }}
+        </div>
+        {% form 'customer', class: 'w-full rounded-full overflow-hidden' %}
+          {% if form.errors %}
+            {% capture error_text %}
+              {{ form.errors | default_errors }}
+            {% endcapture %}
 
-      {% for link in linklists.footer.links %}
-        <div class="space-y-1">
-          <div>
-            <a
-              href="{{ link.url }}"
-              class="text-gray-600 hover:text-black transition duration-150"
-            >
-              {{ link.title }}
-            </a>
+            {%
+              render 'layout-message',
+              type: 'error'
+              text: error_text
+              class: 'mb-8'
+            %}
+          {% endif %}
+
+          {% if form.posted_successfully? %}
+            Success
+          {% endif %}
+
+          <div class="relative">
+            <input type="hidden" name="contact[tags]" value="newsletter">
+
+            <div class="flex flex-col sm:flex-row">
+              <input
+                type="email"
+                placeholder="Enter Email Address"
+                name="contact[email]"
+                value="{% if customer.email != blank %}{{ customer.email }}{% endif %}"
+                class="flex-1 border px-6 py-1 text-dark-gray text-sm leading-none outline-none"
+                required
+              >
+
+              <button class="absolute right-0 top-0 bottom-0 flex items-center px-5 font-bold text-sm leading-none text-light-black uppercase">
+                submit
+              </button>
+            </div>
           </div>
+        {% endform %}
+      </div>
+      {%
+        if section.settings.social_instagram_visible or
+        section.settings.social_tiktok_visible or
+        section.settings.social_facebook_visible or
+        section.settings.social_youtube_visible
+      %}
+        <div class="mt-11">
+          {%
+            render 'layout-social',
+            social_instagram_visible: section.settings.social_instagram_visible
+            social_instagram_link: section.settings.social_instagram_link
+            social_tiktok_visible: section.settings.social_tiktok_visible
+            social_tiktok_link: section.settings.social_tiktok_link
+            social_facebook_visible: section.settings.social_facebook_visible
+            social_facebook_link: section.settings.social_facebook_link
+            social_youtube_visible: section.settings.social_youtube_visible
+            social_youtube_link: section.settings.social_youtube_link
+          %}
         </div>
-      {% endfor %}
+      {% endif %}
     </div>
-
-    {% if
-      section.settings.social_instagram_visible or
-      section.settings.social_twitter_visible or
-      section.settings.social_facebook_visible or
-      section.settings.social_youtube_visible
-    %}
-      <div>
-        <div class="text-lg font-bold mb-3">
-          {{ 'footer.social' | t }}
-        </div>
-
-        {% render 'layout-social',
-          social_instagram_visible: section.settings.social_instagram_visible
-          social_instagram_link: section.settings.social_instagram_link
-          social_twitter_visible: section.settings.social_twitter_visible
-          social_twitter_link: section.settings.social_twitter_link
-          social_facebook_visible: section.settings.social_facebook_visible
-          social_facebook_link: section.settings.social_facebook_link
-          social_youtube_visible: section.settings.social_youtube_visible
-          social_youtube_link: section.settings.social_youtube_link
-        %}
+    {%- for link in linklists[section.settings.footer_menu].links -%}
+      <div class="main-footer__menu">
+        <h4 class="flex items-center justify-between text-xl text-white font-bold pb-5 mt-3">
+          {{ link.title }}
+          <span class="sm:hidden">
+            {%- render 'icon-caret-down', class: 'icon-caret-down' -%}
+          </span>
+          <!-- icon-open and close -->
+        </h4>
+        {% if link.links != blank %}
+          <div class="main-footer__menu--sub flex flex-col gap-3">
+            {%- for childlink in link.links -%}
+              <a
+                href="{{ childlink.url }}"
+                class="w-fit text-sm text-white"
+              >
+                {{ childlink.title }}
+              </a>
+            {%- endfor -%}
+          </div>
+        {% endif %}
       </div>
-    {% endif %}
-
-    {% assign enabled_locales = shop.enabled_locales | size %}
-    {% assign enabled_currencies = shop.enabled_currencies | size %}
-
-    {% if enabled_locales > 1 or enabled_currencies > 1 %}
-      <div>
-        <div class="text-lg font-bold mb-3">
-          {{ 'footer.settings' | t }}
-        </div>
-
-        <div class="flex space-x-2">
-          {% if enabled_locales > 1 %}
-            {% render 'layout-select-locale' %}
-          {% endif %}
-
-          {% if enabled_currencies > 1 %}
-            {% render 'layout-select-currency' %}
-          {% endif %}
-        </div>
-      </div>
-    {% endif %}
-
-    {% if shop.enabled_payment_types != blank %}
-      <div class="col-span-2">
-        <div class="text-lg font-bold mb-3">
-          {{ 'footer.payment_methods' | t }}
-        </div>
-
-        <div class="flex flex-wrap space-x-2">
-          {% for type in shop.enabled_payment_types %}
-            {{ type | payment_type_svg_tag: class: 'w-12 h-auto mb-2' }}
-          {% endfor %}
-        </div>
-      </div>
-    {% endif %}
+    {%- endfor -%}
   </div>
-</div>
-
-<div class="border-t border-gray-200 py-8">
-  <div class="container text-sm text-gray-600 font-medium text-center">
-    &copy; {{ 'now' | date: "%Y" }} {{ shop.name }}
+  <div class="pt-20">
+    <div class="container text-white text-xs text-left">
+      &copy; {{ 'now' | date: "%Y" }}
+      {{ shop.name }}
+    </div>
   </div>
 </div>
 
@@ -90,6 +100,22 @@
 {
   "name": "t:sections.footer.name",
   "settings": [
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "t:common.headline",
+      "default": "Our newsletter"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Menu List",
+      "default": "footer"
+    },
     {
       "type": "header",
       "content": "t:sections.footer.settings.header.content",
@@ -111,16 +137,16 @@
     },
     {
       "type": "header",
-      "content": "Twitter"
+      "content": "tiktok"
     },
     {
       "type": "checkbox",
-      "id": "social_twitter_visible",
+      "id": "social_tiktok_visible",
       "label": "t:sections.footer.settings.show-icon"
     },
     {
       "type": "url",
-      "id": "social_twitter_link",
+      "id": "social_tiktok_link",
       "label": "t:common.link"
     },
     {
