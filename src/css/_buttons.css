@@ -1,13 +1,13 @@
 .button {
-  @apply w-full sm:w-auto inline-block border text-base font-medium text-center rounded-sm transition duration-150 px-6 py-2;
+  @apply w-full sm:w-btn h-btn flex items-center justify-center text-base font-bold rounded-full transition duration-150 px-2 py-2;
 }
 
 .button-primary {
-  @apply bg-black hover:bg-gray-700 border-black hover:border-gray-700 text-white;
+  @apply bg-white text-light-black border border-white hover:bg-transparent hover:text-white;
 }
 
 .button-secondary {
-  @apply border-black hover:bg-black hover:text-white;
+  @apply bg-orange text-white;
 }
 
 /* override default Shopify styling */
@@ -16,8 +16,8 @@
     @apply h-12 bg-black border-black text-white border text-base font-medium text-center rounded-sm transition duration-150 px-6 py-2;
 
     &:hover {
-      background: theme('colors.gray.700') !important;
-      border-color: theme('colors.gray.700') !important;
+      background: theme("colors.gray.700") !important;
+      border-color: theme("colors.gray.700") !important;
     }
   }
 }

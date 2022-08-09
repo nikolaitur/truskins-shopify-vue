@@ -1,80 +1,143 @@
-{% assign image = section.settings.image %}
-
-<div class="container mb-12 md:mb-24">
-  <div class="w-full md:h-[500px] relative overflow-hidden">
-    {% if image %}
-      <img
-        sizes="
-          (min-width: 1280px) 1500px,
-          (min-width: 1024px) 1250px,
-          (min-width: 768px) 1000px,
-          (min-width: 640px) 720px,
-          600px
-        "
-        srcset="
-          {{ image | img_url: '600x' }} 600w,
-          {{ image | img_url: '720x' }} 720w,
-          {{ image | img_url: '1000x' }} 1000w,
-          {{ image | img_url: '1250x' }} 1250w,
-          {{ image | img_url: '1500x' }} 1500w
-        "
-        src="{{ image | img_url: '1500x' }}"
-        alt="{{ image.alt }}"
-        loading="lazy"
-        class="w-full h-full object-cover object-center"
+<div
+  {% if section.blocks.size > 1 %}
+    data-slider="hero"
+  {% endif %}
+  class="overflow-hidden relative"
+>
+  <div class="swiper-wrapper">
+    {% for block in section.blocks %}
+      {% assign image = block.settings.image %}
+      <a
+        href="{{ block.settings.button-url }}"
+        class="w-full md:h-auto relative overflow-hidden swiper-slide lozad"
       >
-    {% else %}
-      {{ 'lifestyle-1' | placeholder_svg_tag: 'w-full h-full' }}
-    {% endif %}
+        {% if image %}
+          <img
+            sizes="
+              (min-width: 1280px) 1500px,
+              (min-width: 1024px) 1250px,
+              (min-width: 768px) 1000px,
+              (min-width: 640px) 720px,
+              600px
+            "
+            srcset="
+              {{ image | img_url: '600x' }} 600w,
+              {{ image | img_url: '720x' }} 720w,
+              {{ image | img_url: '1000x' }} 1000w,
+              {{ image | img_url: '1250x' }} 1250w,
+              {{ image | img_url: '1500x' }} 1500w
+            "
+            src="{{ image | img_url: '1500x' }}"
+            alt="{{ image.alt }}"
+            loading="lazy"
+            class="w-full h-full object-cover object-center"
+          >
+        {% else %}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'w-full h-full' }}
+        {% endif %}
 
-    <div class="w-full md:max-w-xl md:absolute bottom-0 right-0 bg-white pt-6 md:p-6 md:mb-8 md:mr-8">
-      <div class="text-2xl lg:text-3xl font-bold mb-2">
-        {{ section.settings.headline }}
-      </div>
+        <div class="container w-full md:absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-{{ block.settings.content_align }} bg-transparent pt-6 md:p-6 md:mb-8 md:mr-8">
+          <div class="md:max-w-2xl {% if block.settings.content_align == 'center' %}mx-auto{% elsif block.settings.content_align == 'right' %}ml-auto{% endif %}">
+            <div class="text-hero-title-md font-extrabold leading-none text-white mb-3">
+              {{ block.settings.headline }}
+            </div>
 
-      <div class="mb-6">
-        {{ section.settings.text }}
-      </div>
+            <div class="text-hero-subtitle-md font-medium text-white mb-6">
+              {{ block.settings.subheadline }}
+            </div>
 
-      <a href="{{ section.settings.button-url }}" class="button button-primary">
-        {{ section.settings.button-text }}
+            <div class="mb-7 text-base text-white leading-5 font-light max-w-xl {% if block.settings.content_align == 'center' %}mx-auto{% elsif block.settings.content_align == 'right' %}ml-auto{% endif %}">
+              {{ block.settings.text }}
+            </div>
+
+            <div
+              href="{{ block.settings.button-url }}"
+              class="button button-primary {% if block.settings.content_align == 'center' %}mx-auto{% elsif block.settings.content_align == 'right' %}ml-auto{% endif %}"
+            >
+              {{ block.settings.button-text }}
+            </div>
+          </div>
+        </div>
       </a>
-    </div>
+    {% endfor %}
   </div>
+  {% if section.blocks.size > 1 %}
+    <div
+      class="swiper-button-next hero-swiper-btn"
+    ></div>
+    <div class="swiper-button-prev hero-swiper-btn"></div>
+  {% endif %}
 </div>
 
 {% schema %}
 {
   "name": "t:sections.hero.name",
   "class": "shopify-section-vue",
-  "settings": [
+  "settings": [],
+  "blocks": [
     {
-      "type": "image_picker",
-      "id": "image",
-      "label": "t:common.image"
-    },
-    {
-      "type": "text",
-      "id": "headline",
-      "label": "t:common.headline",
-      "default": "Headline"
-    },
-    {
-      "type": "textarea",
-      "id": "text",
-      "label": "t:common.text",
-      "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque."
-    },
-    {
-      "type": "url",
-      "id": "button-url",
-      "label": "t:common.button.url"
-    },
-    {
-      "type": "text",
-      "id": "button-text",
-      "label": "t:common.button.text",
-      "default": "Button"
+      "type": "hero_slide",
+      "name": "Hero Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:common.image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "select",
+          "id": "content_align",
+          "label": "Content Align",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "headline",
+          "label": "t:common.headline",
+          "default": "Headline"
+        },
+        {
+          "type": "text",
+          "id": "subheadline",
+          "label": "Subheadline",
+          "default": "Sub Headline"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "t:common.text",
+          "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque."
+        },
+        {
+          "type": "url",
+          "id": "button-url",
+          "label": "t:common.button.url"
+        },
+        {
+          "type": "text",
+          "id": "button-text",
+          "label": "t:common.button.text",
+          "default": "Button"
+        }
+      ]
     }
   ],
   "presets": [

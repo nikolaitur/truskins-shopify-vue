@@ -11,3 +11,84 @@
 @import "_transitions";
 
 @import "tailwindcss/utilities";
+
+.hero-swiper-btn,
+.products-swiper-btn {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 100%;
+  background-color: white;
+  position: relative;
+}
+
+.swiper-button-next {
+  right: 40px !important;
+}
+
+.swiper-button-prev {
+  left: 40px !important;
+}
+
+.swiper-button-next::after {
+  content: "" !important;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.swiper-button-prev::after {
+  content: "" !important;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.swiper-button-next::after {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid #111;
+  top: calc(50% - 6px);
+  left: calc(50% - 2px);
+}
+
+.swiper-button-prev::after {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 8px solid #111;
+  top: calc(50% - 6px);
+  left: calc(50% - 6px);
+}
+
+.section-featured-collection {
+  background: linear-gradient(180deg, #f7f7f7 0%, rgba(247, 247, 247, 0) 100%);
+}
+
+.btn-product-quick-add {
+  width: 100%;
+}
+
+.product-card-item:hover .btn-product-quick-add {
+  opacity: 1;
+}
+
+.product-card-item .bv_button_component_container {
+  display: none !important;
+}
+
+.products-swiper-btn.swiper-button-next {
+  transform: translateY(20px);
+  right: 0px !important;
+}
+
+.products-swiper-btn.swiper-button-prev {
+  transform: translateY(20px);
+  left: 0px !important;
+}
+
+.product-card-item:hover .product-card-title {
+  color: #f97a1c;
+}
+
+.banner-title strong {
+  @apply text-light-black;
+}

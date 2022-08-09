@@ -1,72 +1,89 @@
-<div class="container mb-12 md:mb-24">
-  <div class="grid lg:grid-cols-3 gap-4 mb-6 md:mb-12">
-    <div class="lg:col-start-2 text-2xl lg:text-3xl font-bold text-center">
-      {{ section.settings.headline }}
+<div class="pt-16 mb-16">
+  <div class="ml-container-side-match sm:ml-container-side-match-sm md:ml-container-side-match-md lg:ml-container-side-match-lg xl:ml-container-side-match-xl 2xl:ml-container-side-match-2xl overflow-hidden flex items-start gap-7">
+    <div class="basis-1/4">
+      <div class="text-6xl leading-none text-light-black font-bold text-left">
+        {{ section.settings.headline }}
+      </div>
+
+      <div class="mt-6 text-base font-light leading-5">{{ section.settings.body }}</div>
+
+      <div class="hidden lg:flex justify-start items-center">
+        <a
+          href="{{ routes.collections_url }}"
+          class="button button-secondary flex justify-center items-center mt-8"
+        >
+          Shop All
+        </a>
+      </div>
     </div>
 
-    <div class="hidden lg:flex justify-end items-center">
-      <a href="{{ routes.collections_url }}" class="button button-secondary flex justify-center items-center">
-        {{ 'action.view_more' | t }} {% render 'icon-chevron-right', class: 'w-4 h-auto ml-1' style: 'margin-top: 2px;' %}
-      </a>
+    <div
+      data-slider="products"
+      class="overflow-hidden relative md:pr-container-side-match-md lg:pr-container-side-match-lg xl:pr-container-side-match-xl 2xl:pr-container-side-match-2xl"
+    >
+      {% assign collection = collections[section.settings.collection_featured] %}
+      <div class="relative z-10 translate-y-40 sm:translate-y-32 xl:translate-y-40">
+        {% if collection.products.size > 3 %}
+          <div
+            class="swiper-button-next products-swiper-btn"
+          ></div>
+          <div class="swiper-button-prev products-swiper-btn"></div>
+        {% endif %}
+      </div>
+      <div class="swiper-wrapper">
+
+
+        {% unless collection == blank %}
+          {% for product in collection.products limit: 9 %}
+            {% assign index = forloop.index0 | modulo: 3 %}
+            {% if index == 0 %}
+              <div class="swiper-slide lozad flex items-start">
+            {% endif %}
+                <div class="px-3 basis-1/3">
+                {% render 'layout-product', product: product %}
+                </div>
+            {% if index == 2 or forloop.last %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+
+        {% endunless %}
+      </div>
+
+
     </div>
   </div>
 
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8">
-    {% assign collection = collections[section.settings.collection_featured] %}
-
-    {% unless collection == blank %}
-      {% for product in collection.products limit: section.settings.collection_products_limit %}
-        {% render 'layout-product', product: product %}
-      {% endfor %}
-    {% else %}
-      {% for i in (1..4) %}
-        <div>
-          {% capture placeholder %}product-{{ i }}{% endcapture %}
-          {{ placeholder | placeholder_svg_tag: 'w-full h-full border' }}
-        </div>
-      {% endfor %}
-    {% endunless %}
-  </div>
+  {% schema %}
+  {
+    "name": "t:sections.collection.name",
+    "class": "section-featured-collection shopify-section-vue",
+    "settings": [
+      {
+        "type": "text",
+        "id": "headline",
+        "label": "t:common.text",
+        "default": "Featured products"
+      },
+      {
+        "type": "text",
+        "id": "body",
+        "label": "Body",
+        "default": "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+      },
+      {
+        "type": "collection",
+        "id": "collection_featured",
+        "label": "t:common.collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.collection.name",
+        "category": "Collection"
+      }
+    ]
+  }
+  {% endschema %}
 </div>
-
-{% schema %}
-{
-  "name": "t:sections.collection.name",
-  "class": "shopify-section-vue",
-  "settings": [
-    {
-      "type": "text",
-      "id": "headline",
-      "label": "t:common.text",
-      "default": "Selected products"
-    },
-    {
-      "type": "collection",
-      "id": "collection_featured",
-      "label": "t:common.collection"
-    },
-    {
-      "type": "select",
-      "id": "collection_products_limit",
-      "label": "t:sections.collection.settings.max-products-to-display",
-      "default": "4",
-      "options": [
-        {
-          "value": "4",
-          "label": "t:sections.collection.settings.4-products"
-        },
-        {
-          "value": "8",
-          "label": "t:sections.collection.settings.8-products"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "t:sections.collection.name",
-      "category": "Collection"
-    }
-  ]
-}
-{% endschema %}

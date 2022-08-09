@@ -1,0 +1,69 @@
+<div class="py-6">
+  <div class="container flex items-center justify-between">
+    {% for block in section.blocks %}
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12">
+          {% assign image = block.settings.image %}
+          {% if image %}
+            <img
+              src="{{ image | img_url: '100x' }}"
+              alt="{{ image.alt }}"
+              class="w-full h-full object-cover object-center"
+            >
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'w-full h-full border' }}
+          {% endif %}
+        </div>
+        <div class="tracking-normal text-light-black">
+          {{ block.settings.text }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Callouts",
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Your Text Here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Callouts",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "icon"
+        },
+        {
+          "type": "icon"
+        },
+        {
+          "type": "icon"
+        },
+        {
+          "type": "icon"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

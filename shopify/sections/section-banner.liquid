@@ -1,26 +1,26 @@
-{% assign image = section.settings.image %}
-
-<div class="container grid md:grid-cols-2 lg:grid-cols-3 mb-12 md:mb-24">
-  <div class="lg:col-span-2">
+<div class="my-16">
+  {% assign image = section.settings.image %}
+  <a
+    href="{{ block.settings.button-url }}"
+    class="w-full md:h-auto relative overflow-hidden swiper-slide lozad"
+  >
     {% if image %}
       <img
         sizes="
-          (min-width: 1536px) 1000px,
-          (min-width: 1280px) 850px,
-          (min-width: 1024px) 700px,
-          (min-width: 768px) 400px,
-          (min-width: 640px) 500px,
+          (min-width: 1280px) 1500px,
+          (min-width: 1024px) 1250px,
+          (min-width: 768px) 1000px,
+          (min-width: 640px) 720px,
           600px
         "
         srcset="
-          {{ image | img_url: '400x' }} 400w,
-          {{ image | img_url: '500x' }} 500w,
           {{ image | img_url: '600x' }} 600w,
-          {{ image | img_url: '700x' }} 700w,
-          {{ image | img_url: '850x' }} 850w,
-          {{ image | img_url: '1000x' }} 1000w
+          {{ image | img_url: '720x' }} 720w,
+          {{ image | img_url: '1000x' }} 1000w,
+          {{ image | img_url: '1250x' }} 1250w,
+          {{ image | img_url: '1500x' }} 1500w
         "
-        src="{{ image | img_url: '1000x' }}"
+        src="{{ image | img_url: '1500x' }}"
         alt="{{ image.alt }}"
         loading="lazy"
         class="w-full h-full object-cover object-center"
@@ -28,23 +28,26 @@
     {% else %}
       {{ 'lifestyle-1' | placeholder_svg_tag: 'w-full h-full' }}
     {% endif %}
-  </div>
 
-  <div class="flex flex-col justify-center items-start pt-4 md:p-8">
-    <div class="text-2xl lg:text-3xl font-bold mb-2">
-      {{ section.settings.headline }}
+    <div class="container w-full md:absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-{{ section.settings.content_align }} bg-transparent pt-6 md:p-6 md:mb-8 md:mr-8">
+      <div class="md:max-w-2xl {% if section.settings.content_align == 'center' %}mx-auto{% elsif section.settings.content_align == 'right' %}ml-auto{% endif %}">
+        <div class="banner-title text-hero-title-md font-extrabold leading-none text-white mb-5">
+          {{ section.settings.headline }}
+        </div>
+        <div class="mb-10 text-base text-white leading-5 font-light max-w-md {% if block.settings.content_align == 'center' %}mx-auto{% elsif block.settings.content_align == 'right' %}ml-auto{% endif %}">
+          {{ section.settings.text }}
+        </div>
+
+        <div
+          href="{{ section.settings.button-url }}"
+          class="button button-primary {% if block.settings.content_align == 'center' %}mx-auto{% elsif block.settings.content_align == 'right' %}ml-auto{% endif %}"
+        >
+          {{ section.settings.button-text }}
+        </div>
+      </div>
     </div>
-
-    <div class="mb-6">
-      {{ section.settings.text }}
-    </div>
-
-    <a href="{{ section.settings.button-url }}" class="button button-primary">
-      {{ section.settings.button-text }}
-    </a>
-  </div>
+  </a>
 </div>
-
 {% schema %}
 {
   "name": "t:sections.banner.name",
@@ -56,10 +59,28 @@
       "label": "t:common.image"
     },
     {
-      "type": "text",
+      "type": "select",
+      "id": "content_align",
+      "label": "Content Align",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
       "id": "headline",
-      "label": "t:common.headline",
-      "default": "Headline"
+      "label": "t:common.headline"
     },
     {
       "type": "textarea",

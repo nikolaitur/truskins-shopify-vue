@@ -1,3 +1,50 @@
 {
-  "current": {}
+  "current": {
+    "sections": {
+      "layout-announcement-bar": {
+        "type": "layout-announcement-bar",
+        "blocks": {
+          "0e98abb8-5799-4fd6-ac3b-7fe24960f649": {
+            "type": "announcement",
+            "settings": {
+              "content": "FREE SHIPPING on orders over $30 to US addresses"
+            }
+          }
+        },
+        "block_order": [
+          "0e98abb8-5799-4fd6-ac3b-7fe24960f649"
+        ],
+        "settings": {
+          "visible": true,
+          "home_page_only": false
+        }
+      },
+      "layout-header": {
+        "type": "layout-header",
+        "settings": {
+        }
+      },
+      "layout-footer": {
+        "type": "layout-footer",
+        "settings": {
+          "social_instagram_visible": false,
+          "social_instagram_link": "",
+          "social_twitter_visible": false,
+          "social_twitter_link": "",
+          "social_facebook_visible": false,
+          "social_facebook_link": "",
+          "social_youtube_visible": false,
+          "social_youtube_link": ""
+        }
+      },
+      "layout-mobile-navigation": {
+        "type": "layout-mobile-navigation",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
 }

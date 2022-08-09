@@ -1,14 +1,27 @@
 {% if section.settings.visible %}
   {% if section.settings.home_page_only == false or template.name == 'index' %}
-    <div class="container text-sm text-center py-2">
-      {{ section.settings.content }}
+    <div
+      class="overflow-hidden"
+      {% if section.blocks.size > 1 %}
+        data-slider="announcement"
+      {% endif %}
+    >
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide lozad cursor-pointer">
+            <div class="container text-sm text-center py-3 tracking-1">
+              {{ block.settings.content }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   {% endif %}
 {% endif %}
 
 {% schema %}
 {
-  "name":"t:sections.announcement-bar.name",
+  "name": "t:sections.announcement-bar.name",
   "class": "bg-black text-white",
   "settings": [
     {
@@ -22,12 +35,31 @@
       "id": "home_page_only",
       "label": "t:sections.announcement-bar.settings.show-only-on-home-page",
       "default": true
-    },
+    }
+  ],
+  "blocks": [
     {
-      "type": "html",
-      "id": "content",
-      "label": "t:common.content",
-      "default": "Lorem ipsum dolor sit amet."
+      "type": "announcement",
+      "name": "Annoucement",
+      "settings": [
+        {
+          "type": "html",
+          "id": "content",
+          "label": "t:common.content",
+          "default": "Lorem ipsum dolor sit amet."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "announcement"
+        }
+      ]
     }
   ]
 }

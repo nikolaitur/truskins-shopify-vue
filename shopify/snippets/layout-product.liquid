@@ -1,5 +1,8 @@
-<div class="{{ class | default: '' }}" style="{{ style | default: '' }}">
-  <a href="{{ product.url | within: collection }}" class="block relative">
+<div
+  class="product-card-item {{ class | default: '' }}"
+  style="{{ style | default: '' }}"
+>
+  <a href="{{ product.url | within: collection }}" class="block relative ">
     <img
       sizes="
         (min-width: 768px) 450px,
@@ -12,39 +15,60 @@
       src="{{ product.featured_image.src | img_url: '630x' }}"
       alt="{{ product.featured_image.alt | escape }}"
       loading="lazy"
-      class="w-full h-80 sm:h-64 xl:h-80 2xl:max-h-96 object-cover object-center"
+      class="w-full h-80 sm:h-64 xl:h-80 2xl:max-h-96 rounded-xl object-cover object-center"
     >
 
-    {% if product.compare_at_price %}
-      <div class="bg-red-500 text-white text-sm tracking-wider uppercase absolute top-0 left-0 px-2 py-1">
-        {{ 'common.sale' | t }}
+    {% assign badge = '' %}
+    {% for tag in product.tags %}
+      {% if tag contains 'badge-' %}
+        {% assign temp = tag | split: '-' %}
+        {% assign badge = temp[1] %}
+      {% endif %}
+    {% endfor %}
+    {% if badge != '' %}
+      <div class="w-24 h-7 flex items-center justify-center text-xs font-bold text-light-black absolute top-4 left-4 rounded-full bg-green-500">
+        {{ badge }}
       </div>
     {% endif %}
   </a>
 
-  <div class="mt-4">
+  <div class="mt-5">
     {% if product.title %}
-      <a href="{{ product.url | within: collection }}" class="text-lg font-bold">
+      <a
+        href="{{ product.url | within: collection }}"
+        class="product-card-title text-sm font-bold text-light-black leading-none"
+      >
         {{ product.title }}
       </a>
     {% endif %}
 
     {% if product.available %}
-      <div>
-        <span class="{% if product.compare_at_price %}text-red-500{% endif %}">
+      <div class="mt-4 text-sm leading-none text-lighter-gray">
+        <span>
           {{ product.price | money }}
         </span>
 
         {% if product.compare_at_price %}
-          <del class="ml-2">
+          <del class="ml-2 line-through">
             {{ product.compare_at_price | money }}
           </del>
         {% endif %}
       </div>
     {% else %}
-      <div>
+      <div class="mt-4 text-sm leading-none text-lighter-gray">
         {{ 'common.sold_out' | t }}
       </div>
     {% endif %}
+    <div
+      class="mt-3"
+      data-bv-show="rating_summary"
+      data-bv-product-id="{{ product.id }}"
+    ></div>
+    <a
+      class="btn-product-quick-add opacity-0 mt-5 button button-secondary"
+      href="#"
+    >
+      + Quick Buy
+    </a>
   </div>
 </div>

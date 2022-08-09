@@ -2,28 +2,128 @@
   "sections": {
     "section-hero": {
       "type": "section-hero",
+      "blocks": {
+        "53f1f948-a0d8-432f-9b0c-44242d94d324": {
+          "type": "hero_slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hero-img_2x_e4d1acc3-009f-428c-85e5-3c59c6a1657c.png",
+            "content_align": "left",
+            "headline": "Tea Tree<br>\nSuper Cleanser",
+            "subheadline": "A gentle non-stripping cleanser for acne prone skin",
+            "text": "Get a <b>FREE<\/b> tea tree serum with the purchase of our new tea tree cleanser. Available for a limited time only.",
+            "button-url": "",
+            "button-text": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "53f1f948-a0d8-432f-9b0c-44242d94d324"
+      ],
       "settings": {
-        "headline": "Headline",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque.",
-        "button-url": "\/",
-        "button-text": "Button"
       }
     },
-    "section-collection": {
+    "16600013934ed77942": {
+      "type": "section-icons",
+      "blocks": {
+        "1660001393702159e0-0": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-4_2x_e374106a-4a31-4f82-beff-8dbbd00f2f1f.png",
+            "text": "Clinically Tested"
+          }
+        },
+        "1660001393702159e0-1": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-2_2x_ea7dc2e6-9805-4a76-8a00-1084629b9a41.png",
+            "text": "Vegan Friendly"
+          }
+        },
+        "1660001393702159e0-2": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-3_2x_be4090f3-199a-4f42-8298-69333831c607.png",
+            "text": "Dermatologist Tested"
+          }
+        },
+        "1660001393702159e0-3": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-1_2x_97c110fd-e6e7-4330-83c5-a4cd9c7ff9b4.png",
+            "text": "Cruelty-Free"
+          }
+        }
+      },
+      "block_order": [
+        "1660001393702159e0-0",
+        "1660001393702159e0-1",
+        "1660001393702159e0-2",
+        "1660001393702159e0-3"
+      ],
+      "settings": {
+      }
+    },
+    "166000866385a51b4a": {
       "type": "section-collection",
       "settings": {
-        "headline": "Selected products",
-        "collection_featured": "",
-        "collection_products_limit": "4"
+        "headline": "Featured products",
+        "body": "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        "collection_featured": "skincare-products"
+      }
+    },
+    "16600130249bb6ce84": {
+      "type": "skin-condition",
+      "blocks": {
+        "1660013024e7b53c3f-1": {
+          "type": "image_with_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shutterstock_1590981061_2x_b6c68203-c28b-4ccf-a2fc-82546b93205d.png",
+            "title": "Even Tone & Dark Spots",
+            "link": ""
+          }
+        },
+        "1660013024e7b53c3f-0": {
+          "type": "image_with_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/acne-img_2x_e05c18b9-451c-4166-ab96-f65080485fd4.png",
+            "title": "Acne & Clogged Pores",
+            "link": ""
+          }
+        },
+        "1660013024e7b53c3f-2": {
+          "type": "image_with_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ageless-img_2x_95a2479c-a34b-4c26-af51-55cee897174d.png",
+            "title": "Ageless Skin",
+            "link": ""
+          }
+        },
+        "1660013024e7b53c3f-3": {
+          "type": "image_with_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/darkspots-img_2x_f8ab08c9-3a58-443a-82ae-fb9af43fdc82.png",
+            "title": "Dry Skin",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1660013024e7b53c3f-1",
+        "1660013024e7b53c3f-0",
+        "1660013024e7b53c3f-2",
+        "1660013024e7b53c3f-3"
+      ],
+      "settings": {
       }
     },
     "section-banner": {
       "type": "section-banner",
       "settings": {
-        "headline": "Headline",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque.",
+        "image": "shopify:\/\/shop_images\/quiz_copy_2x_947b6262-5651-4582-a356-28f2ec860e60.png",
+        "headline": "<p>Turn Your Routine into <br\/><strong>a Ritual<\/strong><\/p>",
+        "text": "Get your personal skincare routine. Take our quiz to find out which of our products are right for you",
         "button-url": "\/",
-        "button-text": "Button"
+        "button-text": "Take Quiz"
       }
     },
     "section-image-row": {
@@ -31,6 +131,7 @@
       "blocks": {
         "image-1": {
           "type": "image",
+          "disabled": true,
           "settings": {
           }
         },
@@ -98,7 +199,9 @@
   },
   "order": [
     "section-hero",
-    "section-collection",
+    "16600013934ed77942",
+    "166000866385a51b4a",
+    "16600130249bb6ce84",
     "section-banner",
     "section-image-row",
     "section-quotes",
