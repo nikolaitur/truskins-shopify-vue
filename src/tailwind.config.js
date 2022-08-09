@@ -38,6 +38,8 @@ module.exports = {
       fontSize: {
         "hero-title-md": "90px",
         "hero-subtitle-md": "22px",
+        "section-title-md": "40px",
+        "testimonial-title-md": "30px",
       },
     },
     container: {

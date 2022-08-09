@@ -1,12 +1,13 @@
-<div class="{{ class | default: '' }}" style="{{ style | default: '' }}">
-  <div class="md:px-6 lg:px-12">
-    {% render 'icon-quotation-marks', class: 'w-5 h-auto mx-auto mb-8' %}
-
-    <div class="text-center mb-6">
+<div
+  class="max-w-3xl mx-auto {{ class | default: '' }}"
+  style="{{ style | default: '' }}"
+>
+  <div>
+    <div class="text-center text-light-black text-testimonial-title-md leading-8 font-light mb-7">
       {{ text }}
     </div>
 
-    <div class="text-gray-600 text-sm text-center">
+    <div class="text-light-black text-xl leading-none text-center">
       — {{ author }}
     </div>
   </div>

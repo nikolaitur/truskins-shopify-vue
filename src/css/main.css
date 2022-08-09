@@ -13,12 +13,14 @@
 @import "tailwindcss/utilities";
 
 .hero-swiper-btn,
-.products-swiper-btn {
+.products-swiper-btn,
+.testimonial-swiper-btn {
   width: 38px !important;
   height: 38px !important;
   border-radius: 100%;
   background-color: white;
   position: relative;
+  box-shadow: 0 5px 5px 0 rgba(17, 17, 17, 0.08);
 }
 
 .swiper-button-next {
@@ -91,4 +93,20 @@
 
 .banner-title strong {
   @apply text-light-black;
+}
+
+.testimonial-swiper-btn.swiper-button-next {
+  transform: translateY(-20px);
+  right: 50px !important;
+}
+
+.testimonial-swiper-btn.swiper-button-prev {
+  transform: translateY(-20px);
+  left: 50px !important;
+}
+
+.icon-instagram svg {
+  width: 40px;
+  height: 40px;
+  fill: #f97a1c;
 }

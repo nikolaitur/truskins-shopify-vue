@@ -1,2 +1,7 @@
 import "./_events";
-export { heroSlider, announcementSlider, productsSlider } from "./_sliders";
+export {
+  heroSlider,
+  announcementSlider,
+  productsSlider,
+  testimonialSlider,
+} from "./_sliders";

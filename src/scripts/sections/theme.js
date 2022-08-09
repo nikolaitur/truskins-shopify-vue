@@ -1,4 +1,9 @@
-import { heroSlider, announcementSlider, productsSlider } from "../utils";
+import {
+  heroSlider,
+  announcementSlider,
+  productsSlider,
+  testimonialSlider,
+} from "../utils";
 import lozad from "lozad";
 
 const observer = lozad(".lozad", {
@@ -40,6 +45,9 @@ const observer = lozad(".lozad", {
         switch (sliderType) {
           case "announcement":
             announcementSlider(closestSlider);
+            break;
+          case "testimonial":
+            testimonialSlider(closestSlider);
             break;
           default:
             break;

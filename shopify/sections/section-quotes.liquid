@@ -1,17 +1,27 @@
-<div class="container mb-12 md:mb-24">
+<div class="container my-16">
+  <div class="flex justify-center">
+    {% render 'icon-ratings-5' %}
+  </div>
   {% if section.settings.headline %}
-    <div class="text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-16">
+    <div class="text-2xl md:text-section-title-md leading-normal font-bold text-center mt-3 mb-5">
       {{ section.settings.headline }}
     </div>
   {% endif %}
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-12">
-    {% for block in section.blocks %}
-      {% render 'section-quote',
-        text: block.settings.quote-text
-        author: block.settings.quote-author
-      %}
-    {% endfor %}
+  <div class="overflow-hidden relative" data-slider="testimonial">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide lozad">
+          {%
+            render 'section-quote',
+            text: block.settings.quote-text
+            author: block.settings.quote-author
+          %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-next testimonial-swiper-btn"></div>
+    <div class="swiper-button-prev testimonial-swiper-btn"></div>
   </div>
 </div>
 

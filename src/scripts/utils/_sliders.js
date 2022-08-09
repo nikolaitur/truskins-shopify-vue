@@ -42,6 +42,22 @@ export const productsSlider = (element) => {
   }
 };
 
+export const testimonialSlider = (element) => {
+  if (!element.classList.contains("swiper-initialized")) {
+    const swiper = new Swiper(element, {
+      slidesPerView: 1,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        768: {},
+      },
+    });
+  }
+};
+
 export const announcementSlider = (element) => {
   if (!element.classList.contains("swiper-initialized")) {
     const swiper = new Swiper(element, {
@@ -69,23 +85,6 @@ export const iconSlider = (element) => {
           grabCursor: false,
           allowTouchMove: false,
         },
-      },
-    });
-  }
-};
-
-export const testimonialSlider = (element) => {
-  if (!element.classList.contains("swiper-initialized")) {
-    const swiper = new Swiper(element, {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      centeredSlides: true,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-      },
-      breakpoints: {
-        768: {},
       },
     });
   }

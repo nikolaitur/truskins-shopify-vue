@@ -120,39 +120,56 @@
       "type": "section-banner",
       "settings": {
         "image": "shopify:\/\/shop_images\/quiz_copy_2x_947b6262-5651-4582-a356-28f2ec860e60.png",
+        "content_align": "left",
         "headline": "<p>Turn Your Routine into <br\/><strong>a Ritual<\/strong><\/p>",
         "text": "Get your personal skincare routine. Take our quiz to find out which of our products are right for you",
         "button-url": "\/",
         "button-text": "Take Quiz"
       }
     },
-    "section-image-row": {
-      "type": "section-image-row",
+    "1660069424ac213301": {
+      "type": "skin-condition",
       "blocks": {
-        "image-1": {
-          "type": "image",
-          "disabled": true,
+        "1660069424ec4fec1c-0": {
+          "type": "image_with_link",
           "settings": {
+            "image": "shopify:\/\/shop_images\/serums-img_2x_2741a05e-15d5-4125-b18f-97f62f72984e.png",
+            "title": "Serums",
+            "link": ""
           }
         },
-        "image-2": {
-          "type": "image",
+        "1660069424ec4fec1c-1": {
+          "type": "image_with_link",
           "settings": {
+            "image": "shopify:\/\/shop_images\/cleanser-img_2x_f0694124-7129-4c3c-8a2e-fe3682a63274.png",
+            "title": "Cleansers",
+            "link": ""
           }
         },
-        "image-3": {
-          "type": "image",
+        "1660069424ec4fec1c-2": {
+          "type": "image_with_link",
           "settings": {
+            "image": "shopify:\/\/shop_images\/moisturizer-img_2x_ceea0e89-4175-4f47-86fd-3a8cef7c260c.png",
+            "title": "Moisturizers",
+            "link": ""
+          }
+        },
+        "1660069424ec4fec1c-3": {
+          "type": "image_with_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toner-img_2x_0f5548df-be60-47a2-b0c0-1452333fac80.png",
+            "title": "Toners",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "image-1",
-        "image-2",
-        "image-3"
+        "1660069424ec4fec1c-0",
+        "1660069424ec4fec1c-1",
+        "1660069424ec4fec1c-2",
+        "1660069424ec4fec1c-3"
       ],
       "settings": {
-        "headline": "Our store"
       }
     },
     "section-quotes": {
@@ -189,6 +206,62 @@
         "headline": "What others say about us"
       }
     },
+    "1660069523db0203cd": {
+      "type": "section-50-50-split",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ingredients-img_2x_2ab0ccbf-5a67-46a4-afef-72ececa850b7.png",
+        "title": "Blended to be Better With Natural Ingredients",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "btn_link": "",
+        "btn_text": "Learn More"
+      }
+    },
+    "1660070728e073bda0": {
+      "type": "section-instagram",
+      "settings": {
+        "title": "Show Us Your TruSkin",
+        "btn_link": "https:\/\/instagram.com",
+        "image1": "shopify:\/\/shop_images\/New_Project.jpg",
+        "link1": "https:\/\/instagram.com",
+        "image2": "shopify:\/\/shop_images\/Bitmap_2x_1af640d4-b4ff-469a-9071-fa2ea1da3adb.png",
+        "link2": "https:\/\/instagram.com",
+        "image3": "shopify:\/\/shop_images\/insta-3_2x_de262839-53de-49cc-88a0-3ced01903202.png",
+        "link3": "https:\/\/instagram.com",
+        "image4": "shopify:\/\/shop_images\/insta-4.png",
+        "link4": "https:\/\/instagram.com",
+        "image5": "shopify:\/\/shop_images\/Bitmap_2x_1af640d4-b4ff-469a-9071-fa2ea1da3adb.png",
+        "link5": "https:\/\/instagram.com"
+      }
+    },
+    "section-image-row": {
+      "type": "section-image-row",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "image-3": {
+          "type": "image",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "image-1",
+        "image-2",
+        "image-3"
+      ],
+      "settings": {
+        "headline": "Our store"
+      }
+    },
     "section-newsletter": {
       "type": "section-newsletter",
       "settings": {
@@ -203,8 +276,11 @@
     "166000866385a51b4a",
     "16600130249bb6ce84",
     "section-banner",
-    "section-image-row",
+    "1660069424ac213301",
     "section-quotes",
+    "1660069523db0203cd",
+    "1660070728e073bda0",
+    "section-image-row",
     "section-newsletter"
   ]
 }

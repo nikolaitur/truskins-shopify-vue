@@ -1,0 +1,65 @@
+<div class="my-16">
+  <div class="container flex items-center">
+    <div class="pr-16 basis-1/2">
+      {%
+        render 'section-image',
+        class: ''
+        image: section.settings.image
+      %}
+    </div>
+    <div class="max-w-lg pr-10 basis-1/2">
+      <div class="text-section-title-md font-bold text-light-black leading-tight">
+        {{ section.settings.title }}
+      </div>
+      <div class="mt-5 text-base text-light-black leading-normal tracking-normal">
+        {{ section.settings.subtitle }}
+      </div>
+      <a
+        href="{{ section.settings.btn_link }}"
+        class="button button-secondary mt-7"
+      >
+        {{- section.settings.btn_text -}}
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Text",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

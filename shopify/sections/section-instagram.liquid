@@ -1,0 +1,151 @@
+<div class="mt-16">
+  <div class="px-20 flex items-center w-full">
+    <div class="icon-instagram">
+      {% render 'icon-instagram' %}
+    </div>
+    <div class="pl-7 text-light-black text-section-title-md leading-tight text-left grow">
+      {{ section.settings.title }}
+    </div>
+    <a
+      href="{{ section.settings.btn_link }}"
+      _target="blank"
+      class="button button-secondary"
+      >Follow Us</a
+    >
+  </div>
+  <div class="mt-7 flex">
+    <a
+      href="{{ section.settings.link1 }}"
+      target="_blank"
+      class="basis-1/2 h-min"
+    >
+      {%
+        render 'section-image',
+        class: ''
+        image: section.settings.image1
+      %}
+    </a>
+    <div class="basis-1/2 flex flex-wrap self-start">
+      <a
+        href="{{ section.settings.link2 }}"
+        target="_blank"
+        class="basis-1/2 h-min"
+      >
+        {%
+          render 'section-image',
+          class: ''
+          image: section.settings.image2
+        %}
+      </a>
+      <a
+        href="{{ section.settings.link3 }}"
+        target="_blank"
+        class="basis-1/2 h-min"
+      >
+        {%
+          render 'section-image',
+          class: ''
+          image: section.settings.image3
+        %}
+      </a>
+
+      <a
+        href="{{ section.settings.link4 }}"
+        target="_blank"
+        class="basis-1/2 h-min"
+      >
+        {%
+          render 'section-image',
+          class: ''
+          image: section.settings.image4
+        %}
+      </a>
+      <a
+        href="{{ section.settings.link5 }}"
+        target="_blank"
+        class="basis-1/2 h-min"
+      >
+        {%
+          render 'section-image',
+          class: ''
+          image: section.settings.image5
+        %}
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Instagram Images",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Show Us Your TruSkin"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image 1"
+    },
+    {
+      "type": "url",
+      "id": "link1",
+      "label": "Image Link 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image 2"
+    },
+    {
+      "type": "url",
+      "id": "link2",
+      "label": "Image Link 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Image 3"
+    },
+    {
+      "type": "url",
+      "id": "link3",
+      "label": "Image Link 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image4",
+      "label": "Image 4"
+    },
+    {
+      "type": "url",
+      "id": "link4",
+      "label": "Image Link 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image5",
+      "label": "Image 5"
+    },
+    {
+      "type": "url",
+      "id": "link5",
+      "label": "Image Link 5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Images",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
