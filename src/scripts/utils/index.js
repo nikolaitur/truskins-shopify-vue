@@ -4,4 +4,5 @@ export {
   announcementSlider,
   productsSlider,
   testimonialSlider,
+  tickerSlider,
 } from "./_sliders";

@@ -58,6 +58,17 @@ export const testimonialSlider = (element) => {
   }
 };
 
+export const tickerSlider = (element) => {
+  if (!element.classList.contains("swiper-initialized")) {
+    const swiper = new Swiper(element, {
+      slidesPerView: 8,
+      spaceBetween: 28,
+      loop: true,
+      breakpoints: {},
+    });
+  }
+};
+
 export const announcementSlider = (element) => {
   if (!element.classList.contains("swiper-initialized")) {
     const swiper = new Swiper(element, {

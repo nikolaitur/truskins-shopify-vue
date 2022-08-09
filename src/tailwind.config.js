@@ -41,6 +41,9 @@ module.exports = {
         "section-title-md": "40px",
         "testimonial-title-md": "30px",
       },
+      maxWidth: {
+        ticker: "140px",
+      },
     },
     container: {
       center: true,

@@ -3,6 +3,7 @@ import {
   announcementSlider,
   productsSlider,
   testimonialSlider,
+  tickerSlider,
 } from "../utils";
 import lozad from "lozad";
 
@@ -34,6 +35,9 @@ const observer = lozad(".lozad", {
               break;
             case "products":
               productsSlider(closestSlider);
+              break;
+            case "ticker":
+              tickerSlider(closestSlider);
               break;
 
             default:

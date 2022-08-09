@@ -233,40 +233,55 @@
         "link5": "https:\/\/instagram.com"
       }
     },
-    "section-image-row": {
-      "type": "section-image-row",
+    "16600841864db1e8c5": {
+      "type": "section-tickers",
       "blocks": {
-        "image-1": {
-          "type": "image",
-          "disabled": true,
+        "16600841869e1ca338-0": {
+          "type": "ticker",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/usa-today_2x_117b5c58-adf6-47b9-8fb9-e6839c4d6f8b.png"
           }
         },
-        "image-2": {
-          "type": "image",
+        "16600841869e1ca338-1": {
+          "type": "ticker",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/allure_2x_82897ae3-5b55-480f-b9d4-0cc4c63241c5.png"
           }
         },
-        "image-3": {
-          "type": "image",
+        "16600841869e1ca338-2": {
+          "type": "ticker",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/buzzfeed-2_2x_7288afa6-562c-4103-99c9-33c56acf20ec.png"
+          }
+        },
+        "16600841869e1ca338-3": {
+          "type": "ticker",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/byrdie_2x_bcf98a12-97e8-4ccb-9226-934e57d26beb.png"
+          }
+        },
+        "16600841869e1ca338-4": {
+          "type": "ticker",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/instyle_2x_42f8ee90-72dd-46b9-9431-52ff08d35c32.png"
+          }
+        },
+        "16600841869e1ca338-5": {
+          "type": "ticker",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/popsugar_2x_9a6a755a-41f6-42a4-a182-c8c8c56d6c33.png"
           }
         }
       },
       "block_order": [
-        "image-1",
-        "image-2",
-        "image-3"
+        "16600841869e1ca338-0",
+        "16600841869e1ca338-1",
+        "16600841869e1ca338-2",
+        "16600841869e1ca338-3",
+        "16600841869e1ca338-4",
+        "16600841869e1ca338-5"
       ],
       "settings": {
-        "headline": "Our store"
-      }
-    },
-    "section-newsletter": {
-      "type": "section-newsletter",
-      "settings": {
-        "headline": "Our newsletter",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque."
       }
     }
   },
@@ -280,7 +295,6 @@
     "section-quotes",
     "1660069523db0203cd",
     "1660070728e073bda0",
-    "section-image-row",
-    "section-newsletter"
+    "16600841864db1e8c5"
   ]
 }
