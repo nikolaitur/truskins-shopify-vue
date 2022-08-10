@@ -25,6 +25,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     >
+    <link rel="stylesheet" href="https://use.typekit.net/mkt3ejg.css">
 
     {{ 'bundle.css' | asset_url | stylesheet_tag }}
 
@@ -46,7 +47,7 @@
         {% if request.page_type == "customers/account" %}
           vue-router="account"
         {% endif %}
-        class="min-h-screen flex flex-col font-sans"
+        class="min-h-screen flex flex-col font-filson-soft"
       >
         {% section 'layout-announcement-bar' %}
         {% section 'layout-header' %}
@@ -54,7 +55,7 @@
         <main
           id="main"
           role="main"
-          class="flex-1 {% if request.page_type == 'index' %}md:-mt-header-height{% else %}{% endif %}"
+          class="flex-1 {% if request.page_type == 'index' %}-mt-header-height-mob md:-mt-header-height-md{% else %}{% endif %}"
         >
           {{ content_for_layout }}
         </main>

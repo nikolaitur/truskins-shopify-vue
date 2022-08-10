@@ -1,20 +1,18 @@
-<div class="pt-16 mb-16">
-  <div class="ml-container-side-match sm:ml-container-side-match-sm md:ml-container-side-match-md lg:ml-container-side-match-lg xl:ml-container-side-match-xl 2xl:ml-container-side-match-2xl overflow-hidden flex items-start gap-7">
-    <div class="basis-1/4">
-      <div class="text-6xl leading-none text-light-black font-bold text-left">
+<div class="pt-16 mb-16 hidden md:block">
+  <div class="ml-container-side-match sm:ml-container-side-match-sm md:ml-container-side-match-md lg:ml-container-side-match-lg xl:ml-container-side-match-xl 2xl:ml-container-side-match-2xl overflow-hidden flex items-start md:gap-7 flex-col md:flex-row">
+    <div class="md:basis-1/4">
+      <div class="text-6xl font-abril-display leading-none text-light-black font-bold text-left">
         {{ section.settings.headline }}
       </div>
 
       <div class="mt-6 text-base font-light leading-5">{{ section.settings.body }}</div>
 
-      <div class="hidden lg:flex justify-start items-center">
-        <a
-          href="{{ routes.collections_url }}"
-          class="button button-secondary flex justify-center items-center mt-8"
-        >
-          Shop All
-        </a>
-      </div>
+      <a
+        href="{{ routes.collections_url }}"
+        class="button button-secondary flex justify-center items-center mt-8"
+      >
+        Shop All
+      </a>
     </div>
 
     <div
@@ -55,35 +53,69 @@
     </div>
   </div>
 
-  {% schema %}
-  {
-    "name": "t:sections.collection.name",
-    "class": "section-featured-collection shopify-section-vue",
-    "settings": [
-      {
-        "type": "text",
-        "id": "headline",
-        "label": "t:common.text",
-        "default": "Featured products"
-      },
-      {
-        "type": "text",
-        "id": "body",
-        "label": "Body",
-        "default": "Lorem ipsum dolor sit amet consectetur adipiscing elit."
-      },
-      {
-        "type": "collection",
-        "id": "collection_featured",
-        "label": "t:common.collection"
-      }
-    ],
-    "presets": [
-      {
-        "name": "t:sections.collection.name",
-        "category": "Collection"
-      }
-    ]
-  }
-  {% endschema %}
+
 </div>
+
+<div class="md:hidden pt-12 mb-12 px-8 container overflow-hidden">
+  <div class="text-center text-light-black">
+    <div class="font-abril-display text-section-title-md font-bold leading-section-title tracking-normal capitalize">
+      {{ section.settings.headline }}
+    </div>
+    <div class="mt-5 text-base font-light leading-5">{{ section.settings.body }}</div>
+
+    <a
+      href="{{ routes.collections_url }}"
+      class="button button-secondary flex justify-center items-center mx-auto mt-5"
+    >
+      Shop All
+    </a>
+  </div>
+  <div class="mt-10 overflow-hidden relative" data-slider="products">
+    <div class="swiper-wrapper">
+      {% unless collection == blank %}
+        {% for product in collection.products limit: 9 %}
+          <div class="swiper-slide lozad">
+            {% render 'layout-product', product: product %}
+          </div>
+        {% endfor %}
+      {% endunless %}
+    </div>
+    <div
+      class="swiper-button-next products-swiper-btn"
+    ></div>
+    <div class="swiper-button-prev products-swiper-btn"></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.collection.name",
+  "class": "section-featured-collection shopify-section-vue",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "t:common.text",
+      "default": "Featured products"
+    },
+    {
+      "type": "text",
+      "id": "body",
+      "label": "Body",
+      "default": "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+    },
+    {
+      "type": "collection",
+      "id": "collection_featured",
+      "label": "t:common.collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.collection.name",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
+

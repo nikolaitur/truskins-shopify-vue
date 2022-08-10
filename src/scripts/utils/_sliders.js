@@ -35,9 +35,6 @@ export const productsSlider = (element) => {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-      breakpoints: {
-        768: {},
-      },
     });
   }
 };
@@ -50,6 +47,9 @@ export const testimonialSlider = (element) => {
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 3000,
       },
       breakpoints: {
         768: {},

@@ -30,29 +30,51 @@
             src="{{ image | img_url: '1500x' }}"
             alt="{{ image.alt }}"
             loading="lazy"
-            class="w-full h-full object-cover object-center"
+            class="w-full h-full hidden md:block object-cover object-center"
+          >
+          {%- assign mobile_image = block.settings.image_mobile | default: image -%}
+          <img
+            sizes="
+              (min-width: 640px) 720px,
+              600px
+            "
+            srcset="
+              {{ mobile_image | img_url: '600x' }} 600w,
+              {{ mobile_image | img_url: '720x' }} 720w,
+            "
+            src="{{ mobile_image | img_url: '600x' }}"
+            alt="{{ mobile_image.alt }}"
+            loading="lazy"
+            class="w-full h-full block md:hidden object-cover object-center"
           >
         {% else %}
           {{ 'lifestyle-1' | placeholder_svg_tag: 'w-full h-full' }}
         {% endif %}
 
-        <div class="container w-full md:absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-{{ block.settings.content_align }} bg-transparent pt-6 md:p-6 md:mb-8 md:mr-8">
-          <div class="md:max-w-2xl {% if block.settings.content_align == 'center' %}mx-auto{% elsif block.settings.content_align == 'right' %}ml-auto{% endif %}">
-            <div class="text-hero-title-md font-extrabold leading-none text-white mb-3">
-              {{ block.settings.headline }}
+        <div class="hero-content container w-full mt-12 md:mt-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 text-{{ block.settings.content_align }} bg-transparent pt-6 md:p-6 md:mb-8 md:mr-8">
+          <div class="md:max-w-2xl {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'right' %}md:ml-auto md:mr-0{% endif %}">
+            {% assign title_lines = block.settings.headline | split: '<br>' %}
+            <div class="hero-title text-hero-title-mob md:text-hero-title-md font-abril-display font-extrabold leading-none text-light-black md:text-white w-fit {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'right' %}md:ml-auto md:mr-0{% endif %} relative">
+              <span class="relative z-0">{{ title_lines[0] }}</span>
+              <span class="absolute -z-10 font-filson-soft bg-badge-bg rounded-full w-16 h-16 flex items-center justify-center text-sm uppercase text-light-black md:text-badge-text tracking-1 leading-none right-0 top-0 translate-x-10 -translate-y-9 md:translate-x-1/2 md:-translate-y-5 ">
+                <span>{{- block.settings.badge -}}</span>
+              </span>
+            </div>
+            <div class="text-hero-title-mob md:text-hero-title-md md:text-{{ block.settings.content_align }} font-abril-display font-extrabold leading-none text-light-black md:text-white">
+              {{ title_lines[1] }}
             </div>
 
-            <div class="text-hero-subtitle-md font-medium text-white mb-6">
+            <div class="hidden md:block text-hero-subtitle-md font-medium text-light-black md:text-white mt-3 mb-6">
               {{ block.settings.subheadline }}
             </div>
 
-            <div class="mb-7 text-base text-white leading-5 font-light max-w-xl {% if block.settings.content_align == 'center' %}mx-auto{% elsif block.settings.content_align == 'right' %}ml-auto{% endif %}">
+            <div class="mt-5 md:mt-0 mb-7 text-base text-light-black md:text-white leading-5 font-light max-w-xl mx-auto {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'right' %}md:ml-auto md:mr-0{% endif %} {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'left' %}md:mr-auto md:ml-0{% endif %}">
               {{ block.settings.text }}
             </div>
 
             <div
               href="{{ block.settings.button-url }}"
-              class="button button-primary {% if block.settings.content_align == 'center' %}mx-auto{% elsif block.settings.content_align == 'right' %}ml-auto{% endif %}"
+              class="button button-primary mx-auto {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'right' %}md:ml-auto md:mr-0{% endif %} {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'left' %}md:mr-auto md:ml-0{% endif %}"
             >
               {{ block.settings.button-text }}
             </div>
@@ -125,6 +147,12 @@
           "id": "text",
           "label": "t:common.text",
           "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque."
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "default": "New!"
         },
         {
           "type": "url",

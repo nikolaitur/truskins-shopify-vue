@@ -7,10 +7,12 @@
           "type": "hero_slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/hero-img_2x_e4d1acc3-009f-428c-85e5-3c59c6a1657c.png",
+            "image_mobile": "shopify:\/\/shop_images\/Screenshot_27.png",
             "content_align": "left",
             "headline": "Tea Tree<br>\nSuper Cleanser",
             "subheadline": "A gentle non-stripping cleanser for acne prone skin",
             "text": "Get a <b>FREE<\/b> tea tree serum with the purchase of our new tea tree cleanser. Available for a limited time only.",
+            "badge": "New!",
             "button-url": "",
             "button-text": "Shop Now"
           }
@@ -114,12 +116,14 @@
         "1660013024e7b53c3f-3"
       ],
       "settings": {
+        "title": "Skin Types"
       }
     },
     "section-banner": {
       "type": "section-banner",
       "settings": {
         "image": "shopify:\/\/shop_images\/quiz_copy_2x_947b6262-5651-4582-a356-28f2ec860e60.png",
+        "image_mobile": "shopify:\/\/shop_images\/Screenshot_28.png",
         "content_align": "left",
         "headline": "<p>Turn Your Routine into <br\/><strong>a Ritual<\/strong><\/p>",
         "text": "Get your personal skincare routine. Take our quiz to find out which of our products are right for you",
@@ -170,6 +174,7 @@
         "1660069424ec4fec1c-3"
       ],
       "settings": {
+        "title": ""
       }
     },
     "section-quotes": {

@@ -1,8 +1,8 @@
-<div class="py-6">
-  <div class="container flex items-center justify-between">
+<div class="py-8 md:py-6">
+  <div class="container px-8 md:px-4 flex items-center justify-between flex-wrap md:flex-nowrap">
     {% for block in section.blocks %}
-      <div class="flex items-center gap-3">
-        <div class="w-12 h-12">
+      <div class="flex items-center basis-1/2 md:basis-auto flex-col md:flex-row gap-5 md:gap-3 py-5 md:py-0">
+        <div class="w-16 h-16 md:w-12 md:h-12">
           {% assign image = block.settings.image %}
           {% if image %}
             <img
@@ -14,7 +14,7 @@
             {{ 'image' | placeholder_svg_tag: 'w-full h-full border' }}
           {% endif %}
         </div>
-        <div class="tracking-normal text-light-black">
+        <div class="text-sm md:text-base tracking-normal text-light-black">
           {{ block.settings.text }}
         </div>
       </div>

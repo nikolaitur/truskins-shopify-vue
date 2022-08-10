@@ -27,14 +27,16 @@
       "layout-footer": {
         "type": "layout-footer",
         "settings": {
-          "social_instagram_visible": false,
-          "social_instagram_link": "",
-          "social_twitter_visible": false,
-          "social_twitter_link": "",
-          "social_facebook_visible": false,
-          "social_facebook_link": "",
-          "social_youtube_visible": false,
-          "social_youtube_link": ""
+          "headline": "Sign Up For News & Promotions",
+          "footer_menu": "footer-new-menu",
+          "social_instagram_visible": true,
+          "social_instagram_link": "https:\/\/instagram.com",
+          "social_tiktok_visible": true,
+          "social_tiktok_link": "https:\/\/tiktok.com",
+          "social_facebook_visible": true,
+          "social_facebook_link": "https:\/\/facebook.com",
+          "social_youtube_visible": true,
+          "social_youtube_link": "https:\/\/youtube.com"
         }
       },
       "layout-mobile-navigation": {

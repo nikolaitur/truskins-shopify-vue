@@ -1,19 +1,24 @@
-<div class="my-16 container grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+{% if section.settings.title != blank %}
+  <div class="md:hidden font-abril-display text-section-title-md leading-section-title font-bold text-center mb-10">
+    {{ section.settings.title }}
+  </div>
+{% endif %}
+<div class="grid my-5 container px-10 md:px-4 grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
   {% for block in section.blocks %}
-    <div class="">
+    <div class="text-center py-5 md:text-left">
       <a class="" href="{{ block.settings.link }}">
         {%
           render 'section-image',
-          class: 'h-96 rounded-2xl overflow-hidden'
+          class: 'h48 md:h-96 rounded-2xl overflow-hidden'
           image: block.settings.image
         %}
       </a>
 
-      <div class="mt-5 text-xl leading-6 text-light-black font-bold">
+      <div class="mt-5 text-lg md:text-xl leading-6 font-abril-display text-light-black font-bold">
         {{ block.settings.title }}
       </div>
       <a
-        class="block w-fit pt-3 pb-underline text-sm leading-none font-bold border-b-2 border-b-orange"
+        class="block mx-auto md:ml-0 w-fit pt-4 md:pt-3 pb-1 md:pb-underline text-xs md:text-sm leading-none font-bold border-b-2 border-b-orange"
         href="{{ block.settings.link }}"
         >Shop Now</a
       >
@@ -25,6 +30,13 @@
 {
   "name": "Skin Condition",
   "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
   "blocks": [
     {
       "type": "image_with_link",

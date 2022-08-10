@@ -1,23 +1,25 @@
-<div class="overflow-hidden px-16 py-2" data-slider="ticker">
-  <div class="swiper-wrapper">
-    {% for block in section.blocks %}
-      <div class="swiper-slide lozad">
-        {%
-          render 'section-image',
-          class: 'max-h-20'
-          image: block.settings.icon
-        %}
-      </div>
-    {% endfor %}
-    {% for block in section.blocks %}
-      <div class="swiper-slide lozad">
-        {%
-          render 'section-image',
-          class: 'max-h-20 '
-          image: block.settings.icon
-        %}
-      </div>
-    {% endfor %}
+<div class="hidden md:block">
+  <div class="overflow-hidden px-16 py-2" data-slider="ticker">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide lozad">
+          {%
+            render 'section-image',
+            class: 'max-h-20'
+            image: block.settings.icon
+          %}
+        </div>
+      {% endfor %}
+      {% for block in section.blocks %}
+        <div class="swiper-slide lozad">
+          {%
+            render 'section-image',
+            class: 'max-h-20 '
+            image: block.settings.icon
+          %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 <div class="my-16">
   {% assign image = section.settings.image %}
   <a
-    href="{{ block.settings.button-url }}"
+    href="{{ section.settings.button-url }}"
     class="w-full md:h-auto relative overflow-hidden swiper-slide lozad"
   >
     {% if image %}
@@ -23,24 +23,39 @@
         src="{{ image | img_url: '1500x' }}"
         alt="{{ image.alt }}"
         loading="lazy"
-        class="w-full h-full object-cover object-center"
+        class="w-full h-full hidden md:block object-cover object-center"
+      >
+      {%- assign mobile_image = section.settings.image_mobile | default: image -%}
+      <img
+        sizes="
+          (min-width: 640px) 720px,
+          600px
+        "
+        srcset="
+          {{ mobile_image | img_url: '600x' }} 600w,
+          {{ mobile_image | img_url: '720x' }} 720w,
+        "
+        src="{{ mobile_image | img_url: '600x' }}"
+        alt="{{ mobile_image.alt }}"
+        loading="lazy"
+        class="w-full h-full block md:hidden object-cover object-center"
       >
     {% else %}
       {{ 'lifestyle-1' | placeholder_svg_tag: 'w-full h-full' }}
     {% endif %}
 
-    <div class="container w-full md:absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-{{ section.settings.content_align }} bg-transparent pt-6 md:p-6 md:mb-8 md:mr-8">
+    <div class="hero-content container w-full md:absolute md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 text-{{ section.settings.content_align }} bg-transparent pt-12 md:p-6 md:mb-8 md:mr-8">
       <div class="md:max-w-2xl {% if section.settings.content_align == 'center' %}mx-auto{% elsif section.settings.content_align == 'right' %}ml-auto{% endif %}">
-        <div class="banner-title text-hero-title-md font-extrabold leading-none text-white mb-5">
+        <div class="banner-title font-abril-display text-section-title-md md:text-hero-title-md font-extrabold leading-hero-title md:leading-none text-light-black md:text-white mb-5">
           {{ section.settings.headline }}
         </div>
-        <div class="mb-10 text-base text-white leading-5 font-light max-w-md {% if block.settings.content_align == 'center' %}mx-auto{% elsif block.settings.content_align == 'right' %}ml-auto{% endif %}">
+        <div class="mb-10 text-base text-light-black md:text-white leading-5 font-light max-w-md {% if section.settings.content_align == 'center' %}mx-auto{% elsif section.settings.content_align == 'right' %}ml-auto{% endif %}">
           {{ section.settings.text }}
         </div>
 
         <div
           href="{{ section.settings.button-url }}"
-          class="button button-primary {% if block.settings.content_align == 'center' %}mx-auto{% elsif block.settings.content_align == 'right' %}ml-auto{% endif %}"
+          class="hero-btn button button-primary mx-auto {% if section.settings.content_align == 'center' %}md:mx-auto{% elsif section.settings.content_align == 'left' %}md:mr-auto md:ml-0{% elsif section.settings.content_align == 'right' %}md:ml-auto md:mr-0{% endif %}"
         >
           {{ section.settings.button-text }}
         </div>
@@ -56,6 +71,11 @@
     {
       "type": "image_picker",
       "id": "image",
+      "label": "t:common.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
       "label": "t:common.image"
     },
     {

@@ -1,22 +1,22 @@
 <div class="my-16">
-  <div class="container flex items-center">
-    <div class="pr-16 basis-1/2">
+  <div class="container flex items-center flex-col md:flex-row">
+    <div class="md:pr-16 md:basis-1/2">
       {%
         render 'section-image',
         class: ''
         image: section.settings.image
       %}
     </div>
-    <div class="max-w-lg pr-10 basis-1/2">
-      <div class="text-section-title-md font-bold text-light-black leading-tight">
+    <div class="max-w-lg text-center md:text-left mt-10 md:mt-0 md:pr-10 md:basis-1/2">
+      <div class="text-section-title-md font-abril-display font-bold text-light-black leading-tight">
         {{ section.settings.title }}
       </div>
-      <div class="mt-5 text-base text-light-black leading-normal tracking-normal">
+      <div class="mt-10 md:mt-5 text-base text-light-black leading-6 md:leading-normal tracking-normal">
         {{ section.settings.subtitle }}
       </div>
       <a
         href="{{ section.settings.btn_link }}"
-        class="button button-secondary mt-7"
+        class="button button-secondary mx-auto md:ml-0 mt-10 md:mt-7"
       >
         {{- section.settings.btn_text -}}
       </a>
