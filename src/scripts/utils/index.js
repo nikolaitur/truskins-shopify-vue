@@ -1,4 +1,5 @@
 import "./_events";
+import "./_footerNav";
 export {
   heroSlider,
   announcementSlider,

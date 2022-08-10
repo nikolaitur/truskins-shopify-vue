@@ -1,10 +1,42 @@
 <div class="{{ class | default: '' }}" style="{{ style | default: '' }}">
-  {% for link in linklists.main-menu.links %}
-    <a
-      href="{{ link.url }}"
-      class="inline-block text-sm font-medium leading-none text-white px-5"
-    >
-      {{ link.title }}
-    </a>
+  {% for link in linklists[linklist].links %}
+    <div class="px-5 inline-block">
+      <a
+        href="{{ link.url }}"
+        class="header-nav-item relative text-sm font-medium leading-none text-white"
+        {% if link.handle == 'products' %}data-megamenu-parent{% endif %}
+      >
+        {{ link.title }}
+      </a>
+    </div>
   {% endfor %}
+</div>
+
+<div
+  class="hidden absolute top-[100%] left-0 w-full bg-white"
+  data-megamenu
+>
+  <div class="container">
+    <div class="border-t border-t-megamenu-border"></div>
+  </div>
+  <div class="container pt-10 pb-20  flex items-start">
+    {% for link in linklists['megamenu'].links %}
+      <div class="grow {% unless forloop.first %}pl-12{% endunless %} pr-8 {% unless forloop.last %}border-r border-r-megamenu-border{% endunless %}">
+        <a href="{{ link.url }}" class="header-subnav-title hover:text-orange font-bold font-abril-display text-light-black text-lg leading-[25px] mb-5 block">{{ link.title }}</a>
+        <div class="flex items-start">
+          {% for childlink in link.links limit: 12 %}
+            {% assign index = forloop.index0 | modulo: 6 %}
+            {% if index == 0 %}
+              <div class="grow pr-4 flex flex-col">
+            {% endif %}
+                <a href="{{ childlink.url }}" class="text-sm text-light-black leading-[36px] {% if forloop.last %}nav_highlighted{% endif %} hover:text-orange">{{ childlink.title }}</a>
+            {% if index == 5 or forloop.last %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
 </div>

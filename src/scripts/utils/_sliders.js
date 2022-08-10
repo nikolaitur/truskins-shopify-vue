@@ -61,10 +61,14 @@ export const testimonialSlider = (element) => {
 export const tickerSlider = (element) => {
   if (!element.classList.contains("swiper-initialized")) {
     const swiper = new Swiper(element, {
-      slidesPerView: 8,
+      slidesPerView: 3,
       spaceBetween: 28,
       loop: true,
-      breakpoints: {},
+      breakpoints: {
+        768: {
+          slidesPerView: 8,
+        },
+      },
     });
   }
 };

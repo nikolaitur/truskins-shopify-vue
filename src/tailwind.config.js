@@ -21,6 +21,7 @@ module.exports = {
         cart: "#cccc33",
         "badge-bg": "#D4E353",
         "badge-text": "#326730",
+        "megamenu-border": "#e1e1e1",
       },
       letterSpacing: {
         1: "1px",

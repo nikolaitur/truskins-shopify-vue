@@ -139,6 +139,18 @@
     transform: translateY(-20px);
     left: 0px !important;
   }
+
+  .section-instagram {
+    background: linear-gradient(
+      180deg,
+      rgba(247, 247, 247, 0) 0%,
+      #f7f7f7 100%
+    );
+  }
+
+  .newsletter-email-input {
+    height: 42px !important;
+  }
 }
 
 .icon-instagram svg {
@@ -202,4 +214,128 @@
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.main-footer__menu svg {
+  fill: white;
+  width: 16px;
+  height: 16px;
+  transform: rotate(45deg);
+}
+
+.main-footer__menu .open svg {
+  transform: none;
+}
+
+.black-logo svg {
+  width: 151px;
+  height: auto;
+}
+
+html.sticky #shopify-section-layout-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: white;
+}
+
+html.sticky main {
+  margin-top: 0;
+}
+
+html.sticky .white-logo {
+  display: none;
+}
+
+html.sticky .black-logo {
+  display: block;
+}
+
+html.sticky .header-nav-item {
+  color: #111;
+}
+
+html.sticky .header-search-form {
+  background: #f5f5f5;
+  border: 1px solid #bababa;
+}
+
+html.sticky .header-action-item svg {
+  filter: invert(1);
+}
+
+html.sticky #nav-burger-icon span {
+  background-color: #111;
+}
+
+#shopify-section-layout-header:hover > div {
+  background-color: white;
+}
+
+#shopify-section-layout-header:hover .white-logo {
+  display: none;
+}
+
+#shopify-section-layout-header:hover .black-logo {
+  display: block;
+}
+
+#shopify-section-layout-header:hover .header-nav-item {
+  color: #111;
+}
+
+#shopify-section-layout-header:hover .header-search-form {
+  background: #f5f5f5;
+  border: 1px solid #bababa;
+}
+
+#shopify-section-layout-header:hover .header-action-item svg {
+  filter: invert(1);
+}
+
+#shopify-section-layout-header:hover #nav-burger-icon span {
+  background-color: #111;
+}
+
+.nav_highlighted {
+  position: relative;
+  width: fit-content;
+}
+
+.nav_highlighted::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 4px;
+  background-color: #f97a1c;
+}
+
+.header-nav-item:hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background-color: #f97a1c;
+}
+
+.megamenu-open [data-megamenu] {
+  display: block;
+}
+
+.megamenu-open [data-megamenu-parent]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background-color: #f97a1c;
 }

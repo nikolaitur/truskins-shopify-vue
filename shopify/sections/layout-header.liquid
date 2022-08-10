@@ -1,6 +1,6 @@
 <div class="md:bg-transparent z-50 relative">
   <div class="container">
-    <div class="h-header-mob md:h-32 flex justify-between items-center">
+    <div class="h-header-mob md:h-[84px] flex justify-between items-center">
       <div id="nav-burger-icon" class="md:hidden">
         <span></span>
         <span></span>
@@ -9,19 +9,24 @@
         href="{{ routes.root_url }}"
         class="inline-block text-2xl lg:text-3xl font-bold"
       >
-        {% render 'icon-logo' %}
+        <span class="white-logo">
+          {% render 'icon-logo' %}
+        </span>
+        <span class="black-logo hidden">
+          {% render 'icon-logo-black' %}
+        </span>
       </a>
 
       <div class="hidden md:flex md:items-center">
         <div>
-          {% render 'layout-menu', class: 'space-x-4' %}
+          {% render 'layout-menu', class: 'space-x-4', linklist: section.settings.linklist %}
         </div>
         <div class="ml-10">
           {% render 'search-form' %}
         </div>
       </div>
 
-      {% assign link_class = 'flex flex-col justify-center items-center text-sm h-10 w-10 p-1' %}
+      {% assign link_class = 'header-action-item flex flex-col justify-center items-center text-sm h-10 w-10 p-1' %}
       {% assign icon_class = 'w-auto h-6 text-black mb-2' %}
 
       <a
@@ -72,8 +77,9 @@
   "name": "t:sections.header.name",
   "settings": [
     {
-      "type": "paragraph",
-      "content": "t:sections.header.settings.paragraph"
+      "type": "link_list",
+      "id": "linklist",
+      "label": "Linklist"
     }
   ]
 }

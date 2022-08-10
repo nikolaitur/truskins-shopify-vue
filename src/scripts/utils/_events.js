@@ -2,6 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const html = document.querySelector("html");
   const header = document.getElementById("shopify-section-layout-header");
   const hero = document.querySelector(".section-hero");
+  const megaMenuParent = document.querySelector("[data-megamenu-parent]");
+
+  megaMenuParent &&
+    megaMenuParent.addEventListener("mouseover", (e) => {
+      header.classList.add("megamenu-open");
+    });
+
+  header &&
+    header.addEventListener("mouseleave", (e) => {
+      header.classList.remove("megamenu-open");
+    });
 
   ////// Search Form
   // document
@@ -9,11 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //   .addEventListener("click", (e) => {
   //     e.preventDefault();
   //     document.querySelector("[data-search-form]").classList.remove("hidden");
-  //   });
-
-  // header &&
-  //   header.addEventListener("mouseleave", (e) => {
-  //     document.querySelector("[data-search-form]").classList.add("hidden");
   //   });
 
   ///// Mobile Nav Menu
@@ -28,15 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // };
   // menuToggle(navIcon);
 
-  // document.addEventListener("scroll", (e) => {
-  //   let scrollPosition = window.scrollY;
-  //   if (hero) {
-  //     scrollPosition + 90 > hero.scrollHeight
-  //       ? header.classList.add("scrolled")
-  //       : header.classList.remove("scrolled");
-  //   } else {
-  //     console.log("there");
-  //     header.classList.remove("scrolled");
-  //   }
-  // });
+  document.addEventListener("scroll", (e) => {
+    let scrollPosition = window.scrollY;
+    scrollPosition > 44
+      ? html.classList.add("sticky")
+      : html.classList.remove("sticky");
+  });
 });

@@ -55,13 +55,12 @@
         <main
           id="main"
           role="main"
-          class="flex-1 {% if request.page_type == 'index' %}-mt-header-height-mob md:-mt-header-height-md{% else %}{% endif %}"
+          class="flex-1 {% if request.page_type == 'index' %}-mt-header-height-mob md:-mt-[84px]{% else %}{% endif %}"
         >
           {{ content_for_layout }}
         </main>
 
         {% section 'layout-footer' %}
-        {% section 'layout-mobile-navigation' %}
 
         <transition name="slide-mobile-menu">
           {% render 'layout-mobile-menu' %}
