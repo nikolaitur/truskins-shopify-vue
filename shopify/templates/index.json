@@ -208,7 +208,9 @@
         "quote-3"
       ],
       "settings": {
-        "headline": "What others say about us"
+        "headline": "What others say about us",
+        "image1": "shopify:\/\/shop_images\/New_Project.png",
+        "image2": "shopify:\/\/shop_images\/orange-slices-leaf_2x_1d1e3425-2cc1-420c-a3ab-fe1329085559.png"
       }
     },
     "1660069523db0203cd": {
