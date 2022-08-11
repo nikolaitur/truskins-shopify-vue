@@ -1,7 +1,11 @@
 <div class="md:bg-transparent z-50 relative">
   <div class="container">
     <div class="h-header-mob md:h-[84px] flex justify-between items-center">
-      <div id="nav-burger-icon" class="md:hidden">
+      <div
+        @click="$store.dispatch('mobile-menu/toggle')"
+        id="nav-burger-icon"
+        class="md:hidden"
+      >
         <span></span>
         <span></span>
       </div>

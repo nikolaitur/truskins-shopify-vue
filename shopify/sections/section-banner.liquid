@@ -1,4 +1,10 @@
-<div class="my-16">
+<div class="my-16 relative">
+  <div class="absolute w-fit left-0 top-0 -translate-y-full max-w-full gery-pattern">
+    {% render 'grey-pattern-2' %}
+  </div>
+  <div class="absolute w-fit right-0 top-0 -translate-y-full max-w-full gery-pattern">
+    {% render 'grey-pattern-3' %}
+  </div>
   {% assign image = section.settings.image %}
   <a
     href="{{ section.settings.button-url }}"
@@ -21,7 +27,7 @@
           {{ image | img_url: '1500x' }} 1500w
         "
         src="{{ image | img_url: '1500x' }}"
-        alt="{{ image.alt }}"
+        alt="Banner"
         loading="lazy"
         class="w-full h-full hidden md:block object-cover object-center"
       >
@@ -36,7 +42,7 @@
           {{ mobile_image | img_url: '720x' }} 720w,
         "
         src="{{ mobile_image | img_url: '600x' }}"
-        alt="{{ mobile_image.alt }}"
+        alt="Banner"
         loading="lazy"
         class="w-full h-full block md:hidden object-cover object-center"
       >

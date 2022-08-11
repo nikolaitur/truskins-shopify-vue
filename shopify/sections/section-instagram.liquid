@@ -1,4 +1,10 @@
-<div class="section-instagram mt-16 pb-16 md:pb-0 flex flex-col-reverse md:flex-col">
+<div class="section-instagram relative mt-16 pb-16 md:pb-0 flex flex-col-reverse md:flex-col">
+  <div class="hidden md:block absolute w-full left-0 top-[78px] -translate-y-full background-pattern">
+    {% render 'background-pattern-svg' %}
+  </div>
+  <div class="block md:hidden absolute w-full left-0 top-0 -translate-y-full gery-pattern">
+    {% render 'grey-pattern-3' %}
+  </div>
   <div class="pt-10 md:pt-0 md:px-20 flex items-center w-full flex-col md:flex-row ">
     <div class="icon-instagram">
       {% render 'icon-instagram' %}
@@ -22,7 +28,8 @@
       {%
         render 'section-image',
         class: ''
-        image: section.settings.image1
+        image: section.settings.image1,
+        alt_text: "instagram feed"
       %}
     </a>
     <div class="basis-1/2 flex flex-wrap self-start">
@@ -34,7 +41,8 @@
         {%
           render 'section-image',
           class: ''
-          image: section.settings.image2
+          image: section.settings.image2,
+          alt_text: "instagram feed"
         %}
       </a>
       <a
@@ -45,7 +53,8 @@
         {%
           render 'section-image',
           class: ''
-          image: section.settings.image3
+          image: section.settings.image3,
+          alt_text: "instagram feed"
         %}
       </a>
 
@@ -57,7 +66,8 @@
         {%
           render 'section-image',
           class: ''
-          image: section.settings.image4
+          image: section.settings.image4,
+          alt_text: "instagram feed"
         %}
       </a>
       <a
@@ -68,7 +78,8 @@
         {%
           render 'section-image',
           class: ''
-          image: section.settings.image5
+          image: section.settings.image5,
+          alt_text: "instagram feed"
         %}
       </a>
     </div>

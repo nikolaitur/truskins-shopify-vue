@@ -339,3 +339,13 @@ html.sticky #nav-burger-icon span {
   bottom: -3px;
   background-color: #f97a1c;
 }
+
+.background-pattern svg {
+  width: 100%;
+  height: auto;
+}
+
+.gery-pattern svg {
+  width: 100%;
+  height: auto;
+}
