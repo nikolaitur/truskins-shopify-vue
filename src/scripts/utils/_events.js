@@ -51,8 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
       this.classList.toggle("open");
       html.classList.toggle("overflow-y-scroll");
       html.classList.toggle("overflow-hidden");
-      html.classList.toggle("sticky");
-      console.log(mobileNav);
+
+      let scrollPosition = window.scrollY;
+
+      this.classList.contains("open") || scrollPosition > 44
+        ? html.classList.add("sticky")
+        : html.classList.remove("sticky");
+
       mobileNav.classList.toggle("active");
     });
   };
