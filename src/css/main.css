@@ -349,3 +349,27 @@ html.sticky #nav-burger-icon span {
   width: 100%;
   height: auto;
 }
+
+.nav-expand.active > .nav-expand-content {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav.active {
+  display: block;
+}
+
+.nav-link svg {
+  width: 10px;
+  height: auto;
+}
+
+.nav-back-link svg {
+  width: 8px;
+  height: auto;
+  fill: #f97a1c;
+}

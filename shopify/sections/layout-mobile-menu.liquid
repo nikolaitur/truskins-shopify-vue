@@ -1,0 +1,118 @@
+<div class="mobile-nav bg-mobile-bottom-nav fixed w-full top-header-height-mob bottom-0 left-0  z-10">
+  <div class="mobile-nav-wrap overflow-x-hidden overflow-y-auto min-h-full h-mobile-nav">
+    <div class="pt-4 bg-white">
+      {% render 'search-form' %}
+    </div>
+    <div class="w-full bg-white">
+      <nav class="nav-drill flex relative w-[300px] mx-auto py-5">
+        <ul class="nav-items nav-level-1 basis-full">
+          {% for link in linklists[ section.settings.main_menu ].links %}
+            <li class="nav-item nav-expand py-5">
+              <a
+                class="nav-expand-link flex justify-between items-center text-lg font-abril-display leading-none font-bold text-light-black"
+                href="{{ link.url }}"
+              >
+                <span>{{ link.title }}</span>
+                {% if link.handle == 'products' or link.links != blank %}
+                  <span class="nav-link">
+                    {%- render 'icon-right-chevron' -%}
+                  </span>
+                {% endif %}
+              </a>
+
+              {% if link.handle == 'products' %}
+                {% assign new_link = linklists['megamenu'] %}
+              {% else %}
+                {% assign new_link = link %}
+              {% endif %}
+
+              {% if new_link.links != blank %}
+                <ul class="nav-items nav-expand-content translate-x-full transition duration-300 bg-white invisible absolute top-0 left-0 w-full h-full">
+                  <li class="nav-item py-5">
+                    <a
+                      class="nav-link nav-back-link text-orange text-sm flex items-center"
+                      href="javascript:;"
+                    >
+                      <span>{% render 'icon-left-chevron' %}</span>
+                      <span class="pl-2">Back</span>
+                    </a>
+                  </li>
+                  {% for child_link in new_link.links %}
+                    <li class="nav-item nav-expand py-5">
+                      <a
+                        class="nav-expand-link flex justify-between items-center text-lg font-abril-display leading-none font-bold text-light-black"
+                        href="{{ child_link.url }}"
+                      >
+                        <span>{{ child_link.title }}</span>
+                        {% if child_link.links != blank %}
+                          <span class="nav-link">
+                            {%- render 'icon-right-chevron' -%}
+                          </span>
+                        {% endif %}
+                      </a>
+                      {% if child_link.links != blank %}
+                        <ul class="nav-items nav-expand-content bg-white invisible absolute top-0 left-0 w-full h-full">
+                          <li class="nav-item py-5">
+                            <a
+                              class="nav-link nav-back-link text-orange text-sm flex items-center"
+                              href="javascript:;"
+                            >
+                              <span>{% render 'icon-left-chevron' %}</span>
+                              <span class="pl-2">Back</span>
+                            </a>
+                          </li>
+                          {% for grand_child_link in child_link.links %}
+                            <li class="nav-item py-5">
+                              <a
+                                class="nav-link text-lg text-light-black leading-none"
+                                href="{{ grand_child_link.url }}"
+                              >
+                                {{ grand_child_link.title }}
+                              </a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+    <div class="mobile-bottom-nav bg-mobile-bottom-nav py-7 grow">
+      <ul class="w-[300px] mx-auto">
+        {% for link in linklists[ section.settings.bottom_menu ].links %}
+          <li class="mb-7">
+            <a
+              class="text-light-black text-base"
+              href="{{ link.url }}"
+            >
+              <span>{{ link.title }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Mobile Navigation",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "label": "Main Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "bottom_menu",
+      "label": "Bottom Menu"
+    }
+  ]
+}
+{% endschema %}

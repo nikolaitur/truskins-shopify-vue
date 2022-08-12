@@ -44,6 +44,13 @@
         "type": "layout-mobile-navigation",
         "settings": {
         }
+      },
+      "layout-mobile-menu": {
+        "type": "layout-mobile-menu",
+        "settings": {
+          "main_menu": "new-menu",
+          "bottom_menu": "mobile-bottom-nav"
+        }
       }
     },
     "content_for_index": [

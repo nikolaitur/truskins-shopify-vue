@@ -22,6 +22,7 @@ module.exports = {
         "badge-bg": "#D4E353",
         "badge-text": "#326730",
         "megamenu-border": "#e1e1e1",
+        "mobile-bottom-nav": "#f5f5f5",
       },
       letterSpacing: {
         1: "1px",
@@ -36,6 +37,7 @@ module.exports = {
         "header-mob": "60px",
         "blob-image-1": "500px",
         "blob-image-2": "470px",
+        "mobile-nav": "calc(100vh - 60px)",
       },
       spacing: {
         "header-height-md": "128px",
