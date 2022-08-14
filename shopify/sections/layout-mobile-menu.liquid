@@ -1,4 +1,4 @@
-<div class="mobile-nav bg-mobile-bottom-nav fixed w-full top-header-height-mob bottom-0 left-0  z-10">
+<div class="mobile-nav bg-wild-sand fixed w-full top-header-height-mob bottom-0 left-0  z-10">
   <div class="mobile-nav-wrap overflow-x-hidden overflow-y-auto min-h-full h-mobile-nav">
     <div class="pt-4 bg-white">
       {% render 'search-form' %}
@@ -9,7 +9,7 @@
           {% for link in linklists[ section.settings.main_menu ].links %}
             <li class="nav-item nav-expand py-5">
               <a
-                class="nav-expand-link flex justify-between items-center text-lg font-abril-display leading-none font-bold text-light-black"
+                class="nav-expand-link flex justify-between items-center text-lg font-abril-display leading-none font-bold text-cod-gray"
                 href="{{ link.url }}"
               >
                 <span>{{ link.title }}</span>
@@ -30,7 +30,7 @@
                 <ul class="nav-items nav-expand-content translate-x-full transition duration-300 bg-white invisible absolute top-0 left-0 w-full h-full">
                   <li class="nav-item py-5">
                     <a
-                      class="nav-link nav-back-link text-orange text-sm flex items-center"
+                      class="nav-link nav-back-link text-ecstasy text-sm flex items-center"
                       href="javascript:;"
                     >
                       <span>{% render 'icon-left-chevron' %}</span>
@@ -40,7 +40,7 @@
                   {% for child_link in new_link.links %}
                     <li class="nav-item nav-expand py-5">
                       <a
-                        class="nav-expand-link flex justify-between items-center text-lg font-abril-display leading-none font-bold text-light-black"
+                        class="nav-expand-link flex justify-between items-center text-lg font-abril-display leading-none font-bold text-cod-gray"
                         href="{{ child_link.url }}"
                       >
                         <span>{{ child_link.title }}</span>
@@ -54,7 +54,7 @@
                         <ul class="nav-items nav-expand-content bg-white invisible absolute top-0 left-0 w-full h-full">
                           <li class="nav-item py-5">
                             <a
-                              class="nav-link nav-back-link text-orange text-sm flex items-center"
+                              class="nav-link nav-back-link text-ecstasy text-sm flex items-center"
                               href="javascript:;"
                             >
                               <span>{% render 'icon-left-chevron' %}</span>
@@ -64,7 +64,7 @@
                           {% for grand_child_link in child_link.links %}
                             <li class="nav-item py-5">
                               <a
-                                class="nav-link text-lg text-light-black leading-none"
+                                class="nav-link text-lg text-cod-gray leading-none"
                                 href="{{ grand_child_link.url }}"
                               >
                                 {{ grand_child_link.title }}
@@ -82,12 +82,12 @@
         </ul>
       </nav>
     </div>
-    <div class="mobile-bottom-nav bg-mobile-bottom-nav py-7 grow">
+    <div class="mobile-bottom-nav bg-wild-sand py-7 grow">
       <ul class="w-[300px] mx-auto">
         {% for link in linklists[ section.settings.bottom_menu ].links %}
           <li class="mb-7">
             <a
-              class="text-light-black text-base"
+              class="text-cod-gray text-base"
               href="{{ link.url }}"
             >
               <span>{{ link.title }}</span>

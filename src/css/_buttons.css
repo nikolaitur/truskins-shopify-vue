@@ -3,11 +3,11 @@
 }
 
 .button-primary {
-  @apply bg-orange text-white md:bg-white md:text-light-black border border-white hover:bg-transparent hover:text-white;
+  @apply bg-ecstasy text-white md:bg-white md:text-cod-gray border border-white hover:bg-transparent hover:text-white;
 }
 
 .button-secondary {
-  @apply bg-orange text-white;
+  @apply bg-ecstasy text-white;
 }
 
 /* override default Shopify styling */

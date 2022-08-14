@@ -4,6 +4,7 @@ import {
   productsSlider,
   testimonialSlider,
   tickerSlider,
+  productGallery,
 } from "../utils";
 import lozad from "lozad";
 
@@ -39,7 +40,22 @@ const observer = lozad(".lozad", {
             case "ticker":
               tickerSlider(closestSlider);
               break;
+            case "thumbs": {
+              const dataThumb = closestSlider.dataset.sliderThumbs;
+              const slidesThumb = document.querySelectorAll(
+                `div[data-slider-thumbs="${dataThumb}"]`
+              );
+              const elementThumbs = [...slidesThumb].find(
+                (el) => el.dataset.thumbs === "thumbs"
+              );
+              const elementMain = [...slidesThumb].find(
+                (el) => el.dataset.thumbs === "main"
+              );
+              if (dataThumb === "gallery")
+                productGallery({ elementThumbs, elementMain });
 
+              break;
+            }
             default:
               break;
           }

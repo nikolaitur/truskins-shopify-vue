@@ -6,4 +6,5 @@ export {
   productsSlider,
   testimonialSlider,
   tickerSlider,
+  productGallery,
 } from "./_sliders";

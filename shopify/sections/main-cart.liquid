@@ -1,66 +1,145 @@
-<div class="container max-w-screen-lg">
-  <h1 class="text-2xl md:text-3xl font-bold text-center mb-4">
-    {{ 'cart.title' | t }}
-  </h1>
-
-  <div class="text-center mb-8 md:mb-16">
-    <a href="{{ routes.root_url }}" class="text-sm underline">
-      {{ 'action.continue_shopping' | t }}
-    </a>
-  </div>
-
+<div class="container max-w-screen-lg my-12">
   {% if cart.item_count > 0 %}
-    <div class="hidden md:grid grid-cols-8 gap-4 border-b text-gray-600 text-sm tracking-wider uppercase pb-4 mb-8">
-      <span class="col-span-5">{{ 'common.product' | t }}</span>
-      <span class="text-right">{{ 'common.price' | t }}</span>
-      <span class="text-right">{{ 'common.quantity' | t }}</span>
-      <span class="text-right">{{ 'common.total' | t }}</span>
+    <div class="flex justify-between items-center flex-col md:flex-row">
+      <h1 class="font-abril-display text-[40px] font-bold">
+        My Cart &nbsp;<span class="md:hidden">({{ cart.item_count }})</span>
+      </h1>
+      <renderless-shipping-meter
+        v-slot="{ getMessage, getPercent }"
+        :threshold="{{ section.settings.free_shipping_threshold }}"
+        :cart-total="{{ cart.total_price }}"
+      >
+        <div class="w-full md:w-fit py-6 px-5 md:py-0 md:px-0 border border-mercury md:border-none rounded-lg md:rounded-none overflow-hidden">
+          <div
+            class="text-sm font-bold text-cod-gray"
+            v-html="getMessage()"
+          ></div>
+          <div class="mt-3">
+            <div class="w-full h-[2px] bg-mercury relative">
+              <div
+                class="shipping-meter-percent absolute left-0 top-0 h-[2px] bg-ecstasy"
+                :style="{ width: getPercent() }"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </renderless-shipping-meter>
+    </div>
+    <div class="hidden md:grid grid-cols-8 gap-4 border-b border-b-dusty-gray text-gray-600 text-sm tracking-wider uppercase mt-8 pb-2">
+      <span class="col-span-5 text-sm text-cod-gray font-light leading-6">
+        Product
+      </span>
+      <span class="text-sm text-cod-gray font-light leading-6"> Price </span>
+      <span class="text-sm text-cod-gray leading-6 font-light"> Quantity </span>
+      <span class="text-right text-sm text-cod-gray leading-6"> Total </span>
     </div>
 
-    <form action="/cart?locale={{ request.locale.iso_code }}" method="post" novalidate>
-      <input type="hidden" name="attributes[locale]" value="{{ request.locale.iso_code }}" />
+    {% if section.settings.promotion_text %}
+      <div class="cart_promotion_text w-full py-5 md:py-4 flex justify-start gap-1 items-center border-b border-b-dusty-gray font-bold text-sm text-cod-gray">
+        {% if section.settings.show_time_limit_icon %}
+          {% render 'icon-hourglass' %}
+        {% endif %}
+        <span>{{ section.settings.promotion_text }}</span>
+      </div>
+    {% endif %}
+
+    <form
+      action="/cart?locale={{ request.locale.iso_code }}"
+      method="post"
+      novalidate
+    >
+      <input
+        type="hidden"
+        name="attributes[locale]"
+        value="{{ request.locale.iso_code }}"
+      >
 
       {% for item in cart.items %}
-        {% capture deleteUrl %}{% unless routes.root_url == '/' %}{{ routes.root_url }}{% endunless %}/cart/change?line={{ forloop.index }}&amp;quantity=0{% endcapture %}
+        {% capture deleteUrl -%}
+          {%- unless routes.root_url == '/' -%}
+            {{- routes.root_url -}}
+          {%- endunless -%}
+          /cart/change?line={{ forloop.index }}&amp;quantity=0
+        {%- endcapture %}
 
-        {% render 'layout-product-cart',
-          class: 'mb-12 md:mb-8'
+        {%
+          render 'layout-product-cart',
+          class: 'pt-7 pb-5 md:py-5 border-b border-b-dusty-gray'
           product: item
-          deleteUrl: deleteUrl
+          deleteUrl: deleteUrl,
+          index: forloop.index
         %}
       {% endfor %}
 
-      <div class="flex flex-col items-end border-t pt-6">
-        <div class="text-lg font-semibold space-x-8">
-          <span class="inline-block">{{ 'cart.subtotal' | t }}</span>
-          <span class="inline-block">{{ cart.total_price | money_with_currency }}</span>
+      <div class="flex justify-between pt-5">
+        <div class="hidden md:block">
+          <a
+            href="{{ routes.root_url }}"
+            class="text-xs font-bold text-cod-gray link_continue_shopping"
+          >
+            {{ 'action.continue_shopping' | t }}
+          </a>
         </div>
 
-        <div class="text-gray-600 text-sm">
-          {% if shop.taxes_included %}
-            {{ 'common.including_tax' | t }}
-          {% else %}
-            {{ 'common.excluding_tax' | t }}
-          {% endif %}
-        </div>
+        <div class="w-full md:w-[350px] pt-3">
+          <div class="flex justify-between items-center font-bold text-sm md:text-base leading-[22px] text-cod-gray">
+            <span>{{ 'cart.subtotal' | t }}</span>
+            <span>
+              {{- cart.total_price | money_with_currency -}}
+            </span>
+          </div>
 
-        <button
-          name="checkout"
-          class="button button-primary mt-8"
-        >
-          {{ 'action.checkout' | t }}
-        </button>
+          <div class="mt-3 md:mt-1 font-light text-sm text-cod-gray text-center md:text-left pb-3 border-b border-b-dusty-gray md:border-none">
+            Taxes & shipping calculated at checkout
+          </div>
+
+          <button
+            name="checkout"
+            class="button button-secondary w-full mt-8"
+          >
+            {{ 'action.checkout' | t }}
+          </button>
+        </div>
       </div>
     </form>
   {% else %}
-    <p class="text-center mb-16">
-      {{ 'cart.empty_cart' | t }}
-    </p>
+    <div class="my-40">
+      <div class="text-center font-abril-display text-[50px] text-cod-gray">
+        Your Cart Is Empty
+      </div>
 
-    <div class="text-center">
-      <a href="{{ routes.root_url }}" class="button button-primary inline-flex">
-        {{ 'action.continue_shopping' | t }} {% render 'icon-chevron-right', class: 'w-4 h-auto', style: 'margin-top: 2px;' %}
+      <a
+        href="{{ routes.root_url }}"
+        class="button button-secondary mt-5 w-[200px] mx-auto"
+      >
+        {{ 'action.continue_shopping' | t }}
       </a>
     </div>
   {% endif %}
 </div>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": [
+    {
+      "type": "text",
+      "id": "promotion_text",
+      "label": "Promotion Text",
+      "default": "For a limited time - Buy 3 items & Save 20%"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_time_limit_icon",
+      "label": "Show Time Limit Icon",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_threshold",
+      "label": "Free Shipping Threshold",
+      "default": "10000"
+    }
+  ]
+}
+{% endschema %}

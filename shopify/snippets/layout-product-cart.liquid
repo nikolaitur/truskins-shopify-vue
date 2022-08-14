@@ -1,7 +1,10 @@
 <div class="{{ class | default: '' }}" style="{{ style | default: '' }}">
-  <div class="md:grid grid-cols-8 gap-4">
+  <div class="hidden md:grid grid-cols-8 gap-4">
     <div class="col-span-5 flex flex-wrap gap-2 md:gap-6 mb-4 md:mb-0">
-      <a href="{{ product.url | within: collections.all }}" class="block w-full md:w-32 h-64 md:h-32">
+      <a
+        href="{{ product.url | within: collections.all }}"
+        class="block w-full md:w-24 h-auto md:h-32 rounded-lg overflow-hidden"
+      >
         <img
           sizes="
             (min-width: 768px) 275px,
@@ -18,15 +21,18 @@
         >
       </a>
 
-      <div class="flex flex-col py-2">
+      <div class="flex flex-col justify-center text-cod-gray py-2">
         {% if product.title %}
-          <a href="{{ product.url | within: collection }}" class="text-lg font-bold mb-2">
+          <a
+            href="{{ product.url | within: collection }}"
+            class="font-bold leading-[22px] mb-1"
+          >
             {{ product.title }}
           </a>
         {% endif %}
 
         {% if product.options_with_values %}
-          <div class="text-sm">
+          <div class="leading-[22px] mb-1 text-cod-gray font-light">
             {% for option in product.options_with_values %}
               <div>{{ option.name }}: {{ option.value }}</div>
             {% endfor %}
@@ -34,31 +40,148 @@
         {% endif %}
 
         {% if deleteUrl %}
-          <a href="{{ deleteUrl }}" class="text-sm underline mt-2 md:mt-auto">
+          <a
+            href="{{ deleteUrl }}"
+            class="text-xs underline text-cod-gray font-light"
+          >
             {{ 'action.remove' | t }}
           </a>
         {% endif %}
       </div>
     </div>
 
-    <div class="flex justify-between md:justify-end items-center">
-      <span class="md:hidden">{{ 'common.price' | t }}</span> {{ product.price | money }}
+    <div class="flex flex-col justify-center">
+      {% if product.compare_price %}
+        <div class="text-xs leading-[22px] text-cod-gray font-light">
+          {{ product.compare_price | money }}
+        </div>
+      {% endif %}
+      <div class="text-base leading-[22px] text-cod-gray font-light">
+        {{ product.price | money }}
+      </div>
     </div>
 
     <div class="flex justify-between md:justify-end items-center">
-      <span class="md:hidden">{{ 'common.quantity' | t }}</span> x{{ product.quantity }}
+      <renderless-qty-select
+        v-slot="{ updatedQty, increase, decrease }"
+        :qty="{{ product.quantity }}"
+      >
+        <div class="flex w-[110px] h-[45px] rounded-full items-center border border-cod-gray">
+          <a
+            href="/cart/change?line={{ index }}&quantity={{ product.quantity | minus: 1 }}"
+            class="grow cursor-pointer text-center"
+            @click="decrease"
+            >-</a
+          >
+          <input
+            class="qty-input border-none h-full w-[50px] text-center"
+            type="text"
+            name="quantity"
+            v-model="updatedQty"
+          >
+          <a
+            href="/cart/change?line={{ index }}&quantity={{ product.quantity | plus: 1 }}"
+            class="grow cursor-pointer text-center"
+            @click="increase"
+            >+</a
+          >
+        </div>
+      </renderless-qty-select>
     </div>
 
-    <div class="flex justify-between md:justify-end items-center">
+    <div class="flex justify-between md:justify-end items-center font-light">
       {% if product.original_line_price != product.line_price %}
         {{ product.original_line_price | money }}
       {% endif %}
 
-      <span class="md:hidden">{{ 'common.total' | t }}</span> {{ product.line_price | money }}
+      {{ product.line_price | money }}
 
       {% for discount in product.discounts %}
         {{ discount.title }}
       {% endfor %}
     </div>
+  </div>
+  <div class="md:hidden flex items-start relative">
+    <div class="w-20">
+      <a
+        href="{{ product.url | within: collections.all }}"
+        class="block w-full rounded-lg overflow-hidden"
+      >
+        <img
+          sizes="
+            (min-width: 768px) 275px,
+            400px
+          "
+          srcset="
+            {{ product | img_url: '275x' }} 275w,
+            {{ product | img_url: '400x' }} 400w
+          "
+          src="{{ product | img_url: '400x' }}"
+          alt="{{ product.title | escape }}"
+          loading="lazy"
+          class="w-full h-full object-cover object-center"
+        >
+      </a>
+    </div>
+    <div class="grow pl-5">
+      {% if product.title %}
+        <a
+          href="{{ product.url | within: collection }}"
+          class="font-bold leading-[22px] mb-1"
+        >
+          {{ product.title }}
+        </a>
+      {% endif %}
+
+      {% if product.options_with_values %}
+        <div class="leading-[22px] mb-1 text-cod-gray font-light">
+          {% for option in product.options_with_values %}
+            <div>{{ option.name }}: {{ option.value }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div class="flex items-center justify-between">
+        <renderless-qty-select
+          v-slot="{ updatedQty, increase, decrease }"
+          :qty="{{ product.quantity }}"
+        >
+          <div class="flex w-[110px] h-[40px] rounded-full items-center border border-cod-gray mt-5">
+            <a
+              href="/cart/change?line={{ index }}&quantity={{ product.quantity | minus: 1 }}"
+              class="grow cursor-pointer text-center"
+              @click="decrease"
+              >-</a
+            >
+            <input
+              class="qty-input border-none h-full w-[50px] text-center"
+              type="text"
+              name="quantity"
+              v-model="updatedQty"
+            >
+            <a
+              href="/cart/change?line={{ index }}&quantity={{ product.quantity | plus: 1 }}"
+              class="grow cursor-pointer text-center"
+              @click="increase"
+              >+</a
+            >
+          </div>
+        </renderless-qty-select>
+        <div class="grow pl-3 text-right text-sm font-light text-cod-gray">
+          {{ product.line_price | money }}
+        </div>
+        {% if product.original_line_price != product.line_price %}
+          <div class="pl-2 text-right text-sm font-light text-cod-gray">
+            {{ product.original_line_price | money }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <a
+      href="{{ deleteUrl }}"
+      class="link-cart-item-remove absolute w-4 h-4 right-0 -top-3 block"
+    >
+      {% render 'icon-cross' %}
+    </a>
   </div>
 </div>

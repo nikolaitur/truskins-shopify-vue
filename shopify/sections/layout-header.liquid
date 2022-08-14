@@ -1,4 +1,4 @@
-<div class="md:bg-transparent z-50 relative">
+<div class="md:bg-transparent z-50 relative {% unless template == 'index' %}white-header{% endunless %}">
   <div class="container">
     <div class="h-header-mob md:h-[84px] flex justify-between items-center">
       <div
@@ -39,7 +39,7 @@
       >
         {% render 'icon-cart', class: icon_class %}
 
-        <div class="w-5 h-5 flex justify-center items-center bg-cart text-light-black text-xs rounded-full absolute top-0 right-0">
+        <div class="w-5 h-5 flex justify-center items-center bg-earls-green text-cod-gray text-xs rounded-full absolute top-0 right-0">
           {{ cart.item_count }}
         </div>
       </a>
@@ -67,7 +67,7 @@
         >
           {% render 'icon-cart', class: icon_class %}
 
-          <div class="w-5 h-5 flex justify-center items-center bg-cart text-light-black text-xs rounded-full absolute top-0 right-0">
+          <div class="w-5 h-5 flex justify-center items-center bg-earls-green text-cod-gray text-xs rounded-full absolute top-0 right-0">
             {{ cart.item_count }}
           </div>
         </a>

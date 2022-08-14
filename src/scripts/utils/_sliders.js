@@ -104,3 +104,28 @@ export const iconSlider = (element) => {
     });
   }
 };
+
+export const productGallery = ({ elementThumbs, elementMain }) => {
+  if (!elementMain.classList.contains("swiper-initialized")) {
+    const swiperThumbs = new Swiper(elementThumbs, {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+      direction: "vertical",
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+    const swiperMain = new Swiper(elementMain, {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      pagination: {
+        el: ".swiper-pagination",
+      },
+
+      thumbs: {
+        swiper: swiperThumbs,
+      },
+    });
+  }
+};

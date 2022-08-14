@@ -26,7 +26,7 @@
       {% endif %}
     {% endfor %}
     {% if badge != '' %}
-      <div class="w-24 h-7 flex items-center justify-center text-xs font-bold text-light-black absolute top-4 left-4 rounded-full bg-green-500">
+      <div class="w-24 h-7 flex items-center justify-center text-xs font-bold text-cod-gray absolute top-4 left-4 rounded-full bg-green-500">
         {{ badge }}
       </div>
     {% endif %}
@@ -36,14 +36,14 @@
     {% if product.title %}
       <a
         href="{{ product.url | within: collection }}"
-        class="product-card-title text-sm font-bold text-light-black leading-none"
+        class="product-card-title text-sm font-bold text-cod-gray leading-none"
       >
         {{ product.title }}
       </a>
     {% endif %}
 
     {% if product.available %}
-      <div class="mt-4 text-sm leading-none text-lighter-gray">
+      <div class="mt-4 text-sm leading-none text-custom-gray">
         <span>
           {{ product.price | money }}
         </span>
@@ -55,7 +55,7 @@
         {% endif %}
       </div>
     {% else %}
-      <div class="mt-4 text-sm leading-none text-lighter-gray">
+      <div class="mt-4 text-sm leading-none text-custom-gray">
         {{ 'common.sold_out' | t }}
       </div>
     {% endif %}

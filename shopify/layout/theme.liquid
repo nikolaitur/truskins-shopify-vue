@@ -1,5 +1,8 @@
 <!doctype html>
-<html lang="{{ request.locale.iso_code }}" class="overflow-y-scroll">
+<html
+  lang="{{ request.locale.iso_code }}"
+  class="overflow-y-scroll"
+>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,9 +58,16 @@
         <main
           id="main"
           role="main"
-          class="flex-1 {% if request.page_type == 'index' %}-mt-header-height-mob md:-mt-[84px]{% else %}{% endif %}"
+          class="flex-1 relative {% if request.page_type == 'index' %}-mt-header-height-mob md:-mt-[84px]{% else %}{% endif %}"
         >
-          {{ content_for_layout }}
+          {% unless template == 'index' %}
+            <div
+              class="gradient-shadow absolute w-full left-0 top-0 h-[286px] z-0"
+            ></div>
+          {% endunless %}
+          <div class="relative z-10">
+            {{ content_for_layout }}
+          </div>
         </main>
 
         {% section 'layout-footer' %}

@@ -1,0 +1,70 @@
+{%- comment -%}
+  Arguments:
+    • images - required
+{%- endcomment -%}
+
+<div class="relative self-start pl-[100px]">
+  <div
+    class="swiper product-gallery rounded-2xl"
+    data-slider="thumbs"
+    data-slider-thumbs="gallery"
+    data-thumbs="main"
+  >
+    <div class="swiper-wrapper">
+      {% for image in images %}
+        <div class="swiper-slide lozad">
+          <div class="relative w-full h-[450px] md:h-[650px] lg:h-[75vh] lg:max-h-[650px]">
+            <img
+              src="{{ image.src | image_url: width: 900 }}"
+              alt="{{ image.alt | escape }}"
+              width=""
+              height=""
+              loading="lazy"
+              class="absolute top-0 left-0 w-full h-full object-cover"
+            >
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="md:hidden">
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <div class="hidden lg:block absolute left-0 top-0 ">
+    <div
+      class="relative overflow-hidden product-thumbs w-[82px] h-[450px] md:h-[650px] lg:h-[75vh] lg:max-h-[650px] pb-16"
+      data-slider="thumbs"
+      data-slider-thumbs="gallery"
+      data-thumbs="thumbs"
+    >
+      <div class="swiper-wrapper items-center">
+        {% for image in images %}
+          <div class="swiper-slide lozad rounded-lg overflow-hidden">
+            <div class="relative w-20 h-fit">
+              <img
+                src="{{ image.src | image_url: width: 900 }}"
+                alt="{{ image.alt | escape }}"
+                width=""
+                height=""
+                loading="lazy"
+                class="w-full object-cover"
+              >
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="absolute bottom-0 w-full left-0 h-[50px] bg-white z-10"></div>
+      <div
+        class="swiper-button-next product-gallery-swiper-btn"
+      ></div>
+      <div class="swiper-button-prev product-gallery-swiper-btn"></div>
+    </div>
+  </div>
+
+  {% if badge != '' %}
+    <div class="w-[136px] h-[38px] flex items-center justify-center text-sm font-bold text-cod-gray absolute top-5 right-7 rounded-full bg-white z-10">
+      {{ badge }}
+    </div>
+  {% endif %}
+</div>
