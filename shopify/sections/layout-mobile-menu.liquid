@@ -9,7 +9,7 @@
           {% for link in linklists[ section.settings.main_menu ].links %}
             <li class="nav-item nav-expand py-5">
               <a
-                class="nav-expand-link flex justify-between items-center text-lg font-abril-display leading-none font-bold text-cod-gray"
+                class="nav-expand-link flex justify-between items-center text-lg font-abril-display leading-none font-bold "
                 href="{{ link.url }}"
               >
                 <span>{{ link.title }}</span>
@@ -40,7 +40,7 @@
                   {% for child_link in new_link.links %}
                     <li class="nav-item nav-expand py-5">
                       <a
-                        class="nav-expand-link flex justify-between items-center text-lg font-abril-display leading-none font-bold text-cod-gray"
+                        class="nav-expand-link flex justify-between items-center text-lg font-abril-display leading-none font-bold "
                         href="{{ child_link.url }}"
                       >
                         <span>{{ child_link.title }}</span>
@@ -64,7 +64,7 @@
                           {% for grand_child_link in child_link.links %}
                             <li class="nav-item py-5">
                               <a
-                                class="nav-link text-lg text-cod-gray leading-none"
+                                class="nav-link text-lg  leading-none"
                                 href="{{ grand_child_link.url }}"
                               >
                                 {{ grand_child_link.title }}
@@ -87,7 +87,7 @@
         {% for link in linklists[ section.settings.bottom_menu ].links %}
           <li class="mb-7">
             <a
-              class="text-cod-gray text-base"
+              class=" text-base"
               href="{{ link.url }}"
             >
               <span>{{ link.title }}</span>

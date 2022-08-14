@@ -26,7 +26,7 @@
       {% endif %}
     {% endfor %}
     {% if badge != '' %}
-      <div class="w-24 h-7 flex items-center justify-center text-xs font-bold text-cod-gray absolute top-4 left-4 rounded-full bg-green-500">
+      <div class="w-24 h-7 flex items-center justify-center text-xs font-bold  absolute top-4 left-4 rounded-full bg-green-500">
         {{ badge }}
       </div>
     {% endif %}
@@ -36,7 +36,7 @@
     {% if product.title %}
       <a
         href="{{ product.url | within: collection }}"
-        class="product-card-title text-sm font-bold text-cod-gray leading-none"
+        class="product-card-title text-sm font-bold  leading-none"
       >
         {{ product.title }}
       </a>

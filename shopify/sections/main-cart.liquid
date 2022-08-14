@@ -6,12 +6,12 @@
       </h1>
       <renderless-shipping-meter
         v-slot="{ getMessage, getPercent }"
-        :threshold="{{ section.settings.free_shipping_threshold }}"
+        :threshold="{{ settings.free_shipping_threshold }}"
         :cart-total="{{ cart.total_price }}"
       >
         <div class="w-full md:w-fit py-6 px-5 md:py-0 md:px-0 border border-mercury md:border-none rounded-lg md:rounded-none overflow-hidden">
           <div
-            class="text-sm font-bold text-cod-gray"
+            class="text-sm font-bold "
             v-html="getMessage()"
           ></div>
           <div class="mt-3">
@@ -26,20 +26,18 @@
       </renderless-shipping-meter>
     </div>
     <div class="hidden md:grid grid-cols-8 gap-4 border-b border-b-dusty-gray text-gray-600 text-sm tracking-wider uppercase mt-8 pb-2">
-      <span class="col-span-5 text-sm text-cod-gray font-light leading-6">
-        Product
-      </span>
-      <span class="text-sm text-cod-gray font-light leading-6"> Price </span>
-      <span class="text-sm text-cod-gray leading-6 font-light"> Quantity </span>
-      <span class="text-right text-sm text-cod-gray leading-6"> Total </span>
+      <span class="col-span-5 text-sm  font-light leading-6"> Product </span>
+      <span class="text-sm  font-light leading-6"> Price </span>
+      <span class="text-sm  leading-6 font-light"> Quantity </span>
+      <span class="text-right text-sm  leading-6"> Total </span>
     </div>
 
-    {% if section.settings.promotion_text %}
-      <div class="cart_promotion_text w-full py-5 md:py-4 flex justify-start gap-1 items-center border-b border-b-dusty-gray font-bold text-sm text-cod-gray">
-        {% if section.settings.show_time_limit_icon %}
+    {% if settings.promotion_text %}
+      <div class="cart_promotion_text w-full py-5 md:py-4 flex justify-start gap-1 items-center border-b border-b-dusty-gray font-bold text-sm ">
+        {% if settings.show_time_limit_icon %}
           {% render 'icon-hourglass' %}
         {% endif %}
-        <span>{{ section.settings.promotion_text }}</span>
+        <span>{{ settings.promotion_text }}</span>
       </div>
     {% endif %}
 
@@ -75,21 +73,21 @@
         <div class="hidden md:block">
           <a
             href="{{ routes.root_url }}"
-            class="text-xs font-bold text-cod-gray link_continue_shopping"
+            class="text-xs font-bold  link_continue_shopping"
           >
             {{ 'action.continue_shopping' | t }}
           </a>
         </div>
 
         <div class="w-full md:w-[350px] pt-3">
-          <div class="flex justify-between items-center font-bold text-sm md:text-base leading-[22px] text-cod-gray">
+          <div class="flex justify-between items-center font-bold text-sm md:text-base leading-[22px] ">
             <span>{{ 'cart.subtotal' | t }}</span>
             <span>
               {{- cart.total_price | money_with_currency -}}
             </span>
           </div>
 
-          <div class="mt-3 md:mt-1 font-light text-sm text-cod-gray text-center md:text-left pb-3 border-b border-b-dusty-gray md:border-none">
+          <div class="mt-3 md:mt-1 font-light text-sm  text-center md:text-left pb-3 border-b border-b-dusty-gray md:border-none">
             Taxes & shipping calculated at checkout
           </div>
 
@@ -97,14 +95,16 @@
             name="checkout"
             class="button button-secondary w-full mt-8"
           >
-            {{ 'action.checkout' | t }}
+            Checkout Now&nbsp;<span class="md:hidden">
+              {{- cart.total_price | money -}}
+            </span>
           </button>
         </div>
       </div>
     </form>
   {% else %}
     <div class="my-40">
-      <div class="text-center font-abril-display text-[50px] text-cod-gray">
+      <div class="text-center font-abril-display text-[50px] ">
         Your Cart Is Empty
       </div>
 

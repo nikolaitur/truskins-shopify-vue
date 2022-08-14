@@ -39,7 +39,7 @@
       >
         {% render 'icon-cart', class: icon_class %}
 
-        <div class="w-5 h-5 flex justify-center items-center bg-earls-green text-cod-gray text-xs rounded-full absolute top-0 right-0">
+        <div class="w-5 h-5 flex justify-center items-center bg-earls-green  text-xs rounded-full absolute top-0 right-0">
           {{ cart.item_count }}
         </div>
       </a>
@@ -62,14 +62,20 @@
         {% endif %}
 
         <a
+          @click.prevent="$store.dispatch('cart/minicartToggle')"
           href="{{ routes.cart_url }}"
           class="{{ link_class }} relative"
         >
           {% render 'icon-cart', class: icon_class %}
 
-          <div class="w-5 h-5 flex justify-center items-center bg-earls-green text-cod-gray text-xs rounded-full absolute top-0 right-0">
-            {{ cart.item_count }}
-          </div>
+          <renderless-cart-info v-slot="{cartSize}">
+            <div class="w-5 h-5 flex justify-center items-center bg-earls-green  text-xs rounded-full absolute top-0 right-0">
+              <span v-if="cartSize" v-html="cartSize"> </span>
+              <span v-else>
+                {{ cart.item_count }}
+              </span>
+            </div>
+          </renderless-cart-info>
         </a>
       </div>
     </div>

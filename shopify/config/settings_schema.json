@@ -19,5 +19,28 @@
         "content": "t:settings_schema.custom_settings.settings.paragraph"
       }
     ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "text",
+        "id": "free_shipping_threshold",
+        "label": "Free Shipping Threshold",
+        "default": "10000"
+      },
+      {
+        "type": "text",
+        "id": "promotion_text",
+        "label": "Promotion Text",
+        "default": "For a limited time - Buy 3 items & Save 20%"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_time_limit_icon",
+        "label": "Show Time Limit Icon",
+        "default": true
+      }
+    ]
   }
 ]

@@ -1,7 +1,7 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
 
-<div class="container max-w-screen-xl flex items-start my-12">
+<div class="container max-w-screen-xl flex items-start my-12 gap-12">
   <div class="basis-[55%]">
     {% assign badge = '' %}
     {% for tag in product.tags %}
@@ -16,7 +16,7 @@
 
   <div class="overflow-hidden basis-[45%]">
     {% if product.title %}
-      <h1 class="font-abril-display text-[30px] leading-10 text-cod-gray">
+      <h1 class="font-abril-display text-[30px] leading-10 ">
         {{ product.title }}
       </h1>
     {% endif %}
@@ -34,95 +34,122 @@
       </div>
     {% endif %}
 
-    {% form 'product', product %}
-      <div class="flex items-end gap-4 mb-6 mt-5">
-        {% if product.has_only_default_variant %}
-          <input
-            name="id"
-            type="hidden"
-            :value="{{ current_variant.id }}"
-            readonly
-          >
-        {% else %}
-          <div class="flex-1 py-5">
-            <renderless-product-variant-selector
-              v-slot="{ selectedVariant, selectOption }"
-              :current-variant="{{ current_variant | json | replace: '"', "'" }}"
-              :product-options="{{ product.options_with_values | json | replace: '"', "'" }}"
-              :product-variants="{{ product.variants | json | replace: '"', "'" }}"
+    <renderless-add-to-cart v-slot="{ addToCart, isLoading }">
+      <form
+        @submit.prevent="addToCart($event)"
+        action="/cart/add"
+        method="post"
+      >
+        <div class="flex items-end gap-4 mb-6 mt-5">
+          {% if product.has_only_default_variant %}
+            <input
+              name="id"
+              type="hidden"
+              :value="{{ current_variant.id }}"
+              readonly
             >
-              <div>
-                <input
-                  name="id"
-                  type="hidden"
-                  :value="selectedVariant.id"
-                  readonly
-                >
+          {% else %}
+            <div class="flex-1 py-5">
+              <renderless-product-variant-selector
+                v-slot="{ selectedVariant, selectOption }"
+                :current-variant="{{ current_variant | json | replace: '"', "'" }}"
+                :product-options="{{ product.options_with_values | json | replace: '"', "'" }}"
+                :product-variants="{{ product.variants | json | replace: '"', "'" }}"
+              >
+                <div>
+                  <input
+                    name="id"
+                    type="hidden"
+                    :value="selectedVariant.id"
+                    readonly
+                  >
 
-                <div class="flex gap-x-3">
-                  {% for option in product.options_with_values %}
-                    <div class="flex-1">
-                      <label
-                        for="product-select-option-{{ forloop.index }}"
-                        class="text-xs font-bold text-cod-gray uppercase"
-                      >
-                        Select A {{ option.name | escape }}
-                      </label>
+                  <div class="flex gap-x-3">
+                    {% for option in product.options_with_values %}
+                      <div class="flex-1">
+                        <label
+                          for="product-select-option-{{ forloop.index }}"
+                          class="text-xs font-bold  uppercase"
+                        >
+                          Select A {{ option.name | escape }}
+                        </label>
 
-                      <div class="flex gap-5 mt-3">
-                        {% for value in option.values %}
-                          <div
-                            @click="
-                              selectOption({
-                                name: '{{ option.name }}'
-                              }, $event)
-                            "
-                            data-value="{{ value }}"
-                            class="swatch-option-item w-[115px] h-10 text-sm font-bold border border-silver-chalice rounded-full flex items-center justify-center  cursor-pointer bg-transparent text-cod-gray"
-                            :class="{ 'selected': (selectedVariant.option1 == '{{ value }}') }"
-                          >
-                            {{ value | escape }}
-                          </div>
-                        {% endfor %}
+                        <div class="flex gap-5 mt-3">
+                          {% for value in option.values %}
+                            <div
+                              @click="
+                                selectOption({
+                                  name: '{{ option.name }}'
+                                }, $event)
+                              "
+                              data-value="{{ value }}"
+                              class="swatch-option-item w-[115px] h-10 text-sm font-bold border border-silver-chalice rounded-full flex items-center justify-center  cursor-pointer bg-transparent "
+                              :class="{ 'selected': (selectedVariant.option1 == '{{ value }}') }"
+                            >
+                              {{ value | escape }}
+                            </div>
+                          {% endfor %}
+                        </div>
                       </div>
-                    </div>
-                  {% endfor %}
+                    {% endfor %}
+                  </div>
                 </div>
+              </renderless-product-variant-selector>
+            </div>
+          {% endif %}
+        </div>
+
+        {% if current_variant.available %}
+          <div class="flex gap-3">
+            <renderless-qty-select
+              v-slot="{ updatedQty, increase, decrease }"
+              :qty="1"
+            >
+              <div class="flex w-[110px] h-[45px] rounded-full items-center border border-cod-gray">
+                <button
+                  type="button"
+                  class="grow cursor-pointer"
+                  @click="decrease"
+                >
+                  -
+                </button>
+                <input
+                  class="qty-input border-none h-full w-[50px] text-center"
+                  type="text"
+                  name="quantity"
+                  v-model="updatedQty"
+                >
+                <button
+                  type="button"
+                  class="grow cursor-pointer"
+                  @click="increase"
+                >
+                  +
+                </button>
               </div>
-            </renderless-product-variant-selector>
+            </renderless-qty-select>
+            <div class="grow">
+              <button
+                name="add"
+                class="button button-secondary font-bold w-full h-[45px]"
+              >
+                <div
+                  v-if="isLoading"
+                  class="w-8 h-8 border-4 border-solid rounded-full border-t-4 border-t-black animate-spin"
+                ></div>
+                <div v-else>
+                  {{ 'action.add_to_cart' | t }} - {{ product.price | money }}
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-7 text-sm font-bold text-forest-green">
+            In Stock - Ready to Ship
           </div>
         {% endif %}
-      </div>
-
-      {% if current_variant.available %}
-        <div class="flex gap-3">
-          <renderless-qty-select v-slot="{ qty, increase, decrease }" :qty="1">
-            <div class="flex w-[110px] h-[45px] rounded-full items-center border border-cod-gray">
-              <button class="grow cursor-pointer" @click="decrease">-</button>
-              <input
-                class="qty-input border-none h-full w-[50px] text-center"
-                type="text"
-                name="quantity"
-                v-model="qty"
-              >
-              <button class="grow cursor-pointer" @click="increase">+</button>
-            </div>
-          </renderless-qty-select>
-          <div class="grow">
-            <button
-              name="add"
-              class="button button-secondary font-bold w-full h-[45px]"
-            >
-              {{ 'action.add_to_cart' | t }} - {{ product.price | money }}
-            </button>
-          </div>
-        </div>
-
-        <div class="mt-7 text-sm font-bold text-forest-green">
-          In Stock - Ready to Ship
-        </div>
-      {% endif %}
-    {% endform %}
+      </form>
+    </renderless-add-to-cart>
 
     {% comment %}
       {% if product.description %}

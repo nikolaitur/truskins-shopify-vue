@@ -9,7 +9,7 @@ export default {
     },
   },
   setup(props, { slots }) {
-    console.log(slots);
+    console.log(props.qty);
     const { qty } = toRefs(props);
     const updatedQty = ref(qty.value);
 

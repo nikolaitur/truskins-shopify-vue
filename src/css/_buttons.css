@@ -3,7 +3,7 @@
 }
 
 .button-primary {
-  @apply bg-ecstasy text-white md:bg-white md:text-cod-gray border border-white hover:bg-transparent hover:text-white;
+  @apply bg-ecstasy text-cod-gray md:bg-white border border-white hover:bg-transparent hover:text-white;
 }
 
 .button-secondary {

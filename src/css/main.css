@@ -115,7 +115,7 @@
 }
 
 .banner-title strong {
-  @apply text-cod-gray font-extrabold;
+  @apply font-extrabold;
 }
 
 .testimonial-swiper-btn.swiper-button-next {
@@ -417,7 +417,7 @@ html.sticky main {
 }
 
 .swatch-option-item.selected {
-  @apply bg-cod-gray text-cod-gray text-white;
+  @apply bg-cod-gray  text-white;
 }
 
 .qty-input::-webkit-outer-spin-button,
@@ -459,4 +459,22 @@ html.sticky main {
 .link-cart-item-remove svg {
   width: 16px;
   height: auto;
+}
+
+.minicart-close svg {
+  width: 24px;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.minicart-content-shadow {
+  background: linear-gradient(180deg, #f7f7f7 0%, rgba(247, 247, 247, 0) 100%);
+}
+
+.minicart.open {
+  transform: none;
+  visibility: visible;
 }

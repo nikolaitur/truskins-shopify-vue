@@ -68,5 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollPosition > 44
       ? html.classList.add("sticky")
       : html.classList.remove("sticky");
+
+    if (html.classList.contains("index")) {
+      scrollPosition > 44
+        ? header.classList.add("white-header")
+        : header.classList.remove("white-header");
+    }
   });
 });

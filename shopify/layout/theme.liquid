@@ -1,7 +1,7 @@
 <!doctype html>
 <html
   lang="{{ request.locale.iso_code }}"
-  class="overflow-y-scroll"
+  class="overflow-y-scroll {% if template == 'index' %}index{% endif %}"
 >
   <head>
     <meta charset="utf-8">
@@ -37,7 +37,7 @@
     {% render 'minmaxify-head' %}
   </head>
 
-  <body class="min-h-screen">
+  <body class="min-h-screen text-cod-gray">
     {% if request.page_type == 'captcha' %}
       {% comment %}
         fix: Shopify automatically inserts script tags on captcha pages into the content_for_layout tag
@@ -69,6 +69,8 @@
             {{ content_for_layout }}
           </div>
         </main>
+
+        {% render 'minicart' %}
 
         {% section 'layout-footer' %}
 

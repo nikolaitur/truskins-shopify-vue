@@ -54,21 +54,21 @@
         <div class="hero-content container w-full mt-12 md:mt-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 text-{{ block.settings.content_align }} bg-transparent pt-6 md:p-6 md:mb-8 md:mr-8">
           <div class="md:max-w-2xl {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'right' %}md:ml-auto md:mr-0{% endif %}">
             {% assign title_lines = block.settings.headline | split: '<br>' %}
-            <div class="hero-title text-hero-title-mob md:text-hero-title-md font-abril-display font-extrabold leading-none text-cod-gray md:text-white w-fit {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'right' %}md:ml-auto md:mr-0{% endif %} relative">
+            <div class="hero-title text-hero-title-mob md:text-hero-title-md font-abril-display font-extrabold leading-none  md:text-white w-fit {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'right' %}md:ml-auto md:mr-0{% endif %} relative">
               <span class="relative z-0">{{ title_lines[0] }}</span>
-              <span class="absolute -z-10 font-filson-soft bg-wattle rounded-full w-16 h-16 flex items-center justify-center text-sm uppercase text-cod-gray md:text-killarney tracking-1 leading-none right-0 top-0 translate-x-10 -translate-y-9 md:translate-x-1/2 md:-translate-y-5 ">
+              <span class="absolute -z-10 font-filson-soft bg-wattle rounded-full w-16 h-16 flex items-center justify-center text-sm uppercase  md:text-killarney tracking-1 leading-none right-0 top-0 translate-x-10 -translate-y-9 md:translate-x-1/2 md:-translate-y-5 ">
                 <span>{{- block.settings.badge -}}</span>
               </span>
             </div>
-            <div class="text-hero-title-mob md:text-hero-title-md md:text-{{ block.settings.content_align }} font-abril-display font-extrabold leading-none text-cod-gray md:text-white">
+            <div class="text-hero-title-mob md:text-hero-title-md md:text-{{ block.settings.content_align }} font-abril-display font-extrabold leading-none  md:text-white">
               {{ title_lines[1] }}
             </div>
 
-            <div class="hidden md:block text-hero-subtitle-md font-medium text-cod-gray md:text-white mt-3 mb-6">
+            <div class="hidden md:block text-hero-subtitle-md font-medium  md:text-white mt-3 mb-6">
               {{ block.settings.subheadline }}
             </div>
 
-            <div class="mt-5 md:mt-0 mb-7 text-base text-cod-gray md:text-white leading-5 font-light max-w-xl mx-auto {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'right' %}md:ml-auto md:mr-0{% endif %} {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'left' %}md:mr-auto md:ml-0{% endif %}">
+            <div class="mt-5 md:mt-0 mb-7 text-base  md:text-white leading-5 font-light max-w-xl mx-auto {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'right' %}md:ml-auto md:mr-0{% endif %} {% if block.settings.content_align == 'center' %}md:mx-auto{% elsif block.settings.content_align == 'left' %}md:mr-auto md:ml-0{% endif %}">
               {{ block.settings.text }}
             </div>
 

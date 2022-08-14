@@ -66,6 +66,10 @@ module.exports = {
         "section-title": "46px",
         "hero-title": "52px",
       },
+      zIndex: {
+        60: "60",
+        100: "100",
+      },
     },
     container: {
       center: true,

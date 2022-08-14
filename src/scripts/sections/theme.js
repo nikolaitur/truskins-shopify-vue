@@ -79,4 +79,5 @@ const observer = lozad(".lozad", {
 
 setTimeout(() => {
   observer.observe();
+  document.dispatchEvent(new Event("cartInitialLoad"));
 }, 10);
