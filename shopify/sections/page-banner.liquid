@@ -1,0 +1,132 @@
+<div class="relative">
+  {% assign image = section.settings.image %}
+  <a
+    href="{{ section.settings.button-url }}"
+    class="w-full md:h-auto relative overflow-hidden swiper-slide lozad"
+  >
+    {% if image %}
+      <img
+        sizes="
+          (min-width: 1280px) 1500px,
+          (min-width: 1024px) 1250px,
+          (min-width: 768px) 1000px,
+          (min-width: 640px) 720px,
+          600px
+        "
+        srcset="
+          {{ image | img_url: '600x' }} 600w,
+          {{ image | img_url: '720x' }} 720w,
+          {{ image | img_url: '1000x' }} 1000w,
+          {{ image | img_url: '1250x' }} 1250w,
+          {{ image | img_url: '1500x' }} 1500w
+        "
+        src="{{ image | img_url: '1500x' }}"
+        alt="Banner"
+        loading="lazy"
+        class="w-full h-full hidden md:block object-cover object-center"
+      >
+      {%- assign mobile_image = section.settings.image_mobile | default: image -%}
+      <img
+        sizes="
+          (min-width: 640px) 720px,
+          600px
+        "
+        srcset="
+          {{ mobile_image | img_url: '600x' }} 600w,
+          {{ mobile_image | img_url: '720x' }} 720w,
+        "
+        src="{{ mobile_image | img_url: '600x' }}"
+        alt="Banner"
+        loading="lazy"
+        class="w-full h-full block md:hidden object-cover object-center"
+      >
+    {% else %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'w-full h-full' }}
+    {% endif %}
+
+    <div class="hero-content container w-full md:absolute md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 text-{{ section.settings.content_align }} bg-transparent pt-12 md:p-6 md:mb-8 md:mr-8">
+      <div class="md:max-w-2xl {% if section.settings.content_align == 'center' %}mx-auto{% elsif section.settings.content_align == 'right' %}ml-auto{% endif %}">
+        <div class="banner-title font-abril-display text-[50px] md:text-[60px] font-extrabold leading-hero-title md:leading-none  md:text-white mb-5">
+          {{ section.settings.headline }}
+        </div>
+        <div class="text-base  md:text-white leading-5 font-light max-w-md {% if section.settings.content_align == 'center' %}mx-auto{% elsif section.settings.content_align == 'right' %}ml-auto{% endif %}">
+          {{ section.settings.text }}
+        </div>
+
+        {% if section.settings.button-text != blank %}
+          <div
+            href="{{ section.settings.button-url }}"
+            class="mt-10 hero-btn button button-primary mx-auto {% if section.settings.content_align == 'center' %}md:mx-auto{% elsif section.settings.content_align == 'left' %}md:mr-auto md:ml-0{% elsif section.settings.content_align == 'right' %}md:ml-auto md:mr-0{% endif %}"
+          >
+            {{ section.settings.button-text }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>
+{% schema %}
+{
+  "name": "Page Banner",
+  "class": "shopify-section-vue",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:common.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "t:common.image"
+    },
+    {
+      "type": "select",
+      "id": "content_align",
+      "label": "Content Align",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "headline",
+      "label": "t:common.headline"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "t:common.text",
+      "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos hic praesentium recusandae dolores odio animi deleniti officia cum itaque."
+    },
+    {
+      "type": "url",
+      "id": "button-url",
+      "label": "t:common.button.url"
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "t:common.button.text",
+      "default": "Button"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page Banner",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

@@ -478,3 +478,15 @@ svg {
   transform: none;
   visibility: visible;
 }
+
+.section-shadow {
+  background: linear-gradient(180deg, #f7f7f7 0%, rgba(247, 247, 247, 0) 100%);
+}
+
+.ingredient-item:hover {
+  box-shadow: 0 0 0 1px #f97a1c;
+}
+
+.ingredient-item:hover .ingredient-item-title {
+  @apply text-ecstasy;
+}

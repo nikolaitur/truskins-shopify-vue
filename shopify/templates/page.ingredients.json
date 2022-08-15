@@ -1,0 +1,369 @@
+{
+  "sections": {
+    "166052392822350771": {
+      "type": "page-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/hero-img_2x_52c72c9d-adf4-4155-86df-e559734530e4.png",
+        "image_mobile": "shopify:\/\/shop_images\/TruSkin_Feat_2x_7f729375-f20b-47e6-b527-5add2889e3af.png",
+        "content_align": "center",
+        "headline": "<p>Pure Honest Ingredients<\/p>",
+        "text": "We believe in the power of plants. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod .",
+        "button-url": "",
+        "button-text": ""
+      }
+    },
+    "166052407641b46a07": {
+      "type": "section-icons",
+      "blocks": {
+        "1660524075d4713cd7-0": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-4_2x_e374106a-4a31-4f82-beff-8dbbd00f2f1f.png",
+            "text": "Clinically Tested"
+          }
+        },
+        "1660524075d4713cd7-1": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-2_2x_ea7dc2e6-9805-4a76-8a00-1084629b9a41.png",
+            "text": "Cruelty-Free"
+          }
+        },
+        "1660524075d4713cd7-2": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-3_2x_be4090f3-199a-4f42-8298-69333831c607.png",
+            "text": "Dermatologist Tested"
+          }
+        },
+        "1660524075d4713cd7-3": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-1_2x_97c110fd-e6e7-4330-83c5-a4cd9c7ff9b4.png",
+            "text": "Vegan Friendly"
+          }
+        }
+      },
+      "block_order": [
+        "1660524075d4713cd7-0",
+        "1660524075d4713cd7-1",
+        "1660524075d4713cd7-2",
+        "1660524075d4713cd7-3"
+      ],
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-ingredient",
+      "blocks": {
+        "25973b0f-8323-44df-a019-0dff27d85b83": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29.png",
+            "title": "Vitamin C",
+            "subtitle": "Sodium Ascorbyl Phosphate",
+            "content": "Stable and water-soluble, this gentle \nform of vitamin C is known for neutralizing free radicals, lightening dark spots, and supporting elasticity by triggering collagen synthesis.",
+            "page_handle": ""
+          }
+        },
+        "4cd06e77-9a9f-4fba-a40f-3b4f56c9165f": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29.png",
+            "title": "Vitamin E",
+            "subtitle": "D-alpha Tocopheryl Acetate",
+            "content": "With its abundant antioxidant properties, this fat-soluble form of vitamin E is known for combating signs of aging by neutralizing free radicals and limiting inflammation.",
+            "page_handle": ""
+          }
+        },
+        "2038e6f5-1401-4d92-893e-3aa229ac36a7": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Botanical  Hyaluronic Acid",
+            "subtitle": "Methylsulfonylmethane",
+            "content": "A naturally occurring humectant whose antioxidant properties and ability to draw in 1,000 times its weight in water support lasting tissue hydration and health.",
+            "page_handle": ""
+          }
+        },
+        "a46a7ac1-2b6a-4c3b-bbed-6767919d7cac": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin C",
+            "subtitle": "Sodium Ascorbyl Phosphate",
+            "content": "Stable and water-soluble, this gentle \nform of vitamin C is known for neutralizing free radicals, lightening dark spots, and supporting elasticity by triggering collagen synthesis.",
+            "page_handle": ""
+          }
+        },
+        "2b65fad8-4e1d-4336-b59c-d12f30eb28d2": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29.png",
+            "title": "Vitamin E",
+            "subtitle": "D-alpha Tocopheryl Acetate",
+            "content": "With its abundant antioxidant properties, this fat-soluble form of vitamin E is known for combating signs of aging by neutralizing free radicals and limiting inflammation.",
+            "page_handle": ""
+          }
+        },
+        "ed189247-9bc1-4742-9aa6-791172c0cec5": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29.png",
+            "title": "Botanical  Hyaluronic Acid",
+            "subtitle": "Methylsulfonylmethane",
+            "content": "A naturally occurring humectant whose antioxidant properties and ability to draw in 1,000 times its weight in water support lasting tissue hydration and health.",
+            "page_handle": ""
+          }
+        },
+        "f39ab538-293a-4a9e-9f05-f9b70756799a": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin C",
+            "subtitle": "Sodium Ascorbyl Phosphate",
+            "content": "Stable and water-soluble, this gentle \nform of vitamin C is known for neutralizing free radicals, lightening dark spots, and supporting elasticity by triggering collagen synthesis.",
+            "page_handle": ""
+          }
+        },
+        "f1e50e9a-d8d3-45c9-ad01-d965a760bbda": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29.png",
+            "title": "Vitamin E",
+            "subtitle": "D-alpha Tocopheryl Acetate",
+            "content": "With its abundant antioxidant properties, this fat-soluble form of vitamin E is known for combating signs of aging by neutralizing free radicals and limiting inflammation.",
+            "page_handle": ""
+          }
+        },
+        "da241961-5399-49da-804c-a50b815a22bb": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Botanical  Hyaluronic Acid",
+            "subtitle": "Methylsulfonylmethane",
+            "content": "A naturally occurring humectant whose antioxidant properties and ability to draw in 1,000 times its weight in water support lasting tissue hydration and health.",
+            "page_handle": ""
+          }
+        },
+        "2ea8134f-f140-4100-946a-a47ffd208b3f": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin C",
+            "subtitle": "Sodium Ascorbyl Phosphate",
+            "content": "Stable and water-soluble, this gentle \nform of vitamin C is known for neutralizing free radicals, lightening dark spots, and supporting elasticity by triggering collagen synthesis.",
+            "page_handle": ""
+          }
+        },
+        "c1bbfa16-1f1b-423b-805a-557c7d02f89f": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin E",
+            "subtitle": "D-alpha Tocopheryl Acetate",
+            "content": "With its abundant antioxidant properties, this fat-soluble form of vitamin E is known for combating signs of aging by neutralizing free radicals and limiting inflammation.",
+            "page_handle": ""
+          }
+        },
+        "6eb9d01b-3f2f-4d02-8f23-bf5f05e3a488": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Botanical  Hyaluronic Acid",
+            "subtitle": "Methylsulfonylmethane",
+            "content": "A naturally occurring humectant whose antioxidant properties and ability to draw in 1,000 times its weight in water support lasting tissue hydration and health.",
+            "page_handle": ""
+          }
+        },
+        "1016fbe9-9cf5-4c2d-87e8-03d0803859cb": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin C",
+            "subtitle": "Sodium Ascorbyl Phosphate",
+            "content": "Stable and water-soluble, this gentle \nform of vitamin C is known for neutralizing free radicals, lightening dark spots, and supporting elasticity by triggering collagen synthesis.",
+            "page_handle": ""
+          }
+        },
+        "231087e8-0876-4104-8540-f995961c15d7": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin E",
+            "subtitle": "D-alpha Tocopheryl Acetate",
+            "content": "With its abundant antioxidant properties, this fat-soluble form of vitamin E is known for combating signs of aging by neutralizing free radicals and limiting inflammation.",
+            "page_handle": ""
+          }
+        },
+        "dc385367-0312-423d-b3d9-b4c59f424c6a": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Botanical  Hyaluronic Acid",
+            "subtitle": "Methylsulfonylmethane",
+            "content": "A naturally occurring humectant whose antioxidant properties and ability to draw in 1,000 times its weight in water support lasting tissue hydration and health.",
+            "page_handle": ""
+          }
+        },
+        "0c747a84-afcd-498e-8caa-5e31fee5eae7": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin C",
+            "subtitle": "Sodium Ascorbyl Phosphate",
+            "content": "Stable and water-soluble, this gentle \nform of vitamin C is known for neutralizing free radicals, lightening dark spots, and supporting elasticity by triggering collagen synthesis.",
+            "page_handle": ""
+          }
+        },
+        "526a222b-1c86-410c-b257-b1b8e1039609": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin E",
+            "subtitle": "D-alpha Tocopheryl Acetate",
+            "content": "With its abundant antioxidant properties, this fat-soluble form of vitamin E is known for combating signs of aging by neutralizing free radicals and limiting inflammation.",
+            "page_handle": ""
+          }
+        },
+        "f6a952de-248f-44b8-bd30-e13ad327b897": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Botanical  Hyaluronic Acid",
+            "subtitle": "Methylsulfonylmethane",
+            "content": "A naturally occurring humectant whose antioxidant properties and ability to draw in 1,000 times its weight in water support lasting tissue hydration and health.",
+            "page_handle": ""
+          }
+        },
+        "7e645510-dd12-4891-ae24-d46e8e59326c": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin C",
+            "subtitle": "Sodium Ascorbyl Phosphate",
+            "content": "Stable and water-soluble, this gentle \nform of vitamin C is known for neutralizing free radicals, lightening dark spots, and supporting elasticity by triggering collagen synthesis.",
+            "page_handle": ""
+          }
+        },
+        "2bfed663-ba43-4541-933d-1b96a3ec5380": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin E",
+            "subtitle": "D-alpha Tocopheryl Acetate",
+            "content": "With its abundant antioxidant properties, this fat-soluble form of vitamin E is known for combating signs of aging by neutralizing free radicals and limiting inflammation.",
+            "page_handle": ""
+          }
+        },
+        "bd54acb0-afc2-4ea1-bb4e-eb58d69abd46": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Botanical  Hyaluronic Acid",
+            "subtitle": "Methylsulfonylmethane",
+            "content": "A naturally occurring humectant whose antioxidant properties and ability to draw in 1,000 times its weight in water support lasting tissue hydration and health.",
+            "page_handle": ""
+          }
+        },
+        "5dc73c04-ec9f-4553-b2fa-6825efc4845b": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin C",
+            "subtitle": "Sodium Ascorbyl Phosphate",
+            "content": "Stable and water-soluble, this gentle \nform of vitamin C is known for neutralizing free radicals, lightening dark spots, and supporting elasticity by triggering collagen synthesis.",
+            "page_handle": ""
+          }
+        },
+        "c9898ea6-d004-4819-9981-f34c9fab9c45": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin E",
+            "subtitle": "D-alpha Tocopheryl Acetate",
+            "content": "With its abundant antioxidant properties, this fat-soluble form of vitamin E is known for combating signs of aging by neutralizing free radicals and limiting inflammation.",
+            "page_handle": ""
+          }
+        },
+        "b7cf41ef-5984-4970-92c8-6d51db25bc25": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Botanical  Hyaluronic Acid",
+            "subtitle": "Methylsulfonylmethane",
+            "content": "A naturally occurring humectant whose antioxidant properties and ability to draw in 1,000 times its weight in water support lasting tissue hydration and health.",
+            "page_handle": ""
+          }
+        },
+        "490098cd-2c88-4776-b293-6360085ae241": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin C",
+            "subtitle": "Sodium Ascorbyl Phosphate",
+            "content": "Stable and water-soluble, this gentle \nform of vitamin C is known for neutralizing free radicals, lightening dark spots, and supporting elasticity by triggering collagen synthesis.",
+            "page_handle": ""
+          }
+        },
+        "22a84de6-0f6c-4120-8c41-b913e029164b": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Vitamin E",
+            "subtitle": "D-alpha Tocopheryl Acetate",
+            "content": "With its abundant antioxidant properties, this fat-soluble form of vitamin E is known for combating signs of aging by neutralizing free radicals and limiting inflammation.",
+            "page_handle": ""
+          }
+        },
+        "59a5c99e-6c3b-4196-ba48-2ad0b127be96": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_29_1eabdf6b-70e0-43b7-b9e3-37e2527584ae.png",
+            "title": "Botanical  Hyaluronic Acid",
+            "subtitle": "Methylsulfonylmethane",
+            "content": "A naturally occurring humectant whose antioxidant properties and ability to draw in 1,000 times its weight in water support lasting tissue hydration and health.",
+            "page_handle": ""
+          }
+        }
+      },
+      "block_order": [
+        "25973b0f-8323-44df-a019-0dff27d85b83",
+        "4cd06e77-9a9f-4fba-a40f-3b4f56c9165f",
+        "2038e6f5-1401-4d92-893e-3aa229ac36a7",
+        "a46a7ac1-2b6a-4c3b-bbed-6767919d7cac",
+        "2b65fad8-4e1d-4336-b59c-d12f30eb28d2",
+        "ed189247-9bc1-4742-9aa6-791172c0cec5",
+        "f39ab538-293a-4a9e-9f05-f9b70756799a",
+        "f1e50e9a-d8d3-45c9-ad01-d965a760bbda",
+        "da241961-5399-49da-804c-a50b815a22bb",
+        "2ea8134f-f140-4100-946a-a47ffd208b3f",
+        "c1bbfa16-1f1b-423b-805a-557c7d02f89f",
+        "6eb9d01b-3f2f-4d02-8f23-bf5f05e3a488",
+        "1016fbe9-9cf5-4c2d-87e8-03d0803859cb",
+        "231087e8-0876-4104-8540-f995961c15d7",
+        "dc385367-0312-423d-b3d9-b4c59f424c6a",
+        "0c747a84-afcd-498e-8caa-5e31fee5eae7",
+        "526a222b-1c86-410c-b257-b1b8e1039609",
+        "f6a952de-248f-44b8-bd30-e13ad327b897",
+        "7e645510-dd12-4891-ae24-d46e8e59326c",
+        "2bfed663-ba43-4541-933d-1b96a3ec5380",
+        "bd54acb0-afc2-4ea1-bb4e-eb58d69abd46",
+        "5dc73c04-ec9f-4553-b2fa-6825efc4845b",
+        "c9898ea6-d004-4819-9981-f34c9fab9c45",
+        "b7cf41ef-5984-4970-92c8-6d51db25bc25",
+        "490098cd-2c88-4776-b293-6360085ae241",
+        "22a84de6-0f6c-4120-8c41-b913e029164b",
+        "59a5c99e-6c3b-4196-ba48-2ad0b127be96"
+      ],
+      "settings": {
+        "title": "Our Key Ingredients"
+      }
+    }
+  },
+  "order": [
+    "166052392822350771",
+    "166052407641b46a07",
+    "main"
+  ]
+}

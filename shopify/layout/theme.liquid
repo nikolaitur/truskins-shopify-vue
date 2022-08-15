@@ -1,7 +1,16 @@
+{% assign transparent_header = false %}
+{% if template == 'index' %}
+  {% assign transparent_header = true %}
+{% endif %}
+
+{% if template.suffix == 'ingredients' %}
+  {% assign transparent_header = true %}
+{% endif %}
+
 <!doctype html>
 <html
   lang="{{ request.locale.iso_code }}"
-  class="overflow-y-scroll {% if template == 'index' %}index{% endif %}"
+  class="overflow-y-scroll {% if transparent_header %}index{% endif %}"
 >
   <head>
     <meta charset="utf-8">
@@ -58,7 +67,7 @@
         <main
           id="main"
           role="main"
-          class="flex-1 relative {% if request.page_type == 'index' %}-mt-header-height-mob md:-mt-[84px]{% else %}{% endif %}"
+          class="flex-1 relative {% if transparent_header %}-mt-header-height-mob md:-mt-[84px]{% endif %}"
         >
           {% unless template == 'index' %}
             <div

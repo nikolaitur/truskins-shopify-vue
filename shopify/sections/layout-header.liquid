@@ -1,4 +1,13 @@
-<div class="md:bg-transparent z-50 relative {% unless template == 'index' %}white-header{% endunless %}">
+{% assign transparent_header = false %}
+{% if template == 'index' %}
+  {% assign transparent_header = true %}
+{% endif %}
+
+{% if template.suffix == 'ingredients' %}
+  {% assign transparent_header = true %}
+{% endif %}
+
+<div class="md:bg-transparent z-50 relative {% unless transparent_header %}white-header{% endunless %}">
   <div class="container">
     <div class="h-header-mob md:h-[84px] flex justify-between items-center">
       <div

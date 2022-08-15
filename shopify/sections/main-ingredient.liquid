@@ -1,0 +1,80 @@
+<div class="container py-8 md:py-16">
+  <div class="text-center font-abril-display text-[40px] font-bold">
+    {{ section.settings.title }}
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 mt-8 md:mt-16">
+    {% for block in section.blocks %}
+      <div class="ingredient-item border border-silver py-7 px-10 rounded-[20px] bg-white hover: hover:border-ecstasy">
+        <div class="w-[200px] mx-auto">
+          {%
+            render 'section-image',
+            class: ''
+            image: block.settings.image,
+            alt_text: block.settings.title
+          %}
+        </div>
+        <div class="ingredient-item-title mt-5 font-abril-display text-[25px] leading-[34px] font-bold hover:text-ecstasy">
+          {{ block.settings.title }}
+        </div>
+        <div class="mt-1 text-sm font-light">
+          {{ block.settings.subtitle }}
+        </div>
+        <div class="mt-7 text-sm leading-5 font-light">
+          {{ block.settings.content }}
+        </div>
+        <a
+          href="#"
+          class="mt-9 font-bold text-sm text-black pb-1 border-b border-b-ecstasy w-fit block"
+          >Learn More</a
+        >
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Ingredients",
+  "class": "relative",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Our Key Ingredients"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "html",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "page",
+          "id": "page_handle",
+          "label": "Detailed Page"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

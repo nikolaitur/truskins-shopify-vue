@@ -26,6 +26,7 @@ module.exports = {
         "silver-chalice": "#aaaaaa",
         "forest-green": "#349E2D",
         "dusty-gray": "#979797",
+        silver: "#bababa",
       },
       letterSpacing: {
         1: "1px",
