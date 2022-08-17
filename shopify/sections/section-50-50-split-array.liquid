@@ -1,0 +1,80 @@
+<div class="my-16">
+  {% for block in section.blocks %}
+    <div class="container flex py-8 items-center flex-col {% if block.settings.image_on_right %}md:flex-row-reverse{% else %}md:flex-row{% endif %}">
+      <div class="md:pr-16 md:basis-1/2">
+        {%
+          render 'section-image',
+          class: ''
+          image: block.settings.image,
+          alt_text: "Ingredients"
+        %}
+      </div>
+      <div class="max-w-lg md:pr-16 text-center md:text-left mt-10 md:mt-0  md:basis-1/2">
+        <div class="text-section-title-md font-abril-display font-bold  leading-tight">
+          {{ block.settings.title }}
+        </div>
+        <div class="mt-10 md:mt-5 text-sm font-light  leading-6 md:leading-normal tracking-normal">
+          {{ block.settings.subtitle }}
+        </div>
+        <a
+          href="{{ block.settings.btn_link }}"
+          class="button button-secondary mx-auto md:ml-0 mt-10 md:mt-5"
+        >
+          {{- block.settings.btn_text -}}
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Image with Text",
+  "blocks": [
+    {
+      "type": "image_with_text",
+      "name": "Image with Text",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "image_on_right",
+          "label": "Image On Right",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text",
+          "default": "Learn More"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multi Image with Text",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

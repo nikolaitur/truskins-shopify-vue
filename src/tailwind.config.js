@@ -70,6 +70,7 @@ module.exports = {
       zIndex: {
         60: "60",
         100: "100",
+        1: "1",
       },
     },
     container: {

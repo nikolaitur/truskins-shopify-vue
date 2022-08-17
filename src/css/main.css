@@ -115,7 +115,7 @@
 }
 
 .banner-title strong {
-  @apply font-extrabold;
+  @apply font-extrabold text-cod-gray;
 }
 
 .testimonial-swiper-btn.swiper-button-next {
@@ -126,6 +126,16 @@
 .testimonial-swiper-btn.swiper-button-prev {
   transform: translateY(-20px);
   left: 100px !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .testimonial-swiper-btn.swiper-button-next {
+    right: 40px !important;
+  }
+
+  .testimonial-swiper-btn.swiper-button-prev {
+    left: 40px !important;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -204,7 +214,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .hero-content {
     text-align: center;
   }
@@ -212,6 +222,25 @@
   .hero-title {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .hero-content .button {
+    @apply border border-ecstasy bg-ecstasy text-white hover:bg-transparent hover:text-ecstasy;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .banner-content {
+    text-align: center;
+  }
+
+  .banner-title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .banner-content .button {
+    @apply border border-ecstasy bg-ecstasy text-white hover:bg-transparent hover:text-ecstasy;
   }
 }
 
@@ -224,11 +253,6 @@
 
 .main-footer__menu .open svg {
   transform: none;
-}
-
-.black-logo svg {
-  width: 151px;
-  height: auto;
 }
 
 html.sticky #shopify-section-layout-header {
@@ -489,4 +513,16 @@ svg {
 
 .ingredient-item:hover .ingredient-item-title {
   @apply text-ecstasy;
+}
+
+.announcement-close svg {
+  fill: white;
+}
+
+.instagram-section-wrap {
+  scale: 1.005;
+}
+
+.scale-x-1 {
+  --tw-scale-x: -1;
 }

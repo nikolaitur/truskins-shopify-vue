@@ -35,6 +35,14 @@ export const productsSlider = (element) => {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      breakpoints: {
+        768: {
+          slidesPerView: 3,
+        },
+        1280: {
+          slidesPerView: 1,
+        },
+      },
     });
   }
 };
@@ -64,6 +72,10 @@ export const tickerSlider = (element) => {
       slidesPerView: 3,
       spaceBetween: 28,
       loop: true,
+      speed: 2000,
+      autoplay: {
+        delay: 1,
+      },
       breakpoints: {
         768: {
           slidesPerView: 8,

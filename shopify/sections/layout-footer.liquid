@@ -1,11 +1,11 @@
-<div class="pt-16 md:pt-20 pb-10 bg-cod-gray">
-  <div class="container flex items-start flex-wrap md:flex-nowrap w-full justify-between md:pr-20">
-    <div class="w-[300px] mx-auto pb-11 border-b border-b-white md:border-none md:mx-0 md:w-96">
+<footer class="pt-16 md:pt-20 pb-10 bg-cod-gray">
+  <div class="container flex items-start flex-wrap md:flex-nowrap w-full justify-between xl:pr-20">
+    <div class="md:w-[280px] md:pr-6 xl:pr-0 xl:w-[340px] mx-auto pb-11  md:mx-0 ">
       <div>
-        <div class="text-[30px] md:text-hero-subtitle-md font-abril-display text-white font-bold text-center md:text-left mb-10 md:mb-5">
+        <h3 class="text-[30px] md:text-hero-subtitle-md font-abril-display text-white font-bold text-center md:text-left mb-10 md:mb-5">
           {{ section.settings.headline }}
-        </div>
-        {% form 'customer', class: 'w-full rounded-full overflow-hidden' %}
+        </h3>
+        {% form 'customer', class: '' %}
           {% if form.errors %}
             {% capture error_text %}
               {{ form.errors | default_errors }}
@@ -20,10 +20,10 @@
           {% endif %}
 
           {% if form.posted_successfully? %}
-            Success
+            <span class="text-white block pb-3"> Thanks for signing up </span>
           {% endif %}
 
-          <div class="relative">
+          <div class="relative w-full rounded-full overflow-hidden">
             <input type="hidden" name="contact[tags]" value="newsletter">
 
             <div class="flex flex-col sm:flex-row">
@@ -65,10 +65,10 @@
       {% endif %}
     </div>
     {%- for link in linklists[section.settings.footer_menu].links -%}
-      <div class="main-footer__menu basis-full md:basis-auto mt-5 md:mt-0 max-w-[300px] md:max-w-none mx-auto md:mx-0  md:pl-0">
+      <div class="main-footer__menu basis-full md:basis-auto pt-5 md:pt-0 max-w-[300px] {% if forloop.first %}border-t border-t-white md:border-none{% endif %} sm:max-w-none mx-auto md:mx-0  md:pl-0">
         <h4 class="text-xl font-abril-display text-white font-bold pb-5 relative pl-9 md:pl-0 cursor-pointer">
           {{ link.title }}
-          <span class="sm:hidden absolute left-0 top-[6px]">
+          <span class="md:hidden absolute left-0 top-[6px]">
             {%- render 'icon-cross' -%}
           </span>
           <!-- icon-open and close -->
@@ -88,13 +88,15 @@
       </div>
     {%- endfor -%}
   </div>
-  <div class="pt-10 md:pt-20 mt-5 md:mt-0 border-t border-t-white md:border-none max-w-[300px] md:max-w-none mx-auto md:mx-0">
-    <div class="container text-white text-xs text-center md:text-left">
-      &copy; {{ 'now' | date: "%Y" }}
-      {{ shop.name }}
+  <div class="container border-t border-t-white md:border-none mt-5 md:mt-0">
+    <div class="pt-10 md:pt-20    max-w-[300px] sm:max-w-none mx-auto md:mx-0">
+      <div class="text-white text-xs text-center md:text-left">
+        &copy; {{ 'now' | date: "%Y" }}
+        {{ shop.name }}
+      </div>
     </div>
   </div>
-</div>
+</footer>
 
 {% schema %}
 {

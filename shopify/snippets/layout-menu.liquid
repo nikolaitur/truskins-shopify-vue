@@ -1,6 +1,6 @@
 <div class="{{ class | default: '' }}" style="{{ style | default: '' }}">
   {% for link in linklists[linklist].links %}
-    <div class="px-5 inline-block">
+    <div class="lg:px-2 xl:px-5 inline-block">
       <a
         href="{{ link.url }}"
         class="header-nav-item relative text-sm font-medium leading-none text-white"
@@ -29,7 +29,7 @@
             {% if index == 0 %}
               <div class="grow pr-4 flex flex-col">
             {% endif %}
-                <a href="{{ childlink.url }}" class="text-sm  leading-[36px] {% if forloop.last %}nav_highlighted{% endif %} hover:text-ecstasy">{{ childlink.title }}</a>
+                <a href="{{ childlink.url }}" class="text-sm capitalize  leading-[36px] {% if forloop.last %}nav_highlighted{% endif %} hover:text-ecstasy">{{ childlink.title }}</a>
             {% if index == 5 or forloop.last %}
               </div>
             {% endif %}

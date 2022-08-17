@@ -7,6 +7,10 @@
   {% assign transparent_header = true %}
 {% endif %}
 
+{% if template.suffix == 'about' %}
+  {% assign transparent_header = true %}
+{% endif %}
+
 <!doctype html>
 <html
   lang="{{ request.locale.iso_code }}"
@@ -67,7 +71,7 @@
         <main
           id="main"
           role="main"
-          class="flex-1 relative {% if transparent_header %}-mt-header-height-mob md:-mt-[84px]{% endif %}"
+          class="flex-1 relative {% if transparent_header %}-mt-header-height-mob lg:-mt-[84px]{% endif %}"
         >
           {% unless template == 'index' %}
             <div

@@ -7,7 +7,7 @@
 }
 
 .button-secondary {
-  @apply bg-ecstasy text-white;
+  @apply bg-ecstasy border border-ecstasy text-white hover:bg-transparent hover:text-ecstasy;
 }
 
 /* override default Shopify styling */

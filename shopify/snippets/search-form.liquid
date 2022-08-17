@@ -1,16 +1,16 @@
-<div class="bg-transparent flex items-center justify-center md:justify-start">
+<div class="bg-transparent flex items-center justify-center lg:justify-start">
   <form
     action="{{ routes.search_url }}"
-    class="header-search-form w-search-form h-10 px-3 flex items-center rounded-full bg-white"
+    class="header-search-form lg:w-[200px] xl:w-search-form h-10 px-3 flex items-center rounded-full bg-white"
   >
     <input
       type="text"
       placeholder="Search"
       name="q"
       value="{{ search.terms | escape }}"
-      class="bg-transparent grow border-none text-scorpion text-sm  font-light  capitalize outline-none"
+      class="bg-transparent grow border-none text-scorpion text-sm lg:w-[150px] xl:w-auto font-light  capitalize outline-none"
     >
-    <button type="submit" value="Search">
+    <button type="submit" value="Search" class="min-w-[20px]">
       <div class="icon-search">
         {% render 'icon-search' %}
       </div>

@@ -3,7 +3,7 @@
     {{ section.settings.title }}
   </div>
 {% endif %}
-<div class="grid my-5 container px-10 md:px-4 grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
+<div class="grid my-5 container px-10 md:px-4 grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
   {% for block in section.blocks %}
     <div class="text-center py-5 md:text-left">
       <a class="" href="{{ block.settings.link }}">
@@ -19,10 +19,11 @@
         {{ block.settings.title }}
       </div>
       <a
-        class="block mx-auto md:ml-0 w-fit pt-4 md:pt-3 pb-1 md:pb-underline text-xs md:text-sm leading-none font-bold border-b-2 border-b-ecstasy"
+        class="block mx-auto md:ml-0 w-fit pt-4 md:pt-3 pb-1 hover:pb-[2px] md:pb-underline text-xs md:text-sm leading-none font-bold border-b-2 border-b-ecstasy"
         href="{{ block.settings.link }}"
-        >Shop Now</a
       >
+        {{- block.settings.link_text -}}
+      </a>
     </div>
   {% endfor %}
 </div>
@@ -31,6 +32,7 @@
 {
   "name": "Skin Condition",
   "max_blocks": 4,
+  "class": "relative z-1",
   "settings": [
     {
       "type": "text",
@@ -58,6 +60,12 @@
           "type": "url",
           "id": "link",
           "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Shop Now"
         }
       ]
     }

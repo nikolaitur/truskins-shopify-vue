@@ -16,10 +16,25 @@
             "button-url": "",
             "button-text": "Shop Now"
           }
+        },
+        "21d808be-5e6a-4351-a341-8729e3aa2004": {
+          "type": "hero_slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hero-img_2x_e4d1acc3-009f-428c-85e5-3c59c6a1657c.png",
+            "image_mobile": "shopify:\/\/shop_images\/Screenshot_27.png",
+            "content_align": "left",
+            "headline": "Tea Tree<br>\nSuper Cleanser",
+            "subheadline": "A gentle non-stripping cleanser for acne prone skin",
+            "text": "Get a <b>FREE<\/b> tea tree serum with the purchase of our new tea tree cleanser. Available for a limited time only.",
+            "badge": "New!",
+            "button-url": "",
+            "button-text": "Shop Now"
+          }
         }
       },
       "block_order": [
-        "53f1f948-a0d8-432f-9b0c-44242d94d324"
+        "53f1f948-a0d8-432f-9b0c-44242d94d324",
+        "21d808be-5e6a-4351-a341-8729e3aa2004"
       ],
       "settings": {
       }
@@ -81,7 +96,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/shutterstock_1590981061_2x_b6c68203-c28b-4ccf-a2fc-82546b93205d.png",
             "title": "Even Tone & Dark Spots",
-            "link": ""
+            "link": "",
+            "link_text": "Shop Now"
           }
         },
         "1660013024e7b53c3f-0": {
@@ -89,7 +105,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/acne-img_2x_e05c18b9-451c-4166-ab96-f65080485fd4.png",
             "title": "Acne & Clogged Pores",
-            "link": ""
+            "link": "",
+            "link_text": "Shop Now"
           }
         },
         "1660013024e7b53c3f-2": {
@@ -97,7 +114,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/ageless-img_2x_95a2479c-a34b-4c26-af51-55cee897174d.png",
             "title": "Ageless Skin",
-            "link": ""
+            "link": "",
+            "link_text": "Shop Now"
           }
         },
         "1660013024e7b53c3f-3": {
@@ -105,7 +123,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/darkspots-img_2x_f8ab08c9-3a58-443a-82ae-fb9af43fdc82.png",
             "title": "Dry Skin",
-            "link": ""
+            "link": "",
+            "link_text": "Shop Now"
           }
         }
       },
@@ -126,6 +145,7 @@
         "image_mobile": "shopify:\/\/shop_images\/Screenshot_28.png",
         "content_align": "left",
         "headline": "<p>Turn Your Routine into <br\/><strong>a Ritual<\/strong><\/p>",
+        "headline_mobile": "Turn Your Routine Into a Ritual",
         "text": "Get your personal skincare routine. Take our quiz to find out which of our products are right for you",
         "button-url": "\/",
         "button-text": "Take Quiz"
@@ -139,7 +159,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/serums-img_2x_2741a05e-15d5-4125-b18f-97f62f72984e.png",
             "title": "Serums",
-            "link": ""
+            "link": "",
+            "link_text": "Shop Now"
           }
         },
         "1660069424ec4fec1c-1": {
@@ -147,7 +168,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/cleanser-img_2x_f0694124-7129-4c3c-8a2e-fe3682a63274.png",
             "title": "Cleansers",
-            "link": ""
+            "link": "",
+            "link_text": "Shop Now"
           }
         },
         "1660069424ec4fec1c-2": {
@@ -155,7 +177,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/moisturizer-img_2x_ceea0e89-4175-4f47-86fd-3a8cef7c260c.png",
             "title": "Moisturizers",
-            "link": ""
+            "link": "",
+            "link_text": "Shop Now"
           }
         },
         "1660069424ec4fec1c-3": {
@@ -163,7 +186,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/toner-img_2x_0f5548df-be60-47a2-b0c0-1452333fac80.png",
             "title": "Toners",
-            "link": ""
+            "link": "",
+            "link_text": "Shop Now"
           }
         }
       },
@@ -183,22 +207,22 @@
         "quote-1": {
           "type": "quote",
           "settings": {
-            "quote-text": "Add customer reviews and testimonials to showcase your store’s happy customers.",
-            "quote-author": "Author's name"
+            "quote-text": "“This is the Holy Grail of Face serums!! I am a product junkie and have used some very expensive brands and not seeing the results I’m seeing with this. It’s now a must have in my face regimen.”",
+            "quote-author": "Jessica M."
           }
         },
         "quote-2": {
           "type": "quote",
           "settings": {
-            "quote-text": "Add customer reviews and testimonials to showcase your store’s happy customers.",
-            "quote-author": "Author's name"
+            "quote-text": "“This is the Holy Grail of Face serums!! I am a product junkie and have used some very expensive brands and not seeing the results I’m seeing with this. It’s now a must have in my face regimen.”",
+            "quote-author": "Jessica M."
           }
         },
         "quote-3": {
           "type": "quote",
           "settings": {
-            "quote-text": "Add customer reviews and testimonials to showcase your store’s happy customers.",
-            "quote-author": "Author's name"
+            "quote-text": "“This is the Holy Grail of Face serums!! I am a product junkie and have used some very expensive brands and not seeing the results I’m seeing with this. It’s now a must have in my face regimen.”",
+            "quote-author": "Jessica M."
           }
         }
       },
@@ -208,7 +232,7 @@
         "quote-3"
       ],
       "settings": {
-        "headline": "What others say about us",
+        "headline": "The Reviews Are In",
         "image1": "shopify:\/\/shop_images\/New_Project.png",
         "image2": "shopify:\/\/shop_images\/orange-slices-leaf_2x_1d1e3425-2cc1-420c-a3ab-fe1329085559.png"
       }

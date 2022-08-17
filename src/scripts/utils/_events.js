@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileNav = document.querySelector(".mobile-nav");
   const megaMenuParent = document.querySelector("[data-megamenu-parent]");
   const mobileBottomNav = document.querySelector(".mobile-bottom-nav");
+  const announcementBar = document.getElementById(
+    "shopify-section-layout-announcement-bar"
+  );
+  const announcementBarClose = document.querySelector(".announcement-close");
 
   megaMenuParent &&
     megaMenuParent.addEventListener("mouseover", (e) => {
@@ -58,6 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ? html.classList.add("sticky")
         : html.classList.remove("sticky");
 
+      this.classList.contains("open") || scrollPosition > 44
+        ? header.classList.add("white-header")
+        : header.classList.remove("white-header");
+
       mobileNav.classList.toggle("active");
     });
   };
@@ -75,4 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
         : header.classList.remove("white-header");
     }
   });
+
+  announcementBarClose &&
+    announcementBarClose.addEventListener("click", (e) => {
+      console.log("herehere");
+      announcementBar.classList.add("hidden");
+    });
 });

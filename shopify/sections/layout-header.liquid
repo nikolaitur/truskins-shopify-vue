@@ -7,13 +7,17 @@
   {% assign transparent_header = true %}
 {% endif %}
 
-<div class="md:bg-transparent z-50 relative {% unless transparent_header %}white-header{% endunless %}">
+{% if template.suffix == 'about' %}
+  {% assign transparent_header = true %}
+{% endif %}
+
+<header class="lg:bg-transparent z-50 relative {% unless transparent_header %}white-header{% endunless %}">
   <div class="container">
-    <div class="h-header-mob md:h-[84px] flex justify-between items-center">
+    <div class="h-header-mob lg:h-[84px] flex justify-between items-center">
       <div
         @click="$store.dispatch('mobile-menu/toggle')"
         id="nav-burger-icon"
-        class="md:hidden"
+        class="lg:hidden"
       >
         <span></span>
         <span></span>
@@ -30,11 +34,11 @@
         </span>
       </a>
 
-      <div class="hidden md:flex md:items-center">
+      <div class="hidden lg:flex lg:items-center">
         <div>
           {% render 'layout-menu', class: 'space-x-4', linklist: section.settings.linklist %}
         </div>
-        <div class="ml-10">
+        <div class="lg:ml-4 xl:ml-10">
           {% render 'search-form' %}
         </div>
       </div>
@@ -44,7 +48,7 @@
 
       <a
         href="{{ routes.cart_url }}"
-        class="{{ link_class }} md:hidden relative"
+        class="{{ link_class }} lg:hidden relative"
       >
         {% render 'icon-cart', class: icon_class %}
 
@@ -53,7 +57,7 @@
         </div>
       </a>
 
-      <div class="hidden md:flex">
+      <div class="hidden lg:flex">
         <a
           href="{{ routes.search_url }}"
           class="{{ link_class }}"
@@ -89,7 +93,7 @@
       </div>
     </div>
   </div>
-</div>
+</header>
 
 {% schema %}
 {

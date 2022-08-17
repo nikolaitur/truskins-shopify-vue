@@ -1,0 +1,219 @@
+{
+  "sections": {
+    "1660526952e61136f5": {
+      "type": "page-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/hero-img_2x_52c72c9d-adf4-4155-86df-e559734530e4.png",
+        "image_mobile": "shopify:\/\/shop_images\/TruSkin_Feat_2x_7f729375-f20b-47e6-b527-5add2889e3af.png",
+        "content_align": "left",
+        "headline": "<p>Pure & Potent<\/p><p>Nutrition for Skin<\/p>",
+        "text": "Cruelty-Free, Vegan Friendly, premium skincare with pure plant-powered blends that work with your body to enhance, nourish or replenish.",
+        "button-url": "",
+        "button-text": ""
+      }
+    },
+    "1660527128e6d6516b": {
+      "type": "section-50-50-split-array",
+      "blocks": {
+        "ccbcf4de-d471-44a2-95a6-47fb7bc2764c": {
+          "type": "image_with_text",
+          "settings": {
+            "image_on_right": true,
+            "image": "shopify:\/\/shop_images\/ingredients-img_2x_2ab0ccbf-5a67-46a4-afef-72ececa850b7.png",
+            "title": "Our Story",
+            "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "btn_link": "",
+            "btn_text": "Learn More"
+          }
+        },
+        "2bf34634-0287-4615-9f51-953874a0cbcb": {
+          "type": "image_with_text",
+          "settings": {
+            "image_on_right": false,
+            "image": "shopify:\/\/shop_images\/ingredients-img_2x_2ab0ccbf-5a67-46a4-afef-72ececa850b7.png",
+            "title": "Where We Are Today",
+            "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "btn_link": "",
+            "btn_text": "Learn More"
+          }
+        },
+        "6fb67c7d-6d67-4d17-b27b-ec643ca1e1bc": {
+          "type": "image_with_text",
+          "settings": {
+            "image_on_right": true,
+            "image": "shopify:\/\/shop_images\/ingredients-img_2x_2ab0ccbf-5a67-46a4-afef-72ececa850b7.png",
+            "title": "Science Backed Formulas",
+            "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "btn_link": "",
+            "btn_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "ccbcf4de-d471-44a2-95a6-47fb7bc2764c",
+        "2bf34634-0287-4615-9f51-953874a0cbcb",
+        "6fb67c7d-6d67-4d17-b27b-ec643ca1e1bc"
+      ],
+      "settings": {
+      }
+    },
+    "1660528506b3a2b577": {
+      "type": "banner-with-item-list",
+      "blocks": {
+        "ba2e3cd8-c5cf-4ee5-b282-3dabeeb4bc41": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-4_2x_b90a0217-af10-4ba2-901e-e858d543875a.png",
+            "text": "Satisfaction Guaranteed"
+          }
+        },
+        "2761efcb-6d23-491f-8aa0-321731c59f2a": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-4_2x_b90a0217-af10-4ba2-901e-e858d543875a.png",
+            "text": "Fast Shipping"
+          }
+        },
+        "4f6dcb70-0893-47ab-b58a-98d32b010a91": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-4_2x_b90a0217-af10-4ba2-901e-e858d543875a.png",
+            "text": "Hassel Free Returns"
+          }
+        },
+        "9c6236f9-5f30-403f-b382-1f8f8417c4d3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-4_2x_b90a0217-af10-4ba2-901e-e858d543875a.png",
+            "text": "Cruetly Free"
+          }
+        }
+      },
+      "block_order": [
+        "ba2e3cd8-c5cf-4ee5-b282-3dabeeb4bc41",
+        "2761efcb-6d23-491f-8aa0-321731c59f2a",
+        "4f6dcb70-0893-47ab-b58a-98d32b010a91",
+        "9c6236f9-5f30-403f-b382-1f8f8417c4d3"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/hero-img_2x_52c72c9d-adf4-4155-86df-e559734530e4.png",
+        "image_mobile": "shopify:\/\/shop_images\/TruSkin_Feat_2x_7f729375-f20b-47e6-b527-5add2889e3af.png",
+        "content_align": "right",
+        "headline": "<p>Our Guarantee<\/p>",
+        "text": "We Guarantee Your Complete Satisfaction Or Your Money Back Within 90 Days of Purchase"
+      }
+    },
+    "166052895441294a03": {
+      "type": "section-icons",
+      "blocks": {
+        "16605289548bfb5047-0": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-4_2x_e374106a-4a31-4f82-beff-8dbbd00f2f1f.png",
+            "text": "Clinically Tested"
+          }
+        },
+        "16605289548bfb5047-1": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-2_2x_ea7dc2e6-9805-4a76-8a00-1084629b9a41.png",
+            "text": "Cruelty-Free"
+          }
+        },
+        "16605289548bfb5047-3": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-3_2x_be4090f3-199a-4f42-8298-69333831c607.png",
+            "text": "Dermatologist Tested"
+          }
+        },
+        "16605289548bfb5047-2": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon-1_2x_97c110fd-e6e7-4330-83c5-a4cd9c7ff9b4.png",
+            "text": "Vegan Friendly"
+          }
+        }
+      },
+      "block_order": [
+        "16605289548bfb5047-0",
+        "16605289548bfb5047-1",
+        "16605289548bfb5047-3",
+        "16605289548bfb5047-2"
+      ],
+      "settings": {
+      }
+    },
+    "166052905974bec567": {
+      "type": "skin-condition",
+      "blocks": {
+        "16605290590aef928f-2": {
+          "type": "image_with_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/serums-img_2x_4e059a73-ccec-49a6-8279-df83ed6dcf7b.png",
+            "title": "Innovative Skin-Friendly Formulations",
+            "link": "",
+            "link_text": "Learn More"
+          }
+        },
+        "16605290590aef928f-0": {
+          "type": "image_with_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cleanser-img_2x_b3255349-9601-479e-92b4-3818c8fc6db2.png",
+            "title": "Blended to be Better",
+            "link": "",
+            "link_text": "Learn More"
+          }
+        },
+        "16605290590aef928f-1": {
+          "type": "image_with_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/moisturizer-img_2x_a47e6899-35e1-4fea-ba9f-3bb88471f153.png",
+            "title": "Powered by Plants, Proven by Science",
+            "link": "",
+            "link_text": "Learn More"
+          }
+        },
+        "16605290590aef928f-3": {
+          "type": "image_with_link",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/toner-img_2x_fd311fd8-3953-4caf-b3d8-0634ce209115.png",
+            "title": "Affordable, Accessible & Accepting",
+            "link": "",
+            "link_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "16605290590aef928f-2",
+        "16605290590aef928f-0",
+        "16605290590aef928f-1",
+        "16605290590aef928f-3"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "166053020185839070": {
+      "type": "section-50-50-split-small",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ingredients-img_2x_2ab0ccbf-5a67-46a4-afef-72ececa850b7.png",
+        "title": "Skin Friendly Formulations",
+        "subtitle": "Each TruSkin product is a purposefully balanced medley of key antioxidants, super-nutrients and nourishing botanical active ingredients designed to work with your skin's natural capacity to correct, protect, heal and restore skin wellness (could also include context around how products are formulated and bottled in the USA)",
+        "btn_link": "",
+        "btn_text": "",
+        "show_fixed_img": true,
+        "fixed_image1": "shopify:\/\/shop_images\/New_Project.png",
+        "fixed_image2": "shopify:\/\/shop_images\/orange-slices-leaf_2x_1d1e3425-2cc1-420c-a3ab-fe1329085559.png"
+      }
+    }
+  },
+  "order": [
+    "1660526952e61136f5",
+    "1660527128e6d6516b",
+    "1660528506b3a2b577",
+    "166052895441294a03",
+    "166052905974bec567",
+    "166053020185839070"
+  ]
+}
