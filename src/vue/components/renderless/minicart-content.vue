@@ -1,6 +1,7 @@
 <script>
 import { toRefs, ref } from "vue";
 import { useStore } from "vuex";
+import cart from "@/vue/store/cart";
 
 export default {
   setup(props, { slots }) {
@@ -36,6 +37,35 @@ export default {
       );
     };
 
+    const reChargeProcessCart = () => {
+      let token = "";
+      function get_cookie(name) {
+        return (document.cookie.match("(^|; )" + name + "=([^;]*)") || 0)[2];
+      }
+      do {
+        token = get_cookie("cart");
+      } while (token == undefined);
+      try {
+        var ga_linker = ga.getAll()[0].get("linkerParam");
+      } catch (err) {
+        var ga_linker = "";
+      }
+      return `https://checkout.rechargeapps.com/r/checkout?myshopify_domain=${myshopify_domain}&cart_token=${token}&${ga_linker}`;
+    };
+
+    const getCheckoutUrl = () => {
+      for (let index in cartData.value.items) {
+        if (
+          cartData.value.items[index].properties &&
+          cartData.value.items[index].properties.shipping_interval_frequency
+        ) {
+          return reChargeProcessCart();
+        }
+      }
+
+      return "/checkout";
+    };
+
     document.addEventListener("cartUpdate", updateCart);
     document.addEventListener("cartInitialLoad", cartInitialLoad);
 
@@ -44,6 +74,7 @@ export default {
         cartData: cartData.value,
         formatMoney,
         updateItem,
+        getCheckoutUrl,
       });
   },
 };

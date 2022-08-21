@@ -1,4 +1,4 @@
-<renderless-minicart-content v-slot="{cartData, formatMoney, updateItem}">
+<renderless-minicart-content v-slot="{cartData, formatMoney, updateItem, getCheckoutUrl}">
   <div
     class="minicart bg-white fixed right-0 top-0 bottom-0 w-[450px] invisible translate-x-full transition-all duration-300 max-w-full z-100"
     :class="{ 'open': ($store.state['cart'].minicartVisible === true) }"
@@ -155,7 +155,7 @@
           {% endif %}
 
           <a
-            href="/checkout"
+            :href="getCheckoutUrl()"
             name="checkout"
             class="button button-secondary w-full"
           >

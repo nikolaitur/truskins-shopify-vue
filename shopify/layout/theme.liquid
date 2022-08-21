@@ -45,6 +45,10 @@
 
     {{ 'bundle.css' | asset_url | stylesheet_tag }}
 
+    <script>
+      var myshopify_domain='{{ shop.permanent_domain }}'
+    </script>
+
     <!-- header hook for Shopify plugins -->
     {{ content_for_header }}
     {% render 'minmaxify-head' %}

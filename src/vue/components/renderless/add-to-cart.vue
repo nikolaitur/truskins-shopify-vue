@@ -29,7 +29,10 @@ export default {
             variantId: variantId,
             qty: qty,
             properties: isSubscription
-              ? { shipping_interval_frequency: shippingIntervalFrequency }
+              ? {
+                  shipping_interval_frequency: shippingIntervalFrequency,
+                  shipping_interval_unit_type: "Days",
+                }
               : {},
           });
           if (response.isAdded) {
