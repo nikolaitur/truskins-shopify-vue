@@ -9,9 +9,9 @@
     <div class="icon-instagram">
       {% render 'icon-instagram' %}
     </div>
-    <h2 class="mt-5 md:mt-0 md:pl-7 translate-y-1  font-bold font-abril-display text-section-title-md leading-tight text-center md:text-left grow">
+    <h1 class="mt-5 md:mt-0 md:pl-7 translate-y-1  font-bold font-abril-display text-section-title-md leading-tight text-center md:text-left grow">
       {{ section.settings.title }}
-    </h2>
+    </h1>
     <a
       href="{{ section.settings.btn_link }}"
       _target="blank"
@@ -24,14 +24,18 @@
       <a
         href="{{ section.settings.link1 }}"
         target="_blank"
-        class="md:basis-1/2 h-min"
+        class="md:basis-1/2"
       >
-        {%
-          render 'section-image',
-          class: ''
-          image: section.settings.image1,
-          alt_text: "instagram feed"
-        %}
+        <div class="relative h-0 pb-[100%]">
+          <div class="absolute top-0 left-0 w-full h-full">
+            {%
+              render 'section-image',
+              class: ''
+              image: section.settings.image1,
+              alt_text: "instagram feed"
+            %}
+          </div>
+        </div>
       </a>
       <div class="w-full basis-full md:basis-1/2 flex flex-wrap self-start -translate-x-[1px]">
         <a
@@ -39,24 +43,32 @@
           target="_blank"
           class="basis-1/2 h-min"
         >
-          {%
-            render 'section-image',
-            class: ''
-            image: section.settings.image2,
-            alt_text: "instagram feed"
-          %}
+          <div class="relative h-0 pb-[100%]">
+            <div class="absolute top-0 left-0 w-101 h-101">
+              {%
+                render 'section-image',
+                class: ''
+                image: section.settings.image2,
+                alt_text: "instagram feed"
+              %}
+            </div>
+          </div>
         </a>
         <a
           href="{{ section.settings.link3 }}"
           target="_blank"
           class="basis-1/2 h-min -translate-x-[1px]"
         >
-          {%
-            render 'section-image',
-            class: ''
-            image: section.settings.image3,
-            alt_text: "instagram feed"
-          %}
+          <div class="relative h-0 pb-[100%]">
+            <div class="absolute top-0 left-0 w-101 h-101">
+              {%
+                render 'section-image',
+                class: ''
+                image: section.settings.image3,
+                alt_text: "instagram feed"
+              %}
+            </div>
+          </div>
         </a>
 
         <a
@@ -64,24 +76,32 @@
           target="_blank"
           class="hidden md:block basis-1/2 h-min"
         >
-          {%
-            render 'section-image',
-            class: ''
-            image: section.settings.image4,
-            alt_text: "instagram feed"
-          %}
+          <div class="relative h-0 pb-[100%]">
+            <div class="absolute top-0 left-0 w-full h-full">
+              {%
+                render 'section-image',
+                class: ''
+                image: section.settings.image4,
+                alt_text: "instagram feed"
+              %}
+            </div>
+          </div>
         </a>
         <a
           href="{{ section.settings.link5 }}"
           target="_blank"
           class="hidden md:block basis-1/2 h-min -translate-x-[1px]"
         >
-          {%
-            render 'section-image',
-            class: ''
-            image: section.settings.image5,
-            alt_text: "instagram feed"
-          %}
+          <div class="relative h-0 pb-[100%]">
+            <div class="absolute top-0 left-0 w-full h-full">
+              {%
+                render 'section-image',
+                class: ''
+                image: section.settings.image5,
+                alt_text: "instagram feed"
+              %}
+            </div>
+          </div>
         </a>
       </div>
     </div>

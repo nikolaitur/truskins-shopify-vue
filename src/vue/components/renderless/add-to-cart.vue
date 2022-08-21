@@ -16,9 +16,21 @@ export default {
           isLoading.value = true;
           const variantId = form.querySelector('[name="id"]').value;
           const qty = form.querySelector('[name="quantity"]').value;
+          const shippingIntervalFrequency = form.querySelector(
+            ".rc_select__frequency"
+          ).value;
+          const isSubscription = form
+            .querySelector(".rc_block__type--active")
+            .classList.contains("rc_block__type__autodeliver");
+
+          console.log(isSubscription);
+
           const response = await store.dispatch("cart/addToCart", {
             variantId: variantId,
             qty: qty,
+            properties: isSubscription
+              ? { shipping_interval_frequency: shippingIntervalFrequency }
+              : {},
           });
           if (response.isAdded) {
             document.dispatchEvent(

@@ -86,7 +86,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   announcementBarClose &&
     announcementBarClose.addEventListener("click", (e) => {
-      console.log("herehere");
       announcementBar.classList.add("hidden");
     });
+
+  document.addEventListener("click", (e) => {
+    const selectedBlock = e.target.closest(".rc_block__type");
+    if (selectedBlock) {
+      if (selectedBlock.classList.contains("rc_block__type__autodeliver")) {
+        document.querySelector("[data-atc-price]").innerHTML =
+          document.querySelector("#rc_price_autodeliver").innerHTML;
+      } else {
+        document.querySelector("[data-atc-price]").innerHTML =
+          document.querySelector("#rc_price_onetime").innerHTML;
+      }
+    }
+  });
 });

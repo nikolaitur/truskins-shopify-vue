@@ -32,12 +32,13 @@ const mutations = {
  * actions
  */
 const actions = {
-  addToCart: async (_, { variantId }) => {
+  addToCart: async (_, { variantId, qty, properties }) => {
     const cartData = {
       items: [
         {
           id: variantId,
-          quantity: 1,
+          quantity: qty,
+          properties: properties,
         },
       ],
     };

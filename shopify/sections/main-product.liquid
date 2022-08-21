@@ -39,6 +39,7 @@
         @submit.prevent="addToCart($event)"
         action="/cart/add"
         method="post"
+        data-productid="{{ product.id }}"
       >
         <div class="flex items-end gap-4 mb-6 mt-5">
           {% if product.has_only_default_variant %}
@@ -47,6 +48,7 @@
               type="hidden"
               :value="{{ current_variant.id }}"
               readonly
+              data-productid="{{ product.id }}"
             >
           {% else %}
             <div class="flex-1 py-5">
@@ -61,6 +63,7 @@
                     name="id"
                     type="hidden"
                     :value="selectedVariant.id"
+                    data-productid="{{product.id}}"
                     readonly
                   >
 
@@ -98,6 +101,10 @@
             </div>
           {% endif %}
         </div>
+
+        {% if product.available -%}
+          {%- include 'subscription-product' -%}
+        {%- endif %}
 
         {% if current_variant.available %}
           <div class="flex gap-3">
@@ -138,15 +145,18 @@
                   class="w-8 h-8 border-4 border-solid rounded-full border-t-4 border-t-black animate-spin"
                 ></div>
                 <div v-else>
-                  {{ 'action.add_to_cart' | t }} - {{ product.price | money }}
+                  {{ 'action.add_to_cart' | t }} -
+                  <span data-atc-price>{{ product.price | money }}</span>
                 </div>
               </button>
             </div>
           </div>
 
           <div class="mt-7 text-sm font-bold text-forest-green">
-            In Stock - Ready to Ship
+            {{ settings.stock_messaging }}
           </div>
+
+          {% render 'product-info-tab', product: product %}
         {% endif %}
       </form>
     </renderless-add-to-cart>

@@ -91,11 +91,11 @@
                     </div>
                   </div>
 
-                  <div class="flex items-center justify-between">
-                    <div class="flex w-[110px] h-[40px] rounded-full items-center border border-cod-gray mt-5">
+                  <div class="flex items-center justify-start mt-5">
+                    <div class="flex w-[110px] h-[40px] rounded-full items-center border border-cod-gray">
                       <button
                         @click="updateItem(index, item.quantity - 1)"
-                        class="grow cursor-pointer text-center"
+                        class="grow cursor-pointer text-center pl-3 text-3xl"
                       >
                         -
                       </button>
@@ -108,12 +108,12 @@
                       >
                       <button
                         @click="updateItem(index, item.quantity + 1)"
-                        class="grow cursor-pointer text-center"
+                        class="grow cursor-pointer text-center pr-3 text-3xl"
                       >
                         +
                       </button>
                     </div>
-                    <div class="grow pl-3 text-right text-sm font-light ">
+                    <div class="grow pl-10 text-left text-sm font-light ">
                       ${% raw %}{{ item.line_price / 100 }}{% endraw %}
                     </div>
 
@@ -159,8 +159,8 @@
             name="checkout"
             class="button button-secondary w-full"
           >
-            Checkout Now&nbsp;<span v-html="formatMoney(cartData.total_price)">
-            </span>
+            Checkout Now &nbsp; - &nbsp;
+            <span v-html="formatMoney(cartData.total_price)"> </span>
           </a>
         </div>
       </div>

@@ -9,6 +9,9 @@ const path = require("path");
 module.exports = {
   theme: {
     extend: {
+      screens: {
+        desk: "1135px",
+      },
       fontFamily: {
         "abril-display": ['"abril-display"', "serif"],
         "filson-soft": ['"filson-soft"', "sans-serif"],
@@ -35,6 +38,7 @@ module.exports = {
       width: {
         "search-form": "250px",
         btn: "175px",
+        101: "101%",
       },
       height: {
         btn: "45px",
@@ -42,6 +46,7 @@ module.exports = {
         "blob-image-1": "500px",
         "blob-image-2": "470px",
         "mobile-nav": "calc(100vh - 60px)",
+        101: "101%",
       },
       spacing: {
         "header-height-md": "128px",

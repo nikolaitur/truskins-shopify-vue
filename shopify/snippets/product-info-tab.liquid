@@ -1,0 +1,25 @@
+<div class="mt-8 border-t border-t-silver">
+  {% for info_title in product.metafields.info.product_info_title %}
+    <div
+      data-accordion-content="faq-{{ forloop.index }}"
+      class="py-4 pl-1 border-b border-silver"
+    >
+      <div
+        data-accordion-header="faq-{{ forloop.index }}"
+        class="flex gap-3 justify-between items-center cursor-pointer font-bold"
+      >
+        <div class="faq-item-icon rotate-45">
+          {% render 'icon-cross' %}
+        </div>
+        <span class="grow font-abril-display leading-none">
+          {{ info_title }}
+        </span>
+      </div>
+      <div class="opacity-0 max-h-0 overflow-hidden transition-all duration-200 ease-linear answer">
+        <div class="pt-4 pl-5">
+          {{ product.metafields.info.product_info_value[forloop.index0] }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

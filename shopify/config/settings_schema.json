@@ -42,5 +42,16 @@
         "default": true
       }
     ]
+  },
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "text",
+        "id": "stock_messaging",
+        "label": "Stock Messaging",
+        "default": "In Stock - Ready to Ship"
+      }
+    ]
   }
 ]

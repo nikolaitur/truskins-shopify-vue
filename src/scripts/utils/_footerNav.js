@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (mediaMobile) {
     const setHeight = (menu) => {
-      const subMenu = menu.nextSibling;
+      const subMenu = menu.nextSibling.nextSibling;
+      console.log(subMenu);
       menu?.classList.toggle("open");
 
       subMenu?.style.maxHeight
