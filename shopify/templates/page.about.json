@@ -206,6 +206,66 @@
         "fixed_image1": "shopify:\/\/shop_images\/New_Project.png",
         "fixed_image2": "shopify:\/\/shop_images\/orange-slices-leaf_2x_1d1e3425-2cc1-420c-a3ab-fe1329085559.png"
       }
+    },
+    "16610664658b414e46": {
+      "type": "section-testimonial",
+      "blocks": {
+        "642b34ca-aa78-4d41-a13d-823e85ee541b": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_30.png",
+            "name": "Dr. Smith",
+            "job": "Dermatologist",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+          }
+        },
+        "572344e5-a90b-4a12-a26e-49c22a2ad8f7": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_30.png",
+            "name": "Dr. Smith",
+            "job": "Dermatologist",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+          }
+        },
+        "43337cc1-55a6-4192-b0a9-cbb0676cef5d": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_30.png",
+            "name": "Dr. Smith",
+            "job": "Dermatologist",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+          }
+        },
+        "d590cc02-38f5-4546-9bfd-bc94ac39563b": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_30.png",
+            "name": "Dr. Smith",
+            "job": "Dermatologist",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+          }
+        },
+        "f6f7d9c4-9d0c-4467-b151-fb9ed82c813c": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_30.png",
+            "name": "Dr. Smith",
+            "job": "Dermatologist",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+          }
+        }
+      },
+      "block_order": [
+        "642b34ca-aa78-4d41-a13d-823e85ee541b",
+        "572344e5-a90b-4a12-a26e-49c22a2ad8f7",
+        "43337cc1-55a6-4192-b0a9-cbb0676cef5d",
+        "d590cc02-38f5-4546-9bfd-bc94ac39563b",
+        "f6f7d9c4-9d0c-4467-b151-fb9ed82c813c"
+      ],
+      "settings": {
+        "title": "What the Professionals Think"
+      }
     }
   },
   "order": [
@@ -214,6 +274,7 @@
     "1660528506b3a2b577",
     "166052895441294a03",
     "166052905974bec567",
-    "166053020185839070"
+    "166053020185839070",
+    "16610664658b414e46"
   ]
 }

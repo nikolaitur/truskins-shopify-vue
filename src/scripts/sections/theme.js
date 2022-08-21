@@ -5,6 +5,7 @@ import {
   testimonialSlider,
   tickerSlider,
   productGallery,
+  testimonialSlider2,
 } from "../utils";
 import lozad from "lozad";
 
@@ -39,6 +40,9 @@ const observer = lozad(".lozad", {
               break;
             case "ticker":
               tickerSlider(closestSlider);
+              break;
+            case "testimonial2":
+              testimonialSlider2(closestSlider);
               break;
             case "thumbs": {
               const dataThumb = closestSlider.dataset.sliderThumbs;

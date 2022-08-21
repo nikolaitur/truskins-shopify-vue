@@ -1,0 +1,85 @@
+<div class="py-40 container">
+  <div class="text-center font-abril-display font-bold text-[40px]">
+    {{ section.settings.title }}
+  </div>
+  <div class="px-5 overflow-hidden relative mt-16" data-slider="testimonial2">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide lozad">
+          <div class="border border-silver rounded-[20px] min-h-[320px] p-7">
+            <div class="photo rounded-full">
+              {%
+                render 'section-image',
+                class: 'w-16 h-16'
+                image: block.settings.image,
+                alt_text: "block.settings.name"
+              %}
+            </div>
+            <div class="mt-4 font-abril-display font-bold">
+              {{ block.settings.name }}
+            </div>
+            <div class="mt-1 text-sm font-light">{{ block.settings.job }}</div>
+            <div class="mt-3 text-sm font-light">
+              {{ block.settings.content }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div>
+      {% if section.blocks.size > 4 %}
+        <div
+          class="swiper-button-next testimonial2-swiper-btn"
+        ></div>
+        <div class="swiper-button-prev testimonial2-swiper-btn"></div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonial2",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "job",
+          "label": "Job"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials2",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

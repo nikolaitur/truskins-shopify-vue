@@ -141,3 +141,22 @@ export const productGallery = ({ elementThumbs, elementMain }) => {
     });
   }
 };
+
+export const testimonialSlider2 = (element) => {
+  if (!element.classList.contains("swiper-initialized")) {
+    const swiper = new Swiper(element, {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  }
+};

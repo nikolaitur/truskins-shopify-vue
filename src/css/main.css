@@ -655,3 +655,11 @@ div.rc_popup__block {
   border-bottom: 1px solid #bababa;
   margin-bottom: 27px;
 }
+
+.testimonial2-swiper-btn.swiper-button-next {
+  right: 0px !important;
+}
+
+.testimonial2-swiper-btn.swiper-button-prev {
+  left: 0px !important;
+}
